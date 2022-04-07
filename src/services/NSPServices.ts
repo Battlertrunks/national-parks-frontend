@@ -6,7 +6,7 @@ const key: string = process.env.REACT_APP_NPS_KEY || "";
 
 export const getThingsToDo = async (): Promise<TrendingCardModelResponse> => {
   return (
-    await axios.get("https://developer.nps.gov/api/v1/parks?", {
+    await axios.get("https://developer.nps.gov/api/v1/parks", {
       params: { api_key: key },
     })
   ).data;
@@ -18,4 +18,14 @@ export const getActivities = async (): Promise<ActivitiesResponse> => {
       params: { api_key: key },
     })
   ).data;
+};
+
+export const getParksBySearch = async (
+  q: string
+): Promise<TrendingCardModelResponse> => {
+  return await axios
+    .get("https://developer.nps.gov/api/v1/parks", {
+      params: { api_key: key, q },
+    })
+    .then((response) => response.data);
 };

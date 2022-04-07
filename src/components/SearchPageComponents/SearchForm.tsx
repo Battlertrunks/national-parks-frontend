@@ -1,10 +1,15 @@
 import { FormEvent, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import Activities from "../../models/Activities";
 import States from "../../models/States";
 import { getActivities } from "../../services/NSPServices";
 import "./SearchForm.css";
 
 const SearchForm = () => {
+  const [q, setQ] = useState("");
+
+  const navigate = useNavigate();
+
   const [activites, setActivities] = useState<Activities[]>([]);
 
   const [search, setSearch] = useState<string>("");
@@ -68,17 +73,21 @@ const SearchForm = () => {
     getActivities().then((response) => setActivities(response.data));
   }, []);
 
-  const submitHandler = (e: FormEvent): void => {};
+  const submitHandler = (e: FormEvent): void => {
+    e.preventDefault();
+    navigate(`/parks/search?${new URLSearchParams({ q })}`);
+    setQ("");
+  };
 
   return (
-    <form className="SearchForm">
+    <form className="SearchForm" onSubmit={submitHandler}>
       <input
         type="text"
         name="search"
         id="search"
         placeholder="Search"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
       />
       <div>
         <select
@@ -86,6 +95,7 @@ const SearchForm = () => {
           id="activity"
           onChange={(e) => setActivityFilter(e.target.value)}
         >
+          <option value=""></option>
           {activites.map((activity) => (
             <option value={activity.id}>{activity.name}</option>
           ))}
@@ -95,11 +105,13 @@ const SearchForm = () => {
           id="state"
           onChange={(e) => setStateFilter(e.target.value)}
         >
+          <option value=""></option>
           {states.map((state) => (
             <option value={state.stateCode}>{state.fullName}</option>
           ))}
         </select>
       </div>
+      <button>Submit</button>
     </form>
   );
 };
