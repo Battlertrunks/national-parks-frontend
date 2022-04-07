@@ -18,6 +18,9 @@ const Header = () => {
           <li>
             <Link to="/parks/search">Search</Link>
           </li>
+          <li>
+            <Link to="/parks/aboutus">About Us</Link>
+          </li>
         </ul>
         {user ? (
           <div>

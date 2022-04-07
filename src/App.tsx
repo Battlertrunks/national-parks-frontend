@@ -11,6 +11,8 @@ import {
   Routes,
 } from "react-router-dom";
 import SearchParkRoute from "./components/SearchParkRoute";
+import AboutUs from "./components/AboutUs";
+import ParkDetails from "./components/ParkDetails";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeRoute />} />
           <Route path="/parks/search" element={<SearchParkRoute />} />
+          <Route path="/parks/aboutus" element={<AboutUs />} />
+          <Route path="/parks/:id" element={<ParkDetails />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
