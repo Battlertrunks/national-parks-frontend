@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import TrendingCardsModel from "../models/TrendingCardModel";
 import { getAttendedParks } from "../services/AttendedParkServices";
 import { getThingsToDo } from "../services/NSPServices";
+import AboutUs from "./AboutUs";
 import HomeSearchParkForm from "./HomePageComponents/HomeSearchParkForm";
 import TrendingCard from "./HomePageComponents/TrendingCard";
 import "./HomeRoute.css";
@@ -61,6 +62,8 @@ const HomeRoute = () => {
       </div>
       <h2>Search National Parks</h2>
       <HomeSearchParkForm />
+      <h2>About Us</h2>
+      <AboutUs />
     </section>
   );
 };
