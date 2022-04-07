@@ -11,6 +11,7 @@ import {
   Routes,
 } from "react-router-dom";
 import SearchParkRoute from "./components/SearchParkRoute";
+import Account from "./components/Account";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomeRoute />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/parks/search" element={<SearchParkRoute />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
