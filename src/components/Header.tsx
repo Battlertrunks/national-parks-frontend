@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Header.css";
@@ -9,8 +10,15 @@ const Header = () => {
 
   return (
     <header className="Header">
-      <h1>Dream Park</h1>
+      <Link to="/">
+        <h1>Dream Park</h1>
+      </Link>
       <div>
+        <ul>
+          <li>
+            <Link to="/parks/search">Search</Link>
+          </li>
+        </ul>
         {user ? (
           <div>
             <p>{user.displayName}</p>

@@ -4,12 +4,26 @@ import Footer from "./components/Footer";
 import HomeRoute from "./components/HomeRoute";
 import AuthContextProvider from "./context/AuthContextProvider";
 
+import {
+  BrowserRouter as Router,
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
+import SearchParkRoute from "./components/SearchParkRoute";
+
 function App() {
   return (
     <div className="App">
-      <Header />
-      <HomeRoute />
-      <Footer />
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomeRoute />} />
+          <Route path="/parks/search" element={<SearchParkRoute />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
