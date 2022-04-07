@@ -1,0 +1,40 @@
+.HomeSearchParkForm {
+  background-color: #5c9e52;
+  padding: 15px 0;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.HomeSearchParkForm h3 {
+  font-weight: 300;
+}
+
+.HomeSearchParkForm .line-divide {
+  height: 1px;
+  width: 300px;
+  margin-top: 5px;
+  background-color: #fff;
+}
+
+.HomeSearchParkForm .line-divide,
+.HomeSearchParkForm input {
+  margin-bottom: 20px;
+}
+
+.HomeSearchParkForm input {
+  width: 250px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+}
+
+.HomeSearchParkForm button {
+  padding: 5px 35px;
+  border-radius: 50px;
+  border: none;
+  background-color: #63c954;
+  color: #fff;
+  font-family: "Lexend", sans-serif;
+}

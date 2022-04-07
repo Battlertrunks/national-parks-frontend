@@ -1,0 +1,86 @@
+.Footer {
+  background-color: #5c9e52;
+}
+
+.Footer .divider {
+  height: 1px;
+  width: 95%;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-bottom: 8px;
+}
+
+.Footer .links-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.Footer .logo-social-container {
+  flex: 1;
+}
+
+.Footer .community-container,
+.Footer .company-container {
+  flex: 0.9;
+}
+
+.Footer h2 {
+  font-size: 18px;
+}
+
+.Footer p {
+  font-size: 9px;
+}
+
+.Footer .social-media-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.Footer .social-media-container li {
+  background-color: #fff;
+  padding: 7px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.Footer .youtube-icon {
+  color: #dc6a6a;
+}
+
+.Footer .facebook-icon {
+  color: #8094fe;
+}
+
+.Footer .twitter-icon {
+  color: #68d2ff;
+}
+
+.Footer .community-container h3,
+.Footer .company-container h3 {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.Footer .community-container a,
+.Footer .company-container a {
+  font-size: 11px;
+  text-decoration: underline;
+  color: #fff;
+}
+
+.Footer .community-container li,
+.Footer .company-container li {
+  padding-left: 5px;
+}
+
+.Footer .community-container ul,
+.Footer .company-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: unset;
+  margin: 0 5px;
+}

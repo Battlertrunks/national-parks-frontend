@@ -1,0 +1,32 @@
+.Header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #5c9e52b9;
+  z-index: 2;
+}
+
+.Header button {
+  background-color: transparent;
+  border: none;
+}
+
+.Header div {
+  display: flex;
+  align-items: center;
+}
+
+.Header a {
+  color: #fff;
+  text-decoration: underline;
+  margin-right: 15px;
+}
+
+.Header i {
+  font-size: 32px;
+  color: #fff;
+}

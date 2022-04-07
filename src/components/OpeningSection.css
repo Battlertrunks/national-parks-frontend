@@ -1,0 +1,55 @@
+.OpeningSection {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(0deg, #6fc861b0, #6fc861b0),
+    url("../images/park-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "Kulim Park", sans-serif;
+}
+
+.OpeningSection * {
+  margin: 5px 0;
+}
+
+.OpeningSection ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  max-width: 750px;
+  font-size: 28px;
+}
+
+.OpeningSection .divider {
+  display: block;
+  width: 2px;
+  height: 50px;
+  background-color: #fff;
+}
+
+.OpeningSection h2 {
+  color: #fff;
+  font-weight: 200;
+}
+
+.OpeningSection h3 {
+  font-size: 24px;
+  width: 200px;
+  text-align: center;
+  font-weight: 200;
+}
+
+.OpeningSection h3::after {
+  content: "";
+  height: 1px;
+  width: 40%;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 10px;
+  display: block;
+}
