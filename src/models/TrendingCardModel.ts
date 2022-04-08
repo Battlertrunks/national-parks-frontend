@@ -4,6 +4,7 @@ interface image {
 }
 
 export default interface TrendingCardsModel {
+  uid?: string;
   id: string;
   images: image[];
   fullName: string;
