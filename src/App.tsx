@@ -11,12 +11,9 @@ import {
   Routes,
 } from "react-router-dom";
 import SearchParkRoute from "./components/SearchParkRoute";
-<<<<<<< HEAD
-import AboutUs from "./components/AboutUs";
-import ParkDetails from "./components/ParkDetails";
-=======
 import Account from "./components/Account";
->>>>>>> 89395fe2c04e63785a668fc9b456f42adb871ae0
+import ParkDetails from "./components/ParkDetails";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   return (
