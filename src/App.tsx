@@ -10,6 +10,10 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import SearchParkRoute from "./components/SearchParkRoute";
+import Account from "./components/Account";
+import ParkDetails from "./components/ParkDetails";
+import AboutUs from "./components/AboutUs";
 import GalleryRoute from "./components/GalleryRoute";
 import AboutUs from "./components/AboutUs";
 import ParkDetails from "./components/ParkDetails";
