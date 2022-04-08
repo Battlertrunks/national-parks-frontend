@@ -16,7 +16,7 @@ import ParkDetails from "./components/ParkDetails";
 import AboutUs from "./components/AboutUs";
 import GalleryRoute from "./components/GalleryRoute";
 import AboutUs from "./components/AboutUs";
-import ParkDetails from "./components/ParkDetails";
+import ParkDetails from "./components/ParkDetailsCard";
 import Account from "./components/Account";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/parks/search" element={<GalleryRoute />} />
           <Route path="/parks/aboutus" element={<AboutUs />} />
-          <Route path="/parks/:id" element={<ParkDetails />} />
+          <Route path="/parks/details" element={<ParkDetails />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
