@@ -1,15 +1,20 @@
 import { FormEvent, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import Activities from "../../models/Activities";
+import Params from "../../models/Params";
 import States from "../../models/States";
 import { getActivities } from "../../services/NSPServices";
 import "./SearchForm.css";
 
 const SearchForm = () => {
+  const [q, setQ] = useState("");
+
+  const navigate = useNavigate();
+
   const [activites, setActivities] = useState<Activities[]>([]);
 
-  const [search, setSearch] = useState<string>("");
-  const [stateFilter, setStateFilter] = useState<string>("");
-  const [activityFilter, setActivityFilter] = useState<string>("");
+  const [stateCode, setStateCode] = useState<string>("");
+  const [parkCode, setParkCode] = useState<string>("");
 
   const states: States[] = [
     { fullName: "Alabama", stateCode: "AL" },
@@ -68,24 +73,36 @@ const SearchForm = () => {
     getActivities().then((response) => setActivities(response.data));
   }, []);
 
-  const submitHandler = (e: FormEvent): void => {};
+  const submitHandler = (e: FormEvent): void => {
+    e.preventDefault();
+
+    const queryStringParams: Params = {
+      ...(q ? { q } : {}),
+      ...(stateCode ? { stateCode } : {}),
+      ...(parkCode ? { parkCode } : {}),
+    };
+
+    navigate(`/parks/search?${new URLSearchParams({ ...queryStringParams })}`);
+    setQ("");
+  };
 
   return (
-    <form className="SearchForm">
+    <form className="SearchForm" onSubmit={submitHandler}>
       <input
         type="text"
         name="search"
         id="search"
         placeholder="Search"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
       />
       <div>
         <select
           name="activity"
           id="activity"
-          onChange={(e) => setActivityFilter(e.target.value)}
+          onChange={(e) => setParkCode(e.target.value)}
         >
+          <option value=""></option>
           {activites.map((activity) => (
             <option value={activity.id}>{activity.name}</option>
           ))}
@@ -93,13 +110,15 @@ const SearchForm = () => {
         <select
           name="state"
           id="state"
-          onChange={(e) => setStateFilter(e.target.value)}
+          onChange={(e) => setStateCode(e.target.value)}
         >
+          <option value=""></option>
           {states.map((state) => (
             <option value={state.stateCode}>{state.fullName}</option>
           ))}
         </select>
       </div>
+      <button>Submit</button>
     </form>
   );
 };
