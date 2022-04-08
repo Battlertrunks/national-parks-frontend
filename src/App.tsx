@@ -10,14 +10,10 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import SearchParkRoute from "./components/SearchParkRoute";
 import Account from "./components/Account";
-import ParkDetails from "./components/ParkDetails";
 import AboutUs from "./components/AboutUs";
 import GalleryRoute from "./components/GalleryRoute";
-import AboutUs from "./components/AboutUs";
-import ParkDetails from "./components/ParkDetailsCard";
-import Account from "./components/Account";
+import ParkDetailsCard from "./components/ParkDetailsCard";
 
 function App() {
   return (
@@ -29,7 +25,7 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/parks/search" element={<GalleryRoute />} />
           <Route path="/parks/aboutus" element={<AboutUs />} />
-          <Route path="/parks/details" element={<ParkDetails />} />
+          <Route path="/parks/details" element={<ParkDetailsCard />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
