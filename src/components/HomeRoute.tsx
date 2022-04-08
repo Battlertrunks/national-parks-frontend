@@ -67,8 +67,6 @@ const HomeRoute = () => {
       </div>
       <h2>Search National Parks</h2>
       <HomeSearchParkForm />
-      <h2>About Us</h2>
-      <AboutUs />
     </section>
   );
 };

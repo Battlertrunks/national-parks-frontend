@@ -3,9 +3,9 @@ interface condition {
   icon: string;
 }
 interface location {
+  name: string;
   country: string;
   localtime: string;
-  name: string;
 }
 interface current {
   temp_c: number;
@@ -13,7 +13,7 @@ interface current {
   condition: condition;
 }
 
-export default interface Weather {
+export default interface WeatherModel {
   location: location;
   current: current;
 }
