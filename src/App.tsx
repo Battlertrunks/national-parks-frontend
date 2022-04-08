@@ -14,6 +14,10 @@ import SearchParkRoute from "./components/SearchParkRoute";
 import Account from "./components/Account";
 import ParkDetails from "./components/ParkDetails";
 import AboutUs from "./components/AboutUs";
+import GalleryRoute from "./components/GalleryRoute";
+import AboutUs from "./components/AboutUs";
+import ParkDetails from "./components/ParkDetails";
+import Account from "./components/Account";
 
 function App() {
   return (
@@ -23,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeRoute />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/parks/search" element={<SearchParkRoute />} />
+          <Route path="/parks/search" element={<GalleryRoute />} />
           <Route path="/parks/aboutus" element={<AboutUs />} />
           <Route path="/parks/:id" element={<ParkDetails />} />
           <Route path="*" element={<Navigate to="/" />} />
