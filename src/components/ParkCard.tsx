@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import AttendedParksContext from "../context/AttendedParksContext";
+import AuthContext from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import TrendingCardsModel from "../models/TrendingCardModel";
 import "./ParkCard.css";
@@ -7,9 +10,14 @@ interface Props {
 }
 
 const ParkCard = ({ onDisplay }: Props) => {
+
+  const { user } = useContext(AuthContext);
+  const { attendedParks, addPark } = useContext(AttendedParksContext);
+        
   const parkCode: any = {
     ...(onDisplay.parkCode ? { parkCode: onDisplay.parkCode } : {}),
   };
+
 
   return (
     <div className="ParkCard">
@@ -19,6 +27,15 @@ const ParkCard = ({ onDisplay }: Props) => {
       </Link>
 
       <p>{onDisplay.description}</p>
+      {user && (
+        <button
+          onClick={() => {
+            addPark({ ...onDisplay, uid: user.uid });
+          }}
+        >
+          Attended
+        </button>
+      )}
     </div>
   );
 };

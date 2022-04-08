@@ -3,13 +3,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AuthContextProvider from "./context/AuthContextProvider";
+import AttendedParksContextProvider from "./context/AttendedParkContextProvider";
 
 const rootEl = document.getElementById("root");
 
 const root = ReactDOMClient.createRoot(rootEl!);
 root.render(
   <AuthContextProvider>
-    <App />
+    <AttendedParksContextProvider>
+      <App />\
+    </AttendedParksContextProvider>
   </AuthContextProvider>
 );
 

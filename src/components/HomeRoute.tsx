@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import AuthContext from "../context/AuthContext";
 import TrendingCardsModel from "../models/TrendingCardModel";
 import { getAttendedParks } from "../services/AttendedParkServices";
 import { getThingsToDo } from "../services/NSPServices";
@@ -12,6 +13,8 @@ const HomeRoute = () => {
   const [trending, setTrending] = useState<TrendingCardsModel[]>([]);
   const [count, setCount] = useState<number>(0);
 
+  const { user } = useContext(AuthContext);
+
   const retrieveThingsToDo = (): void => {
     getThingsToDo().then((response) => setTrending(response.data));
   };
@@ -22,7 +25,9 @@ const HomeRoute = () => {
 
   // TODO THIS IS A TEST TO BE DELETED LATER!!!!
   useEffect(() => {
-    getAttendedParks().then((response) => console.log(response));
+    if (user) {
+      getAttendedParks(user.uid).then((response) => console.log(response));
+    }
   });
 
   // console.log(count);
