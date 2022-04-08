@@ -11,7 +11,6 @@ interface Props {
 const ParkCard = ({ onDisplay }: Props) => {
   const { user } = useContext(AuthContext);
   const { attendedParks, addPark } = useContext(AttendedParksContext);
-  console.log(attendedParks);
   return (
     <div className="ParkCard">
       <img src={onDisplay.images[0].url} alt={onDisplay.images[0].altText} />
