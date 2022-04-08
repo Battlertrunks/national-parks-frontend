@@ -31,8 +31,6 @@ const SearchParkRoute = () => {
     }
   }, [searchQuery, stateCode, parkCode]);
 
-  console.log(parks);
-
   return (
     <div className="SearchParkRoute">
       <SearchForm />

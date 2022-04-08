@@ -9,4 +9,5 @@ export default interface TrendingCardsModel {
   images: image[];
   fullName: string;
   description: string;
+  parkCode: string;
 }
