@@ -2,6 +2,7 @@ import { ReactNode, useContext, useEffect, useState } from "react";
 import CompletedParks from "../models/CompletedParks";
 import {
   addAttendedParks,
+  completedActivity,
   deleteAttendedParks,
   getAttendedParks,
 } from "../services/AttendedParkServices";
@@ -30,6 +31,10 @@ const AttendedParksContextProvider = ({ children }: Props) => {
     deleteAttendedParks(id).then(() => getAndSetParks(attendedParks));
   };
 
+  const attendedActivity = (id: string, park: CompletedParks): void => {
+    completedActivity(id, park).then(() => getAndSetParks(attendedParks));
+  };
+
   useEffect(() => {
     if (user) {
       getAndSetParks(user);
@@ -37,7 +42,7 @@ const AttendedParksContextProvider = ({ children }: Props) => {
   }, [user]);
   return (
     <AttendedParksContext.Provider
-      value={{ attendedParks, addPark, removePark }}
+      value={{ attendedParks, addPark, removePark, attendedActivity }}
     >
       {children}
     </AttendedParksContext.Provider>

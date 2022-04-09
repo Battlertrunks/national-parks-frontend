@@ -1,14 +1,14 @@
 .Account h1,
 .Account h2,
 .Account h3,
-.Account p {
+.Account p,
+.Account span {
   color: black;
 }
 
 .Account {
   margin-top: 200px;
   margin-bottom: 200px;
-  text-align: center;
 }
 
 .Account li {

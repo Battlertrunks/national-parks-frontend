@@ -4,6 +4,7 @@ import AuthContext from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import TrendingCardsModel from "../models/TrendingCardModel";
 import "./ParkCard.css";
+import Activities from "../models/Activities";
 
 interface Props {
   onDisplay: TrendingCardsModel;
@@ -29,7 +30,19 @@ const ParkCard = ({ onDisplay }: Props) => {
       {user && (
         <button
           onClick={() => {
-            addPark({ ...onDisplay, uid: user.uid });
+            const result: Activities[] = onDisplay.activities.map((act) => {
+              return { id: act.id, name: act.name, completed: false };
+            });
+            const park: TrendingCardsModel = {
+              id: onDisplay.id,
+              uid: onDisplay.uid,
+              images: onDisplay.images,
+              fullName: onDisplay.fullName,
+              description: onDisplay.description,
+              parkCode: onDisplay.parkCode,
+              activities: result,
+            };
+            addPark({ ...park, uid: user.uid });
           }}
         >
           Attended

@@ -19,3 +19,10 @@ export const addAttendedParks = async (
 export const deleteAttendedParks = async (id: string): Promise<void> => {
   return (await axios.delete(`${url}/${encodeURIComponent(id)}`)).data;
 };
+
+export const completedActivity = async (
+  id: string,
+  park: CompletedParks
+): Promise<CompletedParks> => {
+  return await axios.put(`${url}/${encodeURIComponent(id)}`, park);
+};

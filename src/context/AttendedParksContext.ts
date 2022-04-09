@@ -6,12 +6,14 @@ interface AttendParksContextModel {
   attendedParks: TrendingCardsModel[];
   addPark: (park: TrendingCardsModel) => void;
   removePark: (id: string) => void;
+  attendedActivity: (id: string, park: CompletedParks) => void;
 }
 
 const defaultValues: AttendParksContextModel = {
   attendedParks: [],
   addPark: () => {},
   removePark: () => {},
+  attendedActivity: () => {},
 };
 
 const AttendedParksContext = createContext(defaultValues);
