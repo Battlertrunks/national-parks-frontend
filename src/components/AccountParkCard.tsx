@@ -5,16 +5,22 @@ import TrendingCardsModel from "../models/TrendingCardModel";
 import AccountActivitiesCard from "./AccountActivitiesCard";
 import "./AccountParkCard.css";
 
+// Getting the park data to put on the account by using props.
 interface Props {
   park: CompletedParks;
 }
 
 const AccountParkCard = ({ park }: Props) => {
+  // Setting up state for the user to expand and unexpand the activities.
   const [dropdownToggle, setDropdownToggle] = useState<boolean>(true);
+  // Getting the removePark function from our context.
   const { removePark } = useContext(AttendedParksContext);
 
+  // Controls whether the activities should be displayed or not from the dropdownToggle.
   const setDropdown = dropdownToggle ? "activity-dropdown" : "";
 
+  // Calcualtes the progress bar of completed activities by calculating the length (amount) of activities
+  // and dividing it by the amount completed, then multiplying by 100 to make it a whole number.
   const progressBar =
     (park.activities.reduce(
       (prev, act) => (act.completed ? prev + 1 : prev),

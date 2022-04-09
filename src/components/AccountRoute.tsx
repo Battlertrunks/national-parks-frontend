@@ -5,6 +5,8 @@ import AccountParkCard from "./AccountParkCard";
 import "./AccountRoute.css";
 
 const Account = () => {
+  // Gathering user (to see if the user is logged in or not) and attendedPark (to display the user's
+  // parks they have visited).
   const { user } = useContext(AuthContext);
   const { attendedParks } = useContext(AttendedParksContext);
 
@@ -19,11 +21,6 @@ const Account = () => {
             )
         )}
       </ul>
-      <div>
-        <h3>Your Score:</h3>
-        <p>TODO POINTS</p>
-      </div>
-      <h1>How do you gain points?</h1>
     </div>
   );
 };
