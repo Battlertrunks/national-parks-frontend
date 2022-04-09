@@ -19,6 +19,24 @@ const ParkCard = ({ onDisplay }: Props) => {
   };
   //   console.log(attendedParks.filter((item) => item.uid === onDisplay.uid));
 
+  const addingParkToProgress = (): void => {
+    if (user) {
+      const result: Activities[] = onDisplay.activities.map((act) => {
+        return { id: act.id, name: act.name, completed: false };
+      });
+      const park: TrendingCardsModel = {
+        id: onDisplay.id,
+        uid: onDisplay.uid,
+        images: onDisplay.images,
+        fullName: onDisplay.fullName,
+        description: onDisplay.description,
+        parkCode: onDisplay.parkCode,
+        activities: result,
+      };
+      addPark({ ...park, uid: user.uid });
+    }
+  };
+
   return (
     <div className="ParkCard">
       <img src={onDisplay.images[0].url} alt={onDisplay.images[0].altText} />
@@ -27,27 +45,7 @@ const ParkCard = ({ onDisplay }: Props) => {
       </Link>
 
       <p>{onDisplay.description}</p>
-      {user && (
-        <button
-          onClick={() => {
-            const result: Activities[] = onDisplay.activities.map((act) => {
-              return { id: act.id, name: act.name, completed: false };
-            });
-            const park: TrendingCardsModel = {
-              id: onDisplay.id,
-              uid: onDisplay.uid,
-              images: onDisplay.images,
-              fullName: onDisplay.fullName,
-              description: onDisplay.description,
-              parkCode: onDisplay.parkCode,
-              activities: result,
-            };
-            addPark({ ...park, uid: user.uid });
-          }}
-        >
-          Attended
-        </button>
-      )}
+      {user && <button onClick={() => addingParkToProgress()}>Attended</button>}
     </div>
   );
 };

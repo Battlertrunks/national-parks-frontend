@@ -19,7 +19,7 @@ const AccountActivitiesCard = ({ onDisplayCard, park }: Props) => {
   // When the user clicks the attended button, it updates the activity object's property completed to true.
   const attendedActivityFunc = (): void => {
     // Changing completed from false to true.
-    onDisplayCard.completed = true;
+    onDisplayCard.completed = !onDisplayCard.completed;
     // Calling the attendedActivity to update the completetion to updated by sending
     // the id of what park we want to updated and sending the new/updated park object
     attendedActivity(park._id!, {
@@ -37,7 +37,9 @@ const AccountActivitiesCard = ({ onDisplayCard, park }: Props) => {
   return (
     <li className="AccountActivitiesCard">
       <p>{onDisplayCard.name}</p>
-      <button onClick={() => attendedActivityFunc()}>Attended</button>
+      <button onClick={() => attendedActivityFunc()}>
+        {onDisplayCard.completed ? "Completed" : "Finished?"}
+      </button>
     </li>
   );
 };
