@@ -104,7 +104,9 @@ const SearchForm = () => {
         >
           <option value=""></option>
           {activites.map((activity) => (
-            <option value={activity.id}>{activity.name}</option>
+            <option value={activity.id} key={activity.id}>
+              {activity.name}
+            </option>
           ))}
         </select>
         <select
@@ -114,7 +116,9 @@ const SearchForm = () => {
         >
           <option value=""></option>
           {states.map((state) => (
-            <option value={state.stateCode}>{state.fullName}</option>
+            <option value={state.stateCode} key={state.stateCode}>
+              {state.fullName}
+            </option>
           ))}
         </select>
       </div>

@@ -1,3 +1,5 @@
+import Activities from "./Activities";
+
 interface image {
   url: string;
   altText: string;
@@ -11,4 +13,5 @@ export default interface TrendingCardsModel {
   fullName: string;
   description: string;
   parkCode: string;
+  activities: Activities[];
 }

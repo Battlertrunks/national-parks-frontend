@@ -1,11 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AttendedParksContext from "../context/AttendedParksContext";
 import AuthContext from "../context/AuthContext";
+import AccountParkCard from "./AccountParkCard";
 import "./AccountRoute.css";
 
 const Account = () => {
   const { user } = useContext(AuthContext);
-  const { attendedParks, removePark } = useContext(AttendedParksContext);
+  const { attendedParks } = useContext(AttendedParksContext);
 
   return (
     <div className="Account">
@@ -14,12 +15,7 @@ const Account = () => {
         {attendedParks.map(
           (park) =>
             park.uid === user?.uid && (
-              <li key={park._id}>
-                <p>{park.fullName}</p>
-                <button onClick={() => removePark(park._id!)}>
-                  Remove Park
-                </button>
-              </li>
+              <AccountParkCard park={park} key={park._id} />
             )
         )}
       </ul>

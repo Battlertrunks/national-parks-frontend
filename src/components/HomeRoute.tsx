@@ -58,7 +58,7 @@ const HomeRoute = () => {
         </button>
         <ul className="slide-content">
           {trending.map((item) => (
-            <TrendingCard displayContent={item} onSlide={count} />
+            <TrendingCard displayContent={item} onSlide={count} key={item.id} />
           ))}
         </ul>
         <button onClick={() => swipeRight()} className="right-btn">
