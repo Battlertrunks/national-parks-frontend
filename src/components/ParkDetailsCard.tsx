@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ParkDetailsCardModel from "../models/ParkDetailsCardModel";
 import { getParkDetails } from "../services/NSPServices";
@@ -6,12 +6,19 @@ import "./ParkDetailsCard.css";
 import { useSearchParams } from "react-router-dom";
 import { getWeather } from "../services/WeatherServices";
 import WeatherModel from "../models/WeatherModel";
+import AuthContext from "../context/AuthContext";
+import AttendedParksContext from "../context/AttendedParksContext";
+import Activities from "../models/Activities";
+import CompletedParks from "../models/CompletedParks";
 
 const ParkDetailsCard = () => {
   const [parkDetails, setParkDetails] = useState<ParkDetailsCardModel>();
   const [searchParams] = useSearchParams();
   const parkCode: string | null = searchParams.get("parkCode");
   const [currentWeather, setCurrentWeather] = useState<WeatherModel>();
+
+  const { user } = useContext(AuthContext);
+  const { addPark } = useContext(AttendedParksContext);
 
   // const parkCode: string | undefined = useParams().parkCode;
 
@@ -30,6 +37,25 @@ const ParkDetailsCard = () => {
     }
   }, [parkDetails]);
   console.log(currentWeather);
+
+  const addingParkToProgress = (): void => {
+    if (user) {
+      const result: Activities[] = parkDetails!.activities.map((act) => {
+        return { id: act.id, name: act.name, completed: false };
+      });
+      const parkToAdd: CompletedParks = {
+        id: parkDetails!.id,
+        uid: parkDetails!.uid,
+        images: parkDetails!.images,
+        fullName: parkDetails!.fullName,
+        description: parkDetails!.description,
+        parkCode: parkDetails!.parkCode,
+        activities: result,
+      };
+      addPark({ ...parkToAdd, uid: user.uid });
+    }
+  };
+
   return (
     <div className="ParkDetailsCard">
       <h1>{parkDetails?.fullName}</h1>
@@ -38,7 +64,7 @@ const ParkDetailsCard = () => {
       <img src={parkDetails?.images[0].url} alt="park images" />
 
       <p>{parkDetails?.description}</p>
-      <button>Attended Park</button>
+      <button onClick={() => addingParkToProgress()}>Attended Park</button>
       <h2>Activities</h2>
       <ul>
         {parkDetails?.activities.map((activity) => (

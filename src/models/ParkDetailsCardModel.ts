@@ -1,7 +1,4 @@
-interface activities {
-  id: string;
-  name: string;
-}
+import Activities from "./Activities";
 
 interface emailAddresses {
   emailAddress: string;
@@ -30,10 +27,11 @@ interface addresses {
 
 export default interface data {
   id: string;
+  uid?: string;
   parkCode: string;
   fullName: string;
   description: string;
-  activities: activities[];
+  activities: Activities[];
   images: images[];
   states: string;
   contacts: contacts;
