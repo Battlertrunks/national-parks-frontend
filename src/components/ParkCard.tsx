@@ -10,14 +10,13 @@ interface Props {
 }
 
 const ParkCard = ({ onDisplay }: Props) => {
-
   const { user } = useContext(AuthContext);
   const { attendedParks, addPark } = useContext(AttendedParksContext);
-        
+
   const parkCode: any = {
     ...(onDisplay.parkCode ? { parkCode: onDisplay.parkCode } : {}),
   };
-
+  //   console.log(attendedParks.filter((item) => item.uid === onDisplay.uid));
 
   return (
     <div className="ParkCard">

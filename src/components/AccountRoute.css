@@ -1,7 +1,7 @@
-h1,
-h2,
-h3,
-p {
+.Account h1,
+.Account h2,
+.Account h3,
+.Account p {
   color: black;
 }
 
@@ -9,4 +9,8 @@ p {
   margin-top: 200px;
   margin-bottom: 200px;
   text-align: center;
+}
+
+.Account li {
+  margin: 25px 0;
 }

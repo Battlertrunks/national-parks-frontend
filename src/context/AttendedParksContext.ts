@@ -5,13 +5,13 @@ import TrendingCardsModel from "../models/TrendingCardModel";
 interface AttendParksContextModel {
   attendedParks: TrendingCardsModel[];
   addPark: (park: TrendingCardsModel) => void;
-  //   removePark: (id: string) => void;
+  removePark: (id: string) => void;
 }
 
 const defaultValues: AttendParksContextModel = {
   attendedParks: [],
   addPark: () => {},
-  //   removePark: () => {},
+  removePark: () => {},
 };
 
 const AttendedParksContext = createContext(defaultValues);

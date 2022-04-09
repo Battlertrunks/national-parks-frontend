@@ -10,6 +10,11 @@
   z-index: 2;
 }
 
+.Header h1,
+.Header li Link {
+  color: #333;
+}
+
 .Header button {
   background-color: transparent;
   border: none;
