@@ -8,21 +8,21 @@ const Footer = () => {
       <div className="divider" />
       <ul className="links-container">
         <li className="logo-social-container">
-          <h2>Dream Park</h2>
-          <p>Copyright 2022 Szczesniak</p>
+          <h2>National Treasures</h2>
+          <p>Copyright 2022 National Treasures</p>
           <ul className="social-media-container">
             <li>
-              <a href="#" className="youtube-icon">
+              <a href="https://www.youtube.com/" className="youtube-icon">
                 <i className="fa-brands fa-youtube"></i>
               </a>
             </li>
             <li>
-              <a href="#" className="twitter-icon">
+              <a href="https://twitter.com/" className="twitter-icon">
                 <i className="fa-brands fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="#" className="facebook-icon">
+              <a href="https://www.facebook.com/" className="facebook-icon">
                 <i className="fa-brands fa-facebook"></i>
               </a>
             </li>
@@ -35,7 +35,9 @@ const Footer = () => {
               <a href="#">Articles</a>
             </li>
             <li>
-              <a href="#">Support</a>
+              <Link to="/support">
+                <a>Support</a>
+              </Link>
             </li>
             <li>
               <a href="#">Help</a>
@@ -49,13 +51,17 @@ const Footer = () => {
           <h3>Company</h3>
           <ul>
             <li>
-              <a href="#">About Us</a>
+              <Link to="/parks/aboutUs">
+                <a>About Us</a>
+              </Link>
             </li>
             <li>
-              <a href="#">Career</a>
+              <a href="https://www.grandcircus.co/apply/">Career</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link to="/parks/aboutUs">
+                <a>Contact</a>
+              </Link>
             </li>
           </ul>
         </li>
