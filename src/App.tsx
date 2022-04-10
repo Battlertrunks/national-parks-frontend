@@ -10,7 +10,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import Account from "./components/Account";
+import AccountRoute from "./components/AccountRoute";
 import AboutUs from "./components/AboutUs";
 import GalleryRoute from "./components/GalleryRoute";
 import ParkDetailsCard from "./components/ParkDetailsCard";
@@ -22,7 +22,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomeRoute />} />
-          <Route path="/account" element={<Account />} />
+          <Route path="/account" element={<AccountRoute />} />
           <Route path="/parks/search" element={<GalleryRoute />} />
           <Route path="/parks/aboutus" element={<AboutUs />} />
           <Route path="/parks/details" element={<ParkDetailsCard />} />

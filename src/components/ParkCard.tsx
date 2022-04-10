@@ -2,22 +2,43 @@ import { useContext } from "react";
 import AttendedParksContext from "../context/AttendedParksContext";
 import AuthContext from "../context/AuthContext";
 import { Link } from "react-router-dom";
-import TrendingCardsModel from "../models/TrendingCardModel";
 import "./ParkCard.css";
+import CompletedParks from "../models/CompletedParks";
+import Activities from "../models/Activities";
 
 interface Props {
-  onDisplay: TrendingCardsModel;
+  onDisplay: CompletedParks;
 }
 
 const ParkCard = ({ onDisplay }: Props) => {
-
   const { user } = useContext(AuthContext);
   const { attendedParks, addPark } = useContext(AttendedParksContext);
-        
+
   const parkCode: any = {
     ...(onDisplay.parkCode ? { parkCode: onDisplay.parkCode } : {}),
   };
+  //   console.log(attendedParks.filter((item) => item.uid === onDisplay.uid));
 
+  const addingParkToProgress = (): void => {
+    if (user) {
+      const result: Activities[] = onDisplay.activities.map((act) => {
+        return { id: act.id, name: act.name, completed: false };
+      });
+      const parkToAdd: CompletedParks = {
+        id: onDisplay.id,
+        uid: onDisplay.uid,
+        images: onDisplay.images,
+        fullName: onDisplay.fullName,
+        description: onDisplay.description,
+        parkCode: onDisplay.parkCode,
+        activities: result,
+      };
+      addPark({ ...parkToAdd, uid: user.uid });
+      console.log("Press");
+    }
+  };
+
+  console.log(onDisplay?.id, attendedParks[0]?.id);
 
   return (
     <div className="ParkCard">
@@ -27,14 +48,8 @@ const ParkCard = ({ onDisplay }: Props) => {
       </Link>
 
       <p>{onDisplay.description}</p>
-      {user && (
-        <button
-          onClick={() => {
-            addPark({ ...onDisplay, uid: user.uid });
-          }}
-        >
-          Attended
-        </button>
+      {user && !attendedParks.some((park) => park?.id === onDisplay?.id) && (
+        <button onClick={() => addingParkToProgress()}>Attended</button>
       )}
     </div>
   );
