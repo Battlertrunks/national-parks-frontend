@@ -1,5 +1,6 @@
 import axios from "axios";
 import ActivitiesResponse from "../models/ActivitiesResponse";
+import NewsCardModelResponse from "../models/NewsCardModelResponse";
 import Params from "../models/Params";
 import ParkDetailsCardModelResponse from "../models/ParkDetailsCardModelResponse";
 import TrendingCardModelResponse from "../models/TrendingCardModelResponse";
@@ -40,5 +41,16 @@ export const getParkDetails = async (
     await axios.get(`https://developer.nps.gov/api/v1/parks`, {
       params: { api_key: key, parkCode: parkCode },
     })
+  ).data;
+};
+
+export const getNews = async (): Promise<NewsCardModelResponse> => {
+  return (
+    await axios.get(
+      `https://developer.nps.gov/api/v1/newsreleases?limit=5&start=0" -H "accept: application/json`,
+      {
+        params: { api_key: key },
+      }
+    )
   ).data;
 };

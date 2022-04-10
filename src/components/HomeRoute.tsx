@@ -1,16 +1,19 @@
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
+import NewsCardModel from "../models/NewsCardModel";
 import TrendingCardsModel from "../models/TrendingCardModel";
 import { getAttendedParks } from "../services/AttendedParkServices";
-import { getThingsToDo } from "../services/NSPServices";
+import { getThingsToDo, getNews } from "../services/NSPServices";
 import AboutUs from "./AboutUs";
 import HomeSearchParkForm from "./HomePageComponents/HomeSearchParkForm";
+import NewsCard from "./HomePageComponents/NewsCard";
 import TrendingCard from "./HomePageComponents/TrendingCard";
 import "./HomeRoute.css";
 import OpeningSection from "./OpeningSection";
 
 const HomeRoute = () => {
   const [trending, setTrending] = useState<TrendingCardsModel[]>([]);
+  const [news, setNews] = useState<NewsCardModel[]>([]);
   const [count, setCount] = useState<number>(0);
 
   const { user } = useContext(AuthContext);
@@ -18,9 +21,13 @@ const HomeRoute = () => {
   const retrieveThingsToDo = (): void => {
     getThingsToDo().then((response) => setTrending(response.data));
   };
+  const retrieveNews = (): void => {
+    getNews().then((response) => setNews(response.data));
+  };
 
   useEffect(() => {
     retrieveThingsToDo();
+    retrieveNews();
   }, []);
 
   // TODO THIS IS A TEST TO BE DELETED LATER!!!!
@@ -64,6 +71,13 @@ const HomeRoute = () => {
         <button onClick={() => swipeRight()} className="right-btn">
           <i className="fa-solid fa-chevron-right"></i>
         </button>
+      </div>
+      <div className="news-container">
+        <ul>
+          {news.map((item) => (
+            <NewsCard newsDisplay={item} />
+          ))}
+        </ul>
       </div>
       <h2>Search National Parks</h2>
       <HomeSearchParkForm />
