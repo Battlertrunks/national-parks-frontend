@@ -12,7 +12,7 @@ interface Props {
 
 const ParkCard = ({ onDisplay }: Props) => {
   const { user } = useContext(AuthContext);
-  const { addPark } = useContext(AttendedParksContext);
+  const { attendedParks, addPark } = useContext(AttendedParksContext);
 
   const parkCode: any = {
     ...(onDisplay.parkCode ? { parkCode: onDisplay.parkCode } : {}),
@@ -38,6 +38,8 @@ const ParkCard = ({ onDisplay }: Props) => {
     }
   };
 
+  console.log(onDisplay?.id, attendedParks[0]?.id);
+
   return (
     <div className="ParkCard">
       <img src={onDisplay.images[0].url} alt={onDisplay.images[0].altText} />
@@ -46,7 +48,9 @@ const ParkCard = ({ onDisplay }: Props) => {
       </Link>
 
       <p>{onDisplay.description}</p>
-      {user && <button onClick={() => addingParkToProgress()}>Attended</button>}
+      {user && !attendedParks.some((park) => park?.id === onDisplay?.id) && (
+        <button onClick={() => addingParkToProgress()}>Attended</button>
+      )}
     </div>
   );
 };

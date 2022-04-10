@@ -34,7 +34,7 @@ const AccountParkCard = ({ park }: Props) => {
       <p>{park.fullName}</p>
       <div className="container">
         <div className="filler" style={{ width: `${progressBar}%` }}>
-          <span className="label">{`${progressBar.toFixed(2)}%`}</span>
+          <span className="label">{`${progressBar.toFixed(0)}%`}</span>
         </div>
       </div>
       <button onClick={() => setDropdownToggle((prev) => !prev)}>
