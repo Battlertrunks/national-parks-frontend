@@ -27,10 +27,12 @@
 
 .Footer h2 {
   font-size: 18px;
+  color: white;
 }
 
 .Footer p {
   font-size: 9px;
+  color: white;
 }
 
 .Footer .social-media-container {

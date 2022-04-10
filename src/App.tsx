@@ -14,6 +14,7 @@ import AccountRoute from "./components/AccountRoute";
 import AboutUs from "./components/AboutUs";
 import GalleryRoute from "./components/GalleryRoute";
 import ParkDetailsCard from "./components/ParkDetailsCard";
+import SupportPage from "./components/SupportPage";
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeRoute />} />
           <Route path="/account" element={<AccountRoute />} />
+          <Route path="/support" element={<SupportPage />} />
           <Route path="/parks/search" element={<GalleryRoute />} />
-          <Route path="/parks/aboutus" element={<AboutUs />} />
+          <Route path="/parks/aboutUs" element={<AboutUs />} />
           <Route path="/parks/details" element={<ParkDetailsCard />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
