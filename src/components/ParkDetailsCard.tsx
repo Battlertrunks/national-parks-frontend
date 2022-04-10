@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import ParkDetailsCardModel from "../models/ParkDetailsCardModel";
 import { getParkDetails } from "../services/NSPServices";
 import "./ParkDetailsCard.css";
@@ -10,6 +10,7 @@ import AuthContext from "../context/AuthContext";
 import AttendedParksContext from "../context/AttendedParksContext";
 import Activities from "../models/Activities";
 import CompletedParks from "../models/CompletedParks";
+import AccountActivitiesCard from "./AccountActivitiesCard";
 
 const ParkDetailsCard = () => {
   const [parkDetails, setParkDetails] = useState<ParkDetailsCardModel>();
@@ -18,7 +19,7 @@ const ParkDetailsCard = () => {
   const [currentWeather, setCurrentWeather] = useState<WeatherModel>();
 
   const { user } = useContext(AuthContext);
-  const { addPark } = useContext(AttendedParksContext);
+  const { addPark, attendedParks } = useContext(AttendedParksContext);
 
   // const parkCode: string | undefined = useParams().parkCode;
 
@@ -43,6 +44,7 @@ const ParkDetailsCard = () => {
       const result: Activities[] = parkDetails!.activities.map((act) => {
         return { id: act.id, name: act.name, completed: false };
       });
+
       const parkToAdd: CompletedParks = {
         id: parkDetails!.id,
         uid: parkDetails!.uid,
@@ -52,6 +54,7 @@ const ParkDetailsCard = () => {
         parkCode: parkDetails!.parkCode,
         activities: result,
       };
+      console.log(parkToAdd, user.uid, "Hello");
       addPark({ ...parkToAdd, uid: user.uid });
     }
   };
@@ -64,11 +67,21 @@ const ParkDetailsCard = () => {
       <img src={parkDetails?.images[0].url} alt="park images" />
 
       <p>{parkDetails?.description}</p>
-      <button onClick={() => addingParkToProgress()}>Attended Park</button>
+      {user && (
+        <button onClick={() => addingParkToProgress()}>Attended Park</button>
+      )}
       <h2>Activities</h2>
       <ul>
         {parkDetails?.activities.map((activity) => (
-          <li>{activity.name}</li>
+          // <AccountActivitiesCard
+          //   onDisplayCard={activity}
+          //   park={gettingAttendedInfo!}
+          // />
+          <li>
+            <Link to="/account">
+              <p>{activity.name}</p>
+            </Link>
+          </li>
         ))}
       </ul>
       <h2>Photos</h2>
