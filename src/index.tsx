@@ -11,7 +11,7 @@ const root = ReactDOMClient.createRoot(rootEl!);
 root.render(
   <AuthContextProvider>
     <AttendedParksContextProvider>
-      <App />\
+      <App />
     </AttendedParksContextProvider>
   </AuthContextProvider>
 );

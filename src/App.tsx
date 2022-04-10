@@ -15,6 +15,8 @@ import AboutUs from "./components/AboutUs";
 import GalleryRoute from "./components/GalleryRoute";
 import ParkDetailsCard from "./components/ParkDetailsCard";
 import SupportPage from "./components/SupportPage";
+import TeamPageRoute from "./components/TeamPageRoute";
+
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
           <Route path="/parks/search" element={<GalleryRoute />} />
           <Route path="/parks/aboutUs" element={<AboutUs />} />
           <Route path="/parks/details" element={<ParkDetailsCard />} />
+          <Route path="/team" element={<TeamPageRoute />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
