@@ -1,3 +1,40 @@
-.img-container img {
-  max-height: 200px;
+.NewsCard {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #5c9e52;
+  transition: all 0.3s ease-in-out;
+}
+
+.NewsCard .img-container {
+  flex: 1.25;
+}
+
+.NewsCard img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.NewsCard .content-container h2 {
+  font-size: 12px;
+  padding-bottom: 10px;
+  color: white;
+  margin: 0px;
+}
+
+.NewsCard p {
+  font-size: 10px;
+  color: white;
+  text-align: center;
+}
+
+.NewsCard .content-container {
+  flex: 1.25;
+  width: 100vw;
+  min-width: 100px;
+  margin: 0 15px;
+  margin-right: 25px;
+  max-height: 150px;
+  white-space: normal;
+  overflow: hidden;
 }
