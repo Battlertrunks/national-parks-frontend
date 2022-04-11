@@ -25,6 +25,7 @@ const Header = () => {
         {user ? (
           <div>
             <Link to="/account">
+              {user.photoURL && <img src={user.photoURL} alt="Profile Image" />}
               <p>{user.displayName}</p>
             </Link>
             <button onClick={signOut}>Sign Out</button>
@@ -33,7 +34,7 @@ const Header = () => {
           <button onClick={signInWithGoogle}>Sign In</button>
         )}
 
-        <button>
+        <button className="sideBar">
           <i className="fa-solid fa-bars"></i>
         </button>
       </div>
