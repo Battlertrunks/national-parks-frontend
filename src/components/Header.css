@@ -20,6 +20,10 @@
   border: none;
 }
 
+.Header .username {
+  color: #fff;
+}
+
 .Header div {
   display: flex;
   align-items: center;
