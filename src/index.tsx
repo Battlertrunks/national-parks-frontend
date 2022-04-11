@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AuthContextProvider from "./context/AuthContextProvider";
 import AttendedParksContextProvider from "./context/AttendedParkContextProvider";
+import CommentContextProvider from "./context/CommentContextProvider";
 
 const rootEl = document.getElementById("root");
 
@@ -11,7 +12,9 @@ const root = ReactDOMClient.createRoot(rootEl!);
 root.render(
   <AuthContextProvider>
     <AttendedParksContextProvider>
-      <App />
+      <CommentContextProvider>
+        <App />
+      </CommentContextProvider>
     </AttendedParksContextProvider>
   </AuthContextProvider>
 );

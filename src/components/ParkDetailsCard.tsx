@@ -11,6 +11,8 @@ import AttendedParksContext from "../context/AttendedParksContext";
 import Activities from "../models/Activities";
 import CompletedParks from "../models/CompletedParks";
 import AccountActivitiesCard from "./AccountActivitiesCard";
+import CommentForm from "./CommentForm";
+import CommentContext from "../context/CommentContext";
 
 const ParkDetailsCard = () => {
   const [parkDetails, setParkDetails] = useState<ParkDetailsCardModel>();
@@ -20,14 +22,15 @@ const ParkDetailsCard = () => {
 
   const { user } = useContext(AuthContext);
   const { addPark, attendedParks } = useContext(AttendedParksContext);
+  const { comments, getAndSetComments } = useContext(CommentContext);
 
   // const parkCode: string | undefined = useParams().parkCode;
 
   useEffect(() => {
     getParkDetails(parkCode!).then((response) => {
       setParkDetails(response.data[0]);
-      console.log(parkDetails);
     });
+    getAndSetComments(parkDetails?.parkCode!);
   }, [parkCode]);
 
   useEffect(() => {
@@ -102,6 +105,17 @@ const ParkDetailsCard = () => {
       <h2>Contact Park</h2>
       <p>Phone: {parkDetails?.contacts.phoneNumbers[0].phoneNumber}</p>
       <p>Email: {parkDetails?.contacts.emailAddresses[0].emailAddress}</p>
+
+      {user && (
+        <CommentForm userInfo={user?.uid} parkCode={parkDetails?.parkCode!} />
+      )}
+      <ul>
+        {comments.map((comment) => (
+          <li key={comment._id}>
+            <p>{comment.text}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

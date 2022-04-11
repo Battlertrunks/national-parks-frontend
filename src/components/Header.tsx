@@ -25,7 +25,7 @@ const Header = () => {
         {user ? (
           <div>
             <Link to="/account">
-              <p>{user.displayName}</p>
+              <p className="username">{user.displayName}</p>
             </Link>
             <button onClick={signOut}>Sign Out</button>
           </div>
