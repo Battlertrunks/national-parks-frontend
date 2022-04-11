@@ -9,6 +9,7 @@ export default interface data {
   url: string;
   abstract: string;
   image: image;
+  id: string;
 }
 
 export default interface NewsCardModel {

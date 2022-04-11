@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
 import "./NewsCard.css";
 import NewsCardModel from "../../models/NewsCardModel";
-import { getNews } from "../../services/NSPServices";
-import { Link } from "react-router-dom";
 
 interface Props {
   newsDisplay: NewsCardModel;
@@ -25,12 +22,5 @@ const NewsCard = ({ newsDisplay }: Props) => {
     </div>
   );
 };
-// document.addEventListener("DOMContentLoaded", function (event) {
-//   document.querySelectorAll("img").forEach(function (img) {
-//     img.onerror = function () {
-//       this.style.display = "none";
-//     };
-//   });
-// });
 
 export default NewsCard;

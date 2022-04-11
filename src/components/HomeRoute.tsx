@@ -30,15 +30,6 @@ const HomeRoute = () => {
     retrieveNews();
   }, []);
 
-  // TODO THIS IS A TEST TO BE DELETED LATER!!!!
-  useEffect(() => {
-    if (user) {
-      getAttendedParks(user.uid).then((response) => console.log(response));
-    }
-  });
-
-  // console.log(count);
-
   const swipeLeft = (): void => {
     if (count <= 0) {
       setCount(trending.length - 1);
@@ -76,7 +67,7 @@ const HomeRoute = () => {
         <h2>National Park News</h2>
         <ul>
           {news.map((item) => (
-            <NewsCard newsDisplay={item} />
+            <NewsCard newsDisplay={item} key={item.id} />
           ))}
         </ul>
       </div>
