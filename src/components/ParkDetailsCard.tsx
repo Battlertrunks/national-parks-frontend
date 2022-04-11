@@ -30,7 +30,7 @@ const ParkDetailsCard = () => {
     getParkDetails(parkCode!).then((response) => {
       setParkDetails(response.data[0]);
     });
-    getAndSetComments(parkDetails?.parkCode!);
+    getAndSetComments(parkCode!);
   }, [parkCode]);
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const ParkDetailsCard = () => {
         ))}
       </ul>
       <h2>Photos</h2>
-      <ul>
+      <ul className="preview-imgs">
         {parkDetails?.images.map((image) => (
           <li key={image.altText}>
             <img src={image.url} alt={image.altText} />
@@ -111,6 +111,7 @@ const ParkDetailsCard = () => {
         {comments.map((comment) => (
           <li key={comment._id}>
             <h4>{comment.username}</h4>
+            <p>{comment.dateAndTime}</p>
             <p>{comment.text}</p>
           </li>
         ))}
