@@ -17,7 +17,25 @@ const TeamPageRoute = () => {
         </li>
         <li>
           <h3>Developer: Alex Sweezie</h3>
-          <p>Alex</p>
+          <p>
+            Before Covid-19, Alex's field of work was in the the automotive
+            industry. He has over five years of experience in automotive
+            detailing, classic car repair, and general parts knowledge before he
+            entered the tech industry.
+          </p>
+          <p>
+            Once quarantine fully began, Alex started to dabble with programming
+            in his free time. He mainly worked with code-alongs he found on
+            YouTube and started reading into W3schools when he came across an
+            issue.
+          </p>
+          <p>
+            Alex's hobbies mainly revolve around automobiles after working with
+            them on an everyday bases. In his free time, Alex works on a 1973
+            BMW 2002 in hopes of restoring it back to its' original condition.
+            On other days, he's practicing his skills on the track by competing
+            in a production-car class.
+          </p>
         </li>
         <li>
           <h3>Developer: Tom Hudak</h3>
