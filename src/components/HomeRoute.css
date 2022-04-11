@@ -30,12 +30,16 @@
   min-height: 200px;
 }
 
+.HomeRoute .content-container {
+  overflow-y: hidden;
+}
+
 .HomeRoute .news-slides-container {
   position: relative;
   display: flex;
   align-items: center;
-  height: 80vh;
-  min-height: 200px;
+  height: 30vh;
+  /* min-height: 200px; */
 }
 
 .HomeRoute .left-btn,
