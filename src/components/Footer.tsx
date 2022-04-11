@@ -47,11 +47,6 @@ const Footer = () => {
               <a href="#">Articles</a>
             </li>
             <li>
-              <Link to="/support">
-                <p>Support</p>
-              </Link>
-            </li>
-            <li>
               <a href="#">Help</a>
             </li>
             <li>
@@ -63,9 +58,7 @@ const Footer = () => {
           <h3>Company</h3>
           <ul>
             <li>
-              <Link to="/parks/aboutUs">
-                <p>About Us</p>
-              </Link>
+              <Link to="/parks/aboutUs">About Us</Link>
             </li>
             <li>
               <a href="https://www.grandcircus.co/apply/" target="_blank">
@@ -73,9 +66,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <Link to="/parks/aboutUs">
-                <p>Contact</p>
-              </Link>
+              <Link to="/parks/aboutUs">Contact</Link>
             </li>
           </ul>
         </li>

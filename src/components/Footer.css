@@ -68,7 +68,9 @@
 }
 
 .Footer .community-container a,
-.Footer .company-container a {
+.Footer .company-container a,
+.Footer .community-container Link,
+.Footer .company-container Link {
   font-size: 11px;
   text-decoration: underline;
   color: #fff;
