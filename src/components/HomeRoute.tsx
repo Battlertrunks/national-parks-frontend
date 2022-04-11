@@ -73,6 +73,7 @@ const HomeRoute = () => {
         </button>
       </div>
       <div className="news-container">
+        <h2>National Park News</h2>
         <ul>
           {news.map((item) => (
             <NewsCard newsDisplay={item} />

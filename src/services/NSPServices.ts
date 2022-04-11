@@ -46,11 +46,8 @@ export const getParkDetails = async (
 
 export const getNews = async (): Promise<NewsCardModelResponse> => {
   return (
-    await axios.get(
-      `https://developer.nps.gov/api/v1/newsreleases?limit=5&start=0" -H "accept: application/json`,
-      {
-        params: { api_key: key },
-      }
-    )
+    await axios.get(`https://developer.nps.gov/api/v1/newsreleases?limit=5`, {
+      params: { api_key: key },
+    })
   ).data;
 };
