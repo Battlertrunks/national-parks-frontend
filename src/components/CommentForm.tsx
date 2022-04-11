@@ -1,13 +1,15 @@
 import { FormEvent, useContext, useState } from "react";
+import AuthContext from "../context/AuthContext";
 import CommentContext from "../context/CommentContext";
+import ParkDetailsCardModel from "../models/ParkDetailsCardModel";
 import "./CommentForm.css";
 
 interface Props {
-  userInfo: string | undefined;
   parkCode: string;
 }
 
-const CommentForm = ({ userInfo, parkCode }: Props) => {
+const CommentForm = ({ parkCode }: Props) => {
+  const { user } = useContext(AuthContext);
   const { addComment } = useContext(CommentContext);
   const [commentText, setCommentText] = useState<string>("");
 
@@ -15,7 +17,8 @@ const CommentForm = ({ userInfo, parkCode }: Props) => {
     e.preventDefault();
     addComment({
       text: commentText,
-      uid: userInfo!,
+      username: user?.displayName!,
+      uid: user?.uid!,
       park_code: parkCode,
     });
 

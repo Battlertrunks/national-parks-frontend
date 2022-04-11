@@ -106,12 +106,11 @@ const ParkDetailsCard = () => {
       <p>Phone: {parkDetails?.contacts.phoneNumbers[0].phoneNumber}</p>
       <p>Email: {parkDetails?.contacts.emailAddresses[0].emailAddress}</p>
 
-      {user && (
-        <CommentForm userInfo={user?.uid} parkCode={parkDetails?.parkCode!} />
-      )}
+      {user && <CommentForm parkCode={parkDetails?.parkCode!} />}
       <ul>
         {comments.map((comment) => (
           <li key={comment._id}>
+            <h4>{comment.username}</h4>
             <p>{comment.text}</p>
           </li>
         ))}
