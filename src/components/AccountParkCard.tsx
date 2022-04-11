@@ -1,4 +1,5 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import AttendedParksContext from "../context/AttendedParksContext";
 import CompletedParks from "../models/CompletedParks";
 import TrendingCardsModel from "../models/TrendingCardModel";
@@ -19,6 +20,10 @@ const AccountParkCard = ({ park }: Props) => {
   // Controls whether the activities should be displayed or not from the dropdownToggle.
   const setDropdown = dropdownToggle ? "activity-dropdown" : "";
 
+  const parkCodeLink: any = {
+    ...(park.parkCode ? { parkCode: park.parkCode } : {}),
+  };
+
   // Calcualtes the progress bar of completed activities by calculating the length (amount) of activities
   // and dividing it by the amount completed, then multiplying by 100 to make it a whole number.
   const progressBar =
@@ -29,9 +34,13 @@ const AccountParkCard = ({ park }: Props) => {
       park.activities.length) *
     100;
 
+  console.log(park.parkCode);
+
   return (
     <li className="AccountParkCard" key={park._id}>
-      <p>{park.fullName}</p>
+      <Link to={`/parks/details?${new URLSearchParams(parkCodeLink)}`}>
+        <p>{park.fullName}</p>
+      </Link>
       <div className="container">
         <div className="filler" style={{ width: `${progressBar}%` }}>
           <span className="label">{`${progressBar.toFixed(0)}%`}</span>
