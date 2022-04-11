@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="Header">
       <Link to="/">
-        <h1>Dream Park</h1>
+        <h1>National Treasures</h1>
       </Link>
       <div>
         <ul>
