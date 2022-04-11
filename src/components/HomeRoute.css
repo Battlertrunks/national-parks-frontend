@@ -7,6 +7,15 @@
   width: 100%;
 }
 
+.HomeRoute .news-slides {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  height: 50vh;
+  max-height: 200px;
+  width: 100%;
+}
+
 .HomeRoute h2 {
   color: #5c9e52;
   text-align: center;
@@ -14,6 +23,14 @@
 }
 
 .HomeRoute .trending-parks-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  min-height: 200px;
+}
+
+.HomeRoute .news-slides-container {
   position: relative;
   display: flex;
   align-items: center;

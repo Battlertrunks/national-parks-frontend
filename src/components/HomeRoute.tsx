@@ -46,6 +46,21 @@ const HomeRoute = () => {
     setCount((prev) => prev + 1);
   };
 
+  const swipeNewsLeft = (): void => {
+    if (count <= 0) {
+      setCount(news.length - 1);
+      return;
+    }
+    setCount((prev) => prev - 1);
+  };
+
+  const swipeNewsRight = (): void => {
+    if (count >= news.length - 1) {
+      setCount(0);
+      return;
+    }
+    setCount((prev) => prev + 1);
+  };
   return (
     <section className="HomeRoute">
       <OpeningSection />
@@ -63,12 +78,18 @@ const HomeRoute = () => {
           <i className="fa-solid fa-chevron-right"></i>
         </button>
       </div>
-      <div className="news-container">
-        <h2>National Park News</h2>
-        <ul>
+      <h2>National Park News</h2>
+      <div className="news-slides-container">
+        <button onClick={() => swipeNewsLeft()} className="left-btn">
+          <i className="fa-solid fa-chevron-left"></i>
+        </button>
+        <ul className="news-slides">
           {news.map((item) => (
-            <NewsCard newsDisplay={item} key={item.id} />
+            <NewsCard newsDisplay={item} onSlide={count} key={item.id} />
           ))}
+          <button onClick={() => swipeNewsRight()} className="right-btn">
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
         </ul>
       </div>
       <h2>Search National Parks</h2>
