@@ -67,8 +67,8 @@ const ParkDetailsCard = () => {
       <img src={parkDetails?.images[0].url} alt="park images" />
 
       <p>{parkDetails?.description}</p>
-      {user && (
-        <button onClick={() => addingParkToProgress()}>Attended Park</button>
+      {user && !attendedParks.some((park) => park?.id === parkDetails?.id) && (
+        <button onClick={() => addingParkToProgress()}>Attended</button>
       )}
       <h2>Activities</h2>
       <ul>
@@ -77,7 +77,7 @@ const ParkDetailsCard = () => {
           //   onDisplayCard={activity}
           //   park={gettingAttendedInfo!}
           // />
-          <li>
+          <li key={activity.id}>
             <Link to="/account">
               <p>{activity.name}</p>
             </Link>
@@ -85,9 +85,13 @@ const ParkDetailsCard = () => {
         ))}
       </ul>
       <h2>Photos</h2>
-      {parkDetails?.images.map((image) => (
-        <img src={image.url} alt={image.altText} />
-      ))}
+      <ul>
+        {parkDetails?.images.map((image) => (
+          <li key={image.altText}>
+            <img src={image.url} alt={image.altText} />
+          </li>
+        ))}
+      </ul>
 
       <h2>Park Address</h2>
       <p>{parkDetails?.addresses[0].line1}</p>

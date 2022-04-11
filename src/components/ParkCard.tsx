@@ -34,11 +34,8 @@ const ParkCard = ({ onDisplay }: Props) => {
         activities: result,
       };
       addPark({ ...parkToAdd, uid: user.uid });
-      console.log("Press");
     }
   };
-
-  console.log(onDisplay?.id, attendedParks[0]?.id);
 
   return (
     <div className="ParkCard">

@@ -48,7 +48,7 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/support">
-                <a>Support</a>
+                <p>Support</p>
               </Link>
             </li>
             <li>
@@ -64,7 +64,7 @@ const Footer = () => {
           <ul>
             <li>
               <Link to="/parks/aboutUs">
-                <a>About Us</a>
+                <p>About Us</p>
               </Link>
             </li>
             <li>
@@ -74,7 +74,7 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/parks/aboutUs">
-                <a>Contact</a>
+                <p>Contact</p>
               </Link>
             </li>
           </ul>

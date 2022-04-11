@@ -23,15 +23,6 @@ const HomeRoute = () => {
     retrieveThingsToDo();
   }, []);
 
-  // TODO THIS IS A TEST TO BE DELETED LATER!!!!
-  useEffect(() => {
-    if (user) {
-      getAttendedParks(user.uid).then((response) => console.log(response));
-    }
-  });
-
-  // console.log(count);
-
   const swipeLeft = (): void => {
     if (count <= 0) {
       setCount(trending.length - 1);
