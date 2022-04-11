@@ -33,9 +33,6 @@ const AccountParkCard = ({ park }: Props) => {
     ) /
       park.activities.length) *
     100;
-
-  console.log(park.parkCode);
-
   return (
     <li className="AccountParkCard" key={park._id}>
       <Link to={`/parks/details?${new URLSearchParams(parkCodeLink)}`}>

@@ -5,9 +5,9 @@ import TrendingCardsModel from "../models/TrendingCardModel";
 const url: string = process.env.REACT_APP_API_URL || "";
 
 export const getAttendedParks = async (
-  id: string
+  uid: string
 ): Promise<TrendingCardsModel[]> => {
-  return (await axios.get(url, { params: { uid: id } })).data;
+  return (await axios.get(url, { params: { uid: uid } })).data;
 };
 
 export const addAttendedParks = async (
