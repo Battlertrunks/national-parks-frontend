@@ -14,7 +14,7 @@ const OpeningSection = () => {
           <h2>Explore</h2>
         </li>
       </ul>
-      <h3>Simply Just Outdoors</h3>
+      <h3>Simply Outdoors</h3>
     </div>
   );
 };

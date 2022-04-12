@@ -39,3 +39,7 @@
   right: 5px;
   z-index: 1;
 }
+
+.HomeRoute .news-slides-container {
+  height: 200px;
+}
