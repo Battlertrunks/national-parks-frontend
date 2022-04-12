@@ -67,7 +67,11 @@ const ParkDetailsCard = () => {
       <h1>{parkDetails?.fullName}</h1>
       <p>{Math.floor(currentWeather?.current.temp_f!)} &#8457;</p>
       <img src={currentWeather?.current.condition.icon} alt="Weather Icon" />
-      <img src={parkDetails?.images[0].url} alt="park images" />
+      <img
+        src={parkDetails?.images[0].url}
+        alt="park images"
+        className="main-image"
+      />
 
       <p>{parkDetails?.description}</p>
       {user && !attendedParks.some((park) => park?.id === parkDetails?.id) && (

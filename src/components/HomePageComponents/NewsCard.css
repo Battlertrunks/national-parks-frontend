@@ -7,12 +7,19 @@
 }
 
 .NewsCard .img-container {
-  flex: 1.25;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .NewsCard img {
   width: 100%;
   object-fit: cover;
+}
+
+.NewsCard img.backup {
+  justify-content: center;
+  width: 100px;
 }
 
 .NewsCard .content-container h2 {

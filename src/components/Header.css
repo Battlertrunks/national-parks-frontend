@@ -5,14 +5,23 @@
   right: 0;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #5c9e52b9;
   z-index: 2;
+  padding: 10px 10px 25px 10px;
+  background-image: linear-gradient(0deg, #6fc861b0, #6fc861b0),
+    url("../images/park-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.Header h1 {
+  font-size: 24px;
 }
 
 .Header h1,
 .Header li Link {
-  color: #333;
+  color: #fff;
+  text-decoration: none;
 }
 
 .Header button {
@@ -31,8 +40,8 @@
 
 .Header a {
   color: #fff;
-  text-decoration: underline;
   margin-right: 15px;
+  font-size: 12px;
 }
 
 .Header i {

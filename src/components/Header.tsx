@@ -21,6 +21,9 @@ const Header = () => {
           <li>
             <Link to="/parks/aboutus">About Us</Link>
           </li>
+          <li>
+            <Link to="/posts">Social Media</Link>
+          </li>
         </ul>
         {user ? (
           <div>
