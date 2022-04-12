@@ -6,19 +6,22 @@ import SocialMeidaPostForm from "./SocialMediaPostForm";
 import "./SocialMediaRoute.css";
 
 const SocialMediaRoute = () => {
-  const { posts, getAndSetPosts, likePost } = useContext(CommentContext);
+  const { posts, getAndSetPosts, likePost, deleteUserPost } =
+    useContext(CommentContext);
   const { user } = useContext(AuthContext);
-  const [holdPost, setHoldPost] = useState<PostModel[]>([]);
 
   useEffect(() => {
     getAndSetPosts();
-    setHoldPost(posts);
   }, []);
 
   const likingAPost = (likedPost: PostModel): void => {
     likedPost.likes.amountOfLikes += 1;
     likedPost.likes.uids.push(user!.uid);
     likePost(likedPost._id!, likedPost);
+  };
+
+  const deleteYourPost = (postToDelete: string): void => {
+    deleteUserPost(postToDelete);
   };
 
   return (
@@ -28,6 +31,11 @@ const SocialMediaRoute = () => {
       <ul>
         {posts.map((post) => (
           <li key={post._id}>
+            {post.uid === user?.uid && (
+              <button onClick={() => deleteYourPost(post._id!)}>
+                Delete Post
+              </button>
+            )}
             <h4>{post?.username}</h4>
             <p>{post.dateAndTime}</p>
             <h3>{post?.title}</h3>

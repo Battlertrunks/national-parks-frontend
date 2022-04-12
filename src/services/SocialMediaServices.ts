@@ -18,3 +18,7 @@ export const likingUserPost = async (
   return (await axios.put(`${url}/${encodeURIComponent(id)}`, updatedPost))
     .data;
 };
+
+export const deletePost = async (id: string): Promise<void> => {
+  return (await axios.delete(`${url}/${encodeURIComponent(id)}`)).data;
+};
