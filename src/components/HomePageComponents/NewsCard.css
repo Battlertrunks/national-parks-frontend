@@ -15,6 +15,11 @@
   object-fit: cover;
 }
 
+.NewsCard img.backup {
+  justify-content: center;
+  width: 100px;
+}
+
 .NewsCard .content-container h2 {
   font-size: 12px;
   padding-bottom: 10px;

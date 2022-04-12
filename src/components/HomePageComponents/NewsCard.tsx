@@ -10,6 +10,8 @@ interface Props {
 const NewsCard = ({ newsDisplay, onSlide }: Props) => {
   const hasImage = newsDisplay.image.url ? newsDisplay.image.url : backupImg;
 
+  const backUpImgStyle = !newsDisplay.image.url ? "backup" : "";
+
   return (
     <li
       className="NewsCard"
@@ -17,7 +19,11 @@ const NewsCard = ({ newsDisplay, onSlide }: Props) => {
     >
       <div className="img-container">
         <a href={newsDisplay.url} target="_blank">
-          <img src={hasImage} alt={newsDisplay.image.altText} />
+          <img
+            src={hasImage}
+            alt={newsDisplay.image.altText}
+            className={backUpImgStyle}
+          />
         </a>
       </div>
 
