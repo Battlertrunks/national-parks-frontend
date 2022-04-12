@@ -7,7 +7,9 @@
 }
 
 .NewsCard .img-container {
-  flex: 1.25;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .NewsCard img {

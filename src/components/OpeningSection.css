@@ -1,5 +1,5 @@
 .OpeningSection {
-  height: 50vh;
+  height: 40vh;
   /* margin-top: 90px; */
   display: flex;
   flex-direction: column;
@@ -23,23 +23,27 @@
   align-items: center;
   width: 85%;
   max-width: 750px;
-  font-size: 28px;
+  font-size: 16px;
 }
 
 .OpeningSection .divider {
   display: block;
+  margin-top: 90px;
   width: 2px;
-  height: 50px;
+  height: 30px;
   background-color: #fff;
 }
 
 .OpeningSection h2 {
+  margin-top: 80px;
+  font-weight: bold;
   color: #fff;
   font-weight: 200;
 }
 
 .OpeningSection h3 {
   font-size: 24px;
+  font-weight: bold;
   width: 200px;
   text-align: center;
   font-weight: 200;
@@ -47,7 +51,7 @@
 
 .OpeningSection h3::after {
   content: "";
-  height: 1px;
+  height: 2px;
   width: 40%;
   background-color: #fff;
   margin: 0 auto;
