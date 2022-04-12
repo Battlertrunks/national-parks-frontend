@@ -1,14 +1,15 @@
 import { createContext } from "react";
 import CommentModel from "../models/CommentModel";
-import PostModels from "../models/PostModel";
+import PostModel from "../models/PostModel";
 
 interface CommentContextModel {
   comments: CommentModel[];
   getAndSetComments: (parkCode: string) => void;
   addComment: (comment: CommentModel) => void;
-  posts: PostModels[];
+  posts: PostModel[];
   getAndSetPosts: () => void;
-  addPost: (post: PostModels) => void;
+  addPost: (post: PostModel) => void;
+  likePost: (id: string, likedPost: PostModel) => void;
 }
 
 const defaultValues: CommentContextModel = {
@@ -18,6 +19,7 @@ const defaultValues: CommentContextModel = {
   posts: [],
   getAndSetPosts: () => {},
   addPost: () => {},
+  likePost: () => {},
 };
 
 const CommentContext = createContext(defaultValues);

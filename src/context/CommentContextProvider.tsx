@@ -2,7 +2,11 @@ import { ReactNode, useState } from "react";
 import CommentModel from "../models/CommentModel";
 import PostModels from "../models/PostModel";
 import { getComments, postComment } from "../services/PostCommentServices";
-import { retrievePosts, uploadPost } from "../services/SocialMediaServices";
+import {
+  likingUserPost,
+  retrievePosts,
+  uploadPost,
+} from "../services/SocialMediaServices";
 import CommentContext from "./CommentContext";
 
 interface Props {
@@ -29,6 +33,10 @@ const CommentContextProvider = ({ children }: Props) => {
     uploadPost(post).then(() => getAndSetPosts());
   };
 
+  const likePost = (id: string, likedPost: PostModels): void => {
+    likingUserPost(id, likedPost).then(() => getAndSetPosts());
+  };
+
   return (
     <CommentContext.Provider
       value={{
@@ -38,6 +46,7 @@ const CommentContextProvider = ({ children }: Props) => {
         posts,
         getAndSetPosts,
         addPost,
+        likePost,
       }}
     >
       {children}

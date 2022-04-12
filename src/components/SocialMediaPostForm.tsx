@@ -55,6 +55,7 @@ const SocialMediaPostForm = () => {
         title,
         body,
         dateAndTime: timeFormat,
+        likes: { amountOfLikes: 0, uids: [] },
       };
 
       const files = fileInputImgRef.current?.files;
