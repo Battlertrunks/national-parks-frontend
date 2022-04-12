@@ -22,7 +22,9 @@ const SocialMediaRoute = () => {
         {posts.map((post) => (
           <li key={post._id}>
             <h4>{post?.username}</h4>
+            <p>{post.dateAndTime}</p>
             <h3>{post?.title}</h3>
+            <img src={post.imageURL} alt={post.imageURL} />
             <p>{post?.body}</p>
           </li>
         ))}
