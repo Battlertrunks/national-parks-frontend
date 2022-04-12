@@ -52,3 +52,47 @@
 .Header img {
   width: 25px;
 }
+
+.Header .menu-dropdown {
+  display: none;
+}
+
+.Header .menu-dropdown-open {
+  display: none;
+  background-color: rgba(0, 128, 0, 0.816);
+  display: block;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 6vh;
+  width: 40vw;
+  height: 25vh;
+}
+.Header .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.Header .dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.Header .dropdown-content a:hover {
+  background-color: #3e8e41;
+}
+
+.Header .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 128, 0, 0.816);
+  min-width: 120px;
+  height: 100vh;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.Header .dropdown:hover .dropdown-content {
+  display: block;
+  text-align: right;
+}

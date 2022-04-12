@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
@@ -6,7 +6,9 @@ import "./Header.css";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  const [menuDropdown, setMenuDropdown] = useState<boolean>(true);
+
+  // const setDropdown = menuDropdown ? "menu-dropdown" : "menu-dropdown-open";
 
   return (
     <header className="Header">
@@ -37,10 +39,30 @@ const Header = () => {
         ) : (
           <button onClick={signInWithGoogle}>Sign In</button>
         )}
-
-        <button className="sideBar">
-          <i className="fa-solid fa-bars"></i>
-        </button>
+        <div className="dropdown">
+          <button
+            // onClick={() => setMenuDropdown(!menuDropdown)}
+            className="sideBar"
+          >
+            <i className="fa-solid fa-bars"></i>
+          </button>
+          <div className="dropdown-content">
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/parks/search">Search</Link>
+              </li>
+              <li>
+                <Link to="/parks/aboutus">About Us</Link>
+              </li>
+              <li>
+                <Link to="/account">Account</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
   );
