@@ -20,11 +20,15 @@ const Account = () => {
     <div className="Account">
       <h2>Hello, {user?.displayName}!</h2>
       <ul>
-        {attendedParks.map(
-          (park) =>
-            park.uid === user?.uid && (
-              <AccountParkCard park={park} key={park._id} />
-            )
+        {attendedParks.length !== 0 ? (
+          attendedParks.map(
+            (park) =>
+              park.uid === user?.uid && (
+                <AccountParkCard park={park} key={park._id} />
+              )
+          )
+        ) : (
+          <p>Your park list is empty</p>
         )}
       </ul>
       <h2>Acount Parks FAQ</h2>

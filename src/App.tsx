@@ -15,6 +15,7 @@ import AboutUs from "./components/AboutUs";
 import GalleryRoute from "./components/GalleryRoute";
 import ParkDetailsCard from "./components/ParkDetailsCard";
 import TeamPageRoute from "./components/TeamPageRoute";
+import SocialMediaRoute from "./components/SocialMediaRoute";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/parks/aboutUs" element={<AboutUs />} />
           <Route path="/parks/details" element={<ParkDetailsCard />} />
           <Route path="/team" element={<TeamPageRoute />} />
+          <Route path="/posts" element={<SocialMediaRoute />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />

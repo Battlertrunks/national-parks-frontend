@@ -1,3 +1,6 @@
 .ParkCard img {
   width: 250px;
 }
+.ParkCard p {
+  color: black;
+}
