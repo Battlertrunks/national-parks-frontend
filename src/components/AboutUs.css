@@ -3,3 +3,13 @@
 .AboutUs p {
   color: #5c9e52;
 }
+
+.AboutUs {
+  margin: 0 10px;
+  margin-top: 100px;
+  min-height: 100vh;
+}
+
+.AboutUs li {
+  margin: 25px 0;
+}

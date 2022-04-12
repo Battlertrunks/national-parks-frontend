@@ -25,12 +25,9 @@ const Header = () => {
         {user ? (
           <div>
             <Link to="/account">
-
               <p className="username">{user.displayName}</p>
 
               {user.photoURL && <img src={user.photoURL} alt="Profile Image" />}
-              
-
             </Link>
             <button onClick={signOut}>Sign Out</button>
           </div>

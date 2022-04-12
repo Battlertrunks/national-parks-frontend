@@ -1,5 +1,9 @@
 .Footer {
   background-color: #5c9e52;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
 }
 
 .Footer .divider {
