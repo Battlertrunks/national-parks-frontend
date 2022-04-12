@@ -21,16 +21,16 @@ const Header = () => {
           <li>
             <Link to="/parks/aboutus">About Us</Link>
           </li>
+          <li>
+            <Link to="/posts">Social Media</Link>
+          </li>
         </ul>
         {user ? (
           <div>
             <Link to="/account">
-
               <p className="username">{user.displayName}</p>
 
               {user.photoURL && <img src={user.photoURL} alt="Profile Image" />}
-              
-
             </Link>
             <button onClick={signOut}>Sign Out</button>
           </div>
