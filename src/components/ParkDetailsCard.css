@@ -6,3 +6,7 @@
 .ParkDetailsCard {
   color: #222;
 }
+
+.ParkDetailsCard .preview-imgs img {
+  width: 300px;
+}
