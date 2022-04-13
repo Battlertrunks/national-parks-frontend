@@ -3,6 +3,7 @@ import AuthContext from "../context/AuthContext";
 import CommentContext from "../context/CommentContext";
 import PostModel from "../models/PostModel";
 import CommentForm from "./CommentForm";
+import SocialMediaCommentCard from "./SocialMediaCommentCard";
 import "./SocialMediaPostCard.css";
 
 interface Props {
@@ -63,11 +64,7 @@ const SocialMediaPostCard = ({ post }: Props) => {
               : post.comments.length
           ),
         ]?.map((comment, index) => (
-          <li key={post.comments[index]?._id}>
-            <h5>{post.comments[index]?.username}</h5>
-            <p>{post.comments[index]?.dateAndTime}</p>
-            <p>{post.comments[index]?.text}</p>
-          </li>
+          <SocialMediaCommentCard comment={post.comments} index={index} />
         ))}
       </ul>
       <button onClick={() => setShowMoreComments((prev) => prev + 5)}>
