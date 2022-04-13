@@ -92,36 +92,44 @@ const SearchForm = () => {
         type="text"
         name="search"
         id="search"
-        placeholder="Search"
+        placeholder="Search park by name..."
         value={q}
         onChange={(e) => setQ(e.target.value)}
       />
-      <div>
-        <select
-          name="activity"
-          id="activity"
-          onChange={(e) => setParkCode(e.target.value)}
-        >
-          <option value=""></option>
-          {activites.map((activity) => (
-            <option value={activity.id} key={activity.id}>
-              {activity.name}
-            </option>
-          ))}
-        </select>
-        <select
-          name="state"
-          id="state"
-          onChange={(e) => setStateCode(e.target.value)}
-        >
-          <option value=""></option>
-          {states.map((state) => (
-            <option value={state.stateCode} key={state.stateCode}>
-              {state.fullName}
-            </option>
-          ))}
-        </select>
+
+      <div className="dropdowns">
+        <div className="dropdown1">
+          <label htmlFor="activity">Filter by Activity</label>
+          <select
+            name="activity"
+            id="activity"
+            onChange={(e) => setParkCode(e.target.value)}
+          >
+            <option value=""></option>
+            {activites.map((activity) => (
+              <option value={activity.id} key={activity.id}>
+                {activity.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="dropdown2">
+          <label htmlFor="state">Filter by State</label>
+          <select
+            name="state"
+            id="state"
+            onChange={(e) => setStateCode(e.target.value)}
+          >
+            <option value=""></option>
+            {states.map((state) => (
+              <option value={state.stateCode} key={state.stateCode}>
+                {state.fullName}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
+
       <button>Submit</button>
     </form>
   );
