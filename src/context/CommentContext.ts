@@ -11,7 +11,7 @@ interface CommentContextModel {
   addPost: (post: PostModel) => void;
   likePost: (id: string, likedPost: PostModel) => void;
   deleteUserPost: (id: string) => void;
-  addCommentToPost: (id: string, userPostId: PostModel) => void;
+  addCommentToPost: (id: string, userPostId: CommentModel) => void;
 }
 
 const defaultValues: CommentContextModel = {

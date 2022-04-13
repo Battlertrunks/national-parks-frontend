@@ -66,11 +66,11 @@ const SocialMediaRoute = () => {
               <CommentForm commentLocation={post._id!} postDetails={post} />
             )}
             <ul>
-              {post.comments?.map((comment) => {
-                <li>
-                  <p>{comment.text}</p>
-                </li>;
-              })}
+              {post.comments?.map((comment) => (
+                <li key={comment._id}>
+                  <p>{comment?.text}</p>
+                </li>
+              ))}
             </ul>
           </li>
         ))}

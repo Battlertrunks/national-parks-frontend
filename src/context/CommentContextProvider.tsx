@@ -3,6 +3,7 @@ import CommentModel from "../models/CommentModel";
 import PostModels from "../models/PostModel";
 import { getComments, postComment } from "../services/PostCommentServices";
 import {
+  commentUserPost,
   deletePost,
   likingUserPost,
   retrievePosts,
@@ -42,8 +43,8 @@ const CommentContextProvider = ({ children }: Props) => {
     deletePost(id).then(() => getAndSetPosts());
   };
 
-  const addCommentToPost = (id: string, userPostId: PostModels): void => {
-    likingUserPost(id, userPostId).then(() => getAndSetPosts());
+  const addCommentToPost = (id: string, userPostId: CommentModel): void => {
+    commentUserPost(id, userPostId).then(() => getAndSetPosts());
   };
 
   return (
