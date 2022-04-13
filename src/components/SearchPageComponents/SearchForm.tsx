@@ -96,7 +96,8 @@ const SearchForm = () => {
         value={q}
         onChange={(e) => setQ(e.target.value)}
       />
-      <div>
+
+      <div className="dropdowns">
         <select
           name="activity"
           id="activity"
@@ -122,6 +123,7 @@ const SearchForm = () => {
           ))}
         </select>
       </div>
+
       <button>Submit</button>
     </form>
   );

@@ -1,3 +1,40 @@
 .SearchForm {
   margin-top: 100px;
 }
+
+form.SearchForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5c9e52;
+  padding: 20px;
+}
+
+.SearchForm .dropdowns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.SearchForm input#search {
+  width: 70vw;
+  border-radius: 10px;
+  border-width: 0;
+}
+
+.SearchForm select {
+  width: 25vw;
+  border-radius: 10px;
+  border-width: 0;
+  margin-top: 20px;
+}
+
+.SearchForm button {
+  margin-top: 20px;
+  border-radius: 30px;
+  border-width: 0;
+  background-color: #c5ffbc;
+  padding: 5px 15px;
+}
