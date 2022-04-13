@@ -39,7 +39,17 @@ const TeamPageRoute = () => {
         </li>
         <li>
           <h3>Developer: Tom Hudak</h3>
-          <p>INSERT PARAGRAPHS</p>
+          <p>
+            After 10 years in the beer brewing and production industry, Tom is
+            transitioning from a career as a Brewmaster to a Software Engineer.
+            He started the Grand Circus Fullstack JavaScript boot camp and has
+            had the opportunity to gain technical experience in JavaScript, HTML
+            and CSS.
+          </p>
+          <p>
+            In his free time, Tom likes to go running, play volleyball, and
+            spend time with his wife.
+          </p>
         </li>
         <li>
           <h3>Developer: Gavin Szczesniak</h3>
