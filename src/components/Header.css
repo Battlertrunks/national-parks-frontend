@@ -41,6 +41,7 @@
   color: #fff;
   margin-right: 15px;
   font-size: 12px;
+  text-align: right;
 }
 
 .Header i {
@@ -54,14 +55,15 @@
 .Header .dropdown {
   position: relative;
   display: inline-block;
+  background-color: #3a6b39;
+  text-align: right;
+  margin: 0;
 }
 
-.Header .dropdown:hover {
-  background-color: #3e8e41;
-}
-
-.Header .dropdown-content a:hover {
-  background-color: #3e8e41;
+.Header .dropdown a {
+  text-align: right;
+  font-size: 40px;
+  margin: 0;
 }
 
 .Header .dropdown-content {
@@ -69,18 +71,27 @@
   opacity: 0;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -7em;
   width: 100%;
+  text-align: right;
+  margin: 0;
   transform: translateY(-2em);
   z-index: -1;
   transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
     z-index 0s linear 0.01s;
 }
-
+.Header .dropdown-content ul {
+  background-color: #3a6b39;
+  margin: 0px 20px 0px 0px;
+}
 .Header .dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
   z-index: 1;
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.3s;
+  text-align: right;
+  margin: 0;
+  background-color: #3a6b39;
+  width: 100%;
 }

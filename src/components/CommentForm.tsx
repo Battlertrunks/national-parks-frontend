@@ -55,15 +55,16 @@ const CommentForm = ({ commentLocation }: Props) => {
         uid: user?.uid!,
         park_code: commentLocation,
       });
-    } else {
-        addCommentToPost({
-          text: commentText,
-          username: user?.displayName!,
-          dateAndTime: timeFormat,
-          uid: user?.uid!,
-          : commentLocation,
-        });
     }
+    // else {
+    //     addCommentToPost({
+    //       text: commentText,
+    //       username: user?.displayName!,
+    //       dateAndTime: timeFormat,
+    //       uid: user?.uid!,
+    //       : commentLocation,
+    //     });
+    // }
 
     setCommentText("");
   };
