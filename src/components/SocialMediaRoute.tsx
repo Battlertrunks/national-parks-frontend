@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import CommentContext from "../context/CommentContext";
 import PostModel from "../models/PostModel";
+import CommentForm from "./CommentForm";
 import SocialMeidaPostForm from "./SocialMediaPostForm";
 import "./SocialMediaRoute.css";
 
@@ -33,6 +34,7 @@ const SocialMediaRoute = () => {
   const deleteYourPost = (postToDelete: string): void => {
     deleteUserPost(postToDelete);
   };
+  console.log(posts);
 
   return (
     <section className="SocialMediaRoute">
@@ -60,6 +62,16 @@ const SocialMediaRoute = () => {
             <button onClick={() => setCommentToggle((prev) => !prev)}>
               Comment
             </button>
+            {commentToggle && (
+              <CommentForm commentLocation={post._id!} postDetails={post} />
+            )}
+            <ul>
+              {post.comments?.map((comment) => {
+                <li>
+                  <p>{comment.text}</p>
+                </li>;
+              })}
+            </ul>
           </li>
         ))}
       </ul>
