@@ -72,6 +72,10 @@ const SocialMediaPostForm = () => {
         addPost(createdPost);
       }
     }
+
+    setTitle("");
+    setBody("");
+    fileInputImgRef.current!.value = "";
   };
 
   return (

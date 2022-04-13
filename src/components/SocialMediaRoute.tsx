@@ -55,6 +55,7 @@ const SocialMediaRoute = () => {
               <button onClick={() => unlikeAPost(post)}>Unlike</button>
             )}
             <p>Likes: {post.likes.amountOfLikes}</p>
+            <button>Comment</button>
           </li>
         ))}
       </ul>
