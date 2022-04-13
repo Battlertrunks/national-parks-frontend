@@ -3,10 +3,10 @@ import "./AboutUs.css";
 const AboutUs = () => {
   return (
     <div className="AboutUs">
+      <h1 className="AboutUsTitle">About Us</h1>
       <ul>
-        <h1>About Us</h1>
-        <h2>Our Goals</h2>
         <li>
+          <h2>Our Goals</h2>
           <p>
             Dream Park is a motivational National Park finder application that
             incorporates a park completion component. Users are able work

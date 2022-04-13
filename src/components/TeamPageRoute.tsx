@@ -4,7 +4,7 @@ const TeamPageRoute = () => {
   // TODO: ADD IMAGES TO EACH TEAM MEMBER
   return (
     <section className="TeamPageRoute">
-      <h2>Our Team Developers</h2>
+      <h2 className="TeamHeader">Our Team Developers</h2>
       <ul>
         <li>
           <h3>Our project manger: Mia</h3>
@@ -30,11 +30,10 @@ const TeamPageRoute = () => {
             issue.
           </p>
           <p>
-            Alex's hobbies mainly revolve around automobiles after working with
-            them on an everyday bases. In his free time, Alex works on a 1973
-            BMW 2002 in hopes of restoring it back to its' original condition.
-            On other days, he's practicing his skills on the track by competing
-            in a production-car class.
+            Alex's hobbies mainly revolve around automobiles. In his spare time,
+            Alex works on a 1973 BMW 2002 in hopes of restoring it back to its'
+            original condition. On other days, he's practicing his skills on the
+            track by competing in a production-car class.
           </p>
         </li>
         <li>
@@ -86,7 +85,7 @@ const TeamPageRoute = () => {
       </p>
       <ul>
         <li>
-          <h2>Special Thanks to...</h2>
+          <h2 className="ThanksHeader">Special Thanks to...</h2>
         </li>
         <li>
           <h3>Mitch Cuckovich and Andrea Hoffman</h3>

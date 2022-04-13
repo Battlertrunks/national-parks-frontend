@@ -11,10 +11,12 @@
   background-size: cover;
   background-position: center;
   background-color: #3a6b39;
+  font-family: "Kulim Park", light;
 }
 
 .Header h1 {
   font-size: 24px;
+  font-family: "Kulim Park", semibold;
 }
 
 .Header h1,
@@ -25,6 +27,27 @@
 
 .Header button {
   background-color: transparent;
+  border: 0;
+  color: #fff;
+  padding: 5px;
+  font-family: "Kulim Park", extra light;
+}
+button.signInBtn {
+  border: 1px #fff solid;
+  cursor: pointer;
+}
+
+button.signOutBtn {
+  border: 1px #fff solid;
+  color: #5c9e52;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+button.sideBar {
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 2px;
   border: none;
   padding: 0px 6px;
 }
