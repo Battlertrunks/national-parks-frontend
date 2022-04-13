@@ -34,10 +34,14 @@ const Header = () => {
 
               {user.photoURL && <img src={user.photoURL} alt="Profile Image" />}
             </Link>
-            <button onClick={signOut}>Sign Out</button>
+            <button className="signOutBtn" onClick={signOut}>
+              Sign Out
+            </button>
           </div>
         ) : (
-          <button onClick={signInWithGoogle}>Sign In</button>
+          <button className="signInBtn" onClick={signInWithGoogle}>
+            Sign In
+          </button>
         )}
         <div className="dropdown">
           <button

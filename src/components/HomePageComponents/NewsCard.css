@@ -23,16 +23,19 @@
 }
 
 .NewsCard .content-container h2 {
-  font-size: 12px;
+  font-size: 20px;
   padding-bottom: 10px;
-  color: white;
-  margin: 0px;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: "Kulim Park", semi bold;
 }
 
 .NewsCard p {
-  font-size: 10px;
-  color: white;
+  font-size: 14px;
+  color: #fff;
   text-align: center;
+  font-family: "Lexend", light;
 }
 
 .NewsCard .content-container {

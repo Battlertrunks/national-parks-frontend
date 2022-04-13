@@ -4,6 +4,20 @@
   color: #5c9e52;
 }
 
+.AboutUs .AboutUsTitle {
+  margin-bottom: 35px;
+  color: rgb(248, 102, 4);
+}
+
+.AboutUs h1,
+h2 {
+  font-family: "Kulim Park", semi bold;
+}
+
+.AboutUs p {
+  font-family: "Lexend", regular;
+}
+
 .AboutUs {
   margin: 0 10px;
   margin-top: 100px;

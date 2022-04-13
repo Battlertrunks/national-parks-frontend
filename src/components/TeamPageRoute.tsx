@@ -4,7 +4,7 @@ const TeamPageRoute = () => {
   // TODO: ADD IMAGES TO EACH TEAM MEMBER
   return (
     <section className="TeamPageRoute">
-      <h2>Our Team Developers</h2>
+      <h2 className="TeamHeader">Our Team Developers</h2>
       <ul>
         <li>
           <h3>Our project manger: Mia</h3>
@@ -69,7 +69,7 @@ const TeamPageRoute = () => {
       </p>
       <ul>
         <li>
-          <h2>Special Thanks to...</h2>
+          <h2 className="ThanksHeader">Special Thanks to...</h2>
         </li>
         <li>
           <h3>Mitch Cuckovich and Andrea Hoffman</h3>
