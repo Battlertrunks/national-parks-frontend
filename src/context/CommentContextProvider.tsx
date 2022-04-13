@@ -42,8 +42,8 @@ const CommentContextProvider = ({ children }: Props) => {
     deletePost(id).then(() => getAndSetPosts());
   };
 
-  const addCommentToPost = (userPostId: CommentModel): void => {
-    postComment(userPostId).then(() => getAndSetPosts());
+  const addCommentToPost = (id: string, userPostId: PostModels): void => {
+    likingUserPost(id, userPostId).then(() => getAndSetPosts());
   };
 
   return (

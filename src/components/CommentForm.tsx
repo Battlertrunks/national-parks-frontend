@@ -2,13 +2,15 @@ import { FormEvent, useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import CommentContext from "../context/CommentContext";
 import ParkDetailsCardModel from "../models/ParkDetailsCardModel";
+import PostModels from "../models/PostModel";
 import "./CommentForm.css";
 
 interface Props {
   commentLocation: string;
+  postDetails?: PostModels;
 }
 
-const CommentForm = ({ commentLocation }: Props) => {
+const CommentForm = ({ commentLocation, postDetails }: Props) => {
   const { user } = useContext(AuthContext);
   const { addCommentToPark, addCommentToPost } = useContext(CommentContext);
   const [commentText, setCommentText] = useState<string>("");
@@ -47,7 +49,8 @@ const CommentForm = ({ commentLocation }: Props) => {
       currentMinutes < 10 ? `0${currentMinutes}` : currentMinutes
     }${morningAfternoon}`;
 
-    if (commentLocation.length >= 4) {
+    if (commentLocation.length <= 4) {
+      console.log("false");
       addCommentToPark({
         text: commentText,
         username: user?.displayName!,
@@ -55,6 +58,17 @@ const CommentForm = ({ commentLocation }: Props) => {
         uid: user?.uid!,
         park_code: commentLocation,
       });
+    } else {
+      console.log("true");
+      postDetails?.comments?.push({
+        text: commentText,
+        username: user?.displayName!,
+        dateAndTime: timeFormat,
+        uid: user?.uid!,
+        post_id: postDetails?._id,
+        innerComments: [],
+      });
+      addCommentToPost(postDetails?._id!, postDetails!);
     }
     // else {
     //     addCommentToPost({
