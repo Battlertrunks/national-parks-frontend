@@ -26,6 +26,7 @@
 .Header button {
   background-color: transparent;
   border: none;
+  padding: 0px 6px;
 }
 
 .Header .username {
@@ -44,6 +45,14 @@
   text-align: right;
 }
 
+.Header a img {
+  z-index: 3;
+}
+
+.Header li {
+  margin-bottom: 10px;
+}
+
 .Header i {
   font-size: 32px;
   color: #fff;
@@ -53,7 +62,7 @@
 }
 
 .Header .dropdown {
-  position: relative;
+  /* position: relative; */
   display: inline-block;
   background-color: #3a6b39;
   text-align: right;
@@ -62,7 +71,7 @@
 
 .Header .dropdown a {
   text-align: right;
-  font-size: 40px;
+  font-size: 30px;
   margin: 0;
 }
 
@@ -70,28 +79,29 @@
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  top: 100%;
-  left: -7em;
-  width: 100%;
+  top: 20;
+  right: 0;
+  /* width: 100%; */
   text-align: right;
-  margin: 0;
+
   transform: translateY(-2em);
   z-index: -1;
   transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
     z-index 0s linear 0.01s;
 }
 .Header .dropdown-content ul {
-  background-color: #3a6b39;
-  margin: 0px 20px 0px 0px;
+  /* background-color: #3a6b3998; */
+  margin: 30px 30px;
+  padding: 0px 5px 0px 5px;
 }
 .Header .dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
-  z-index: 1;
+  /* z-index: 1; */
   transform: translateY(0%);
-  transition-delay: 0s, 0s, 0.3s;
-  text-align: right;
-  margin: 0;
+  transition-delay: 0s, 0s, 0.5s;
+  /* text-align: right; */
+  /* margin: 0; */
   background-color: #3a6b39;
-  width: 100%;
+  /* width: 100%; */
 }

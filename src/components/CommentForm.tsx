@@ -70,15 +70,6 @@ const CommentForm = ({ commentLocation, postDetails }: Props) => {
       });
       addCommentToPost(postDetails?._id!, postDetails!);
     }
-    // else {
-    //     addCommentToPost({
-    //       text: commentText,
-    //       username: user?.displayName!,
-    //       dateAndTime: timeFormat,
-    //       uid: user?.uid!,
-    //       : commentLocation,
-    //     });
-    // }
 
     setCommentText("");
   };
