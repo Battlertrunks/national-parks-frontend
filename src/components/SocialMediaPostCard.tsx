@@ -36,6 +36,8 @@ const SocialMediaPostCard = ({ post }: Props) => {
     deleteUserPost(postToDelete);
   };
 
+  console.log(showMoreComments);
+
   return (
     <li className="SocialMediaPostCard">
       {post.uid === user?.uid && (
@@ -64,10 +66,20 @@ const SocialMediaPostCard = ({ post }: Props) => {
               : post.comments.length
           ),
         ]?.map((comment, index) => (
-          <SocialMediaCommentCard comment={post.comments} index={index} />
+          <SocialMediaCommentCard
+            comment={post.comments}
+            index={index}
+            key={post.comments[index]._id}
+          />
         ))}
       </ul>
-      <button onClick={() => setShowMoreComments((prev) => prev + 5)}>
+      <button
+        onClick={() =>
+          setShowMoreComments((prev) =>
+            prev < post.comments.length ? prev + 5 : prev
+          )
+        }
+      >
         Show More Comments
       </button>
     </li>

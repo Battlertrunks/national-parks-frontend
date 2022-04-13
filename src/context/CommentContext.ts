@@ -12,6 +12,7 @@ interface CommentContextModel {
   likePost: (id: string, likedPost: PostModel) => void;
   deleteUserPost: (id: string) => void;
   addCommentToPost: (id: string, userPostId: CommentModel) => void;
+  deleteCommentFromPost: (id: string) => void;
 }
 
 const defaultValues: CommentContextModel = {
@@ -24,6 +25,7 @@ const defaultValues: CommentContextModel = {
   likePost: () => {},
   deleteUserPost: () => {},
   addCommentToPost: () => {},
+  deleteCommentFromPost: () => {},
 };
 
 const CommentContext = createContext(defaultValues);
