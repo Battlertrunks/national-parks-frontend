@@ -3,14 +3,19 @@
 .Account h3,
 .Account p,
 .Account span {
-  color: black;
+  color: #5c9e52;
 }
 
 .Account {
   margin-top: 100px;
   margin-bottom: 200px;
+  margin-left: 10px;
 }
 
 .Account li {
   margin: 25px 0;
+}
+
+.Account p {
+  font-family: "Lexend", regular;
 }

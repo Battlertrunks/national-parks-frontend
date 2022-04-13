@@ -31,7 +31,7 @@ const Account = () => {
           <p>Your park list is empty</p>
         )}
       </ul>
-      <h2>Acount Parks FAQ</h2>
+      <h2>Account Parks FAQ</h2>
       <ul>
         <li>
           <div>
@@ -43,8 +43,8 @@ const Account = () => {
           {attendingParkDropdown && (
             <p>
               You can add parks to your visited list on your account by clicking
-              the attended button. Your visited parks will be saved onto your
-              account when ever you log back into your account.
+              the attended button. Any parks added to the list will be available
+              the next time you log back in.
             </p>
           )}
         </li>
@@ -59,9 +59,11 @@ const Account = () => {
           </div>
           {completingActivityDropdown && (
             <p>
-              When completing an activity, your progress will increase until you
-              have reached 100% park completion. You can unset activities that
-              you have not completed.
+              When completing a park activity, your progress will increase until
+              you have reached 100% park completion. This indicates that you
+              have done all available activities that park has to offer. You can
+              unset activities that you have not finished or may have selected
+              accidentally.
             </p>
           )}
         </li>
@@ -74,9 +76,9 @@ const Account = () => {
           </div>
           {removeParkDropdown && (
             <p>
-              If you delete a visited park from you saved list, all the progress
-              will be deleted as well. Please be aware when deleting parks you
-              delete.
+              If you remove a visited park from your saved list, all of your
+              progress will be deleted. Please be aware of which park you are
+              removing.
             </p>
           )}
         </li>
