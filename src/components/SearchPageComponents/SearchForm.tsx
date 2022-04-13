@@ -92,7 +92,7 @@ const SearchForm = () => {
         type="text"
         name="search"
         id="search"
-        placeholder="Search"
+        placeholder="Search park by name..."
         value={q}
         onChange={(e) => setQ(e.target.value)}
       />

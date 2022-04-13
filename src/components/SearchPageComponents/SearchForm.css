@@ -9,7 +9,7 @@ form.SearchForm {
   justify-content: space-between;
   align-items: center;
   background-color: #5c9e52;
-  padding: 25px 0px;
+  padding: 30px 0px 20px 0px;
 }
 
 .SearchForm .dropdowns {
@@ -30,7 +30,7 @@ form.SearchForm {
   width: 70vw;
   border-radius: 25px;
   border-width: 0;
-  padding: 3px;
+  padding: 5px;
 }
 
 .SearchForm select {
