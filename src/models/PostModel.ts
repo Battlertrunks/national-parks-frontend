@@ -6,4 +6,10 @@ export default interface PostModels {
   username: string;
   dateAndTime: string;
   imageURL?: string;
+  likes: Likes;
+}
+
+interface Likes {
+  amountOfLikes: number;
+  uids: string[];
 }

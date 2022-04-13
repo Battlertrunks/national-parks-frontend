@@ -55,6 +55,7 @@ const SocialMediaPostForm = () => {
         title,
         body,
         dateAndTime: timeFormat,
+        likes: { amountOfLikes: 0, uids: [] },
       };
 
       const files = fileInputImgRef.current?.files;
@@ -71,6 +72,10 @@ const SocialMediaPostForm = () => {
         addPost(createdPost);
       }
     }
+
+    setTitle("");
+    setBody("");
+    fileInputImgRef.current!.value = "";
   };
 
   return (
