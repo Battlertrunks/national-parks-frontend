@@ -30,16 +30,32 @@ const TeamPageRoute = () => {
             issue.
           </p>
           <p>
-            Alex's hobbies mainly revolve around automobiles after working with
-            them on an everyday bases. In his free time, Alex works on a 1973
-            BMW 2002 in hopes of restoring it back to its' original condition.
-            On other days, he's practicing his skills on the track by competing
-            in a production-car class.
+            Alex's hobbies mainly revolve around automobiles. In his spare time,
+            Alex works on a 1973 BMW 2002 in hopes of restoring it back to its'
+            original condition. On other days, he's practicing his skills on the
+            track by competing in a production-car class.
           </p>
         </li>
         <li>
           <h3>Developer: Tom Hudak</h3>
-          <p>INSERT PARAGRAPHS</p>
+          <p>
+            After 10 years in the beer brewing and production industry, Tom is
+            transitioning from a career as a Brewmaster to a Software Engineer.
+            He started the Grand Circus Fullstack JavaScript boot camp and has
+            had the opportunity to gain technical experience in JavaScript, HTML
+            and CSS.
+          </p>
+          <p>
+            Tom has found working in JavaScript to be equally challenging and
+            rewarding. When he started the bootcamp, he didn't realize just how
+            deep the rabbit hole went! He looks back at where he came from and
+            is proud of his accomplishments thusfar.
+          </p>
+          <p>
+            In his free time, Tom likes to go running, play volleyball, and
+            spend time with his wife. He hopes to start a new career in coding
+            soon after bootcamp!
+          </p>
         </li>
         <li>
           <h3>Developer: Gavin Szczesniak</h3>

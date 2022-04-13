@@ -16,17 +16,6 @@ const Header = () => {
         <h1>National Treasures</h1>
       </Link>
       <div>
-        <ul>
-          <li>
-            <Link to="/parks/search">Search</Link>
-          </li>
-          <li>
-            <Link to="/parks/aboutus">About Us</Link>
-          </li>
-          <li>
-            <Link to="/posts">Social Media</Link>
-          </li>
-        </ul>
         {user ? (
           <div>
             <Link to="/account">
@@ -44,10 +33,7 @@ const Header = () => {
           </button>
         )}
         <div className="dropdown">
-          <button
-            // onClick={() => setMenuDropdown(!menuDropdown)}
-            className="sideBar"
-          >
+          <button>
             <i className="fa-solid fa-bars"></i>
           </button>
           <div className="dropdown-content">
