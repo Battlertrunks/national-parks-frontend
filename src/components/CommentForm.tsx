@@ -5,12 +5,12 @@ import ParkDetailsCardModel from "../models/ParkDetailsCardModel";
 import "./CommentForm.css";
 
 interface Props {
-  parkCode: string;
+  commentLocation: string;
 }
 
-const CommentForm = ({ parkCode }: Props) => {
+const CommentForm = ({ commentLocation }: Props) => {
   const { user } = useContext(AuthContext);
-  const { addComment } = useContext(CommentContext);
+  const { addCommentToPark, addCommentToPost } = useContext(CommentContext);
   const [commentText, setCommentText] = useState<string>("");
 
   const months: string[] = [
@@ -47,15 +47,23 @@ const CommentForm = ({ parkCode }: Props) => {
       currentMinutes < 10 ? `0${currentMinutes}` : currentMinutes
     }${morningAfternoon}`;
 
-    console.log(timeFormat);
-
-    addComment({
-      text: commentText,
-      username: user?.displayName!,
-      dateAndTime: timeFormat,
-      uid: user?.uid!,
-      park_code: parkCode,
-    });
+    if (commentLocation.length >= 4) {
+      addCommentToPark({
+        text: commentText,
+        username: user?.displayName!,
+        dateAndTime: timeFormat,
+        uid: user?.uid!,
+        park_code: commentLocation,
+      });
+    } else {
+        addCommentToPost({
+          text: commentText,
+          username: user?.displayName!,
+          dateAndTime: timeFormat,
+          uid: user?.uid!,
+          : commentLocation,
+        });
+    }
 
     setCommentText("");
   };
