@@ -9,7 +9,7 @@ export default interface PostModels {
   dateAndTime: string;
   imageURL?: string;
   likes: Likes;
-  comments?: CommentModel[];
+  comments: CommentModel[];
 }
 
 interface Likes {

@@ -5,5 +5,6 @@ export default interface CommentModel {
   username: string;
   text: string;
   park_code?: string;
+  post_id?: string;
   innerComments?: CommentModel[];
 }
