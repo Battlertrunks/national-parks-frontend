@@ -47,8 +47,15 @@ const TeamPageRoute = () => {
             and CSS.
           </p>
           <p>
+            Tom has found working in JavaScript to be equally challenging and
+            rewarding. When he started the bootcamp, he didn't realize just how
+            deep the rabbit hole went! He looks back at where he came from and
+            is proud of his accomplishments thusfar.
+          </p>
+          <p>
             In his free time, Tom likes to go running, play volleyball, and
-            spend time with his wife.
+            spend time with his wife. He hopes to start a new career in coding
+            soon after bootcamp!
           </p>
         </li>
         <li>
