@@ -3,6 +3,7 @@ import AuthContext from "../context/AuthContext";
 import CommentContext from "../context/CommentContext";
 import PostModel from "../models/PostModel";
 import CommentForm from "./CommentForm";
+import SocialMediaCommentCard from "./SocialMediaCommentCard";
 import "./SocialMediaPostCard.css";
 
 interface Props {
@@ -35,6 +36,8 @@ const SocialMediaPostCard = ({ post }: Props) => {
     deleteUserPost(postToDelete);
   };
 
+  console.log(showMoreComments);
+
   return (
     <li className="SocialMediaPostCard">
       {post.uid === user?.uid && (
@@ -63,14 +66,20 @@ const SocialMediaPostCard = ({ post }: Props) => {
               : post.comments.length
           ),
         ]?.map((comment, index) => (
-          <li key={post.comments[index]?._id}>
-            <h5>{post.comments[index]?.username}</h5>
-            <p>{post.comments[index]?.dateAndTime}</p>
-            <p>{post.comments[index]?.text}</p>
-          </li>
+          <SocialMediaCommentCard
+            comment={post.comments}
+            index={index}
+            key={post.comments[index]._id}
+          />
         ))}
       </ul>
-      <button onClick={() => setShowMoreComments((prev) => prev + 5)}>
+      <button
+        onClick={() =>
+          setShowMoreComments((prev) =>
+            prev < post.comments.length ? prev + 5 : prev
+          )
+        }
+      >
         Show More Comments
       </button>
     </li>

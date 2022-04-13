@@ -47,6 +47,10 @@ const CommentContextProvider = ({ children }: Props) => {
     commentUserPost(id, userPostId).then(() => getAndSetPosts());
   };
 
+  const deleteCommentFromPost = (id: string): void => {
+    deletePost(id).then(() => getAndSetPosts());
+  };
+
   return (
     <CommentContext.Provider
       value={{
@@ -59,6 +63,7 @@ const CommentContextProvider = ({ children }: Props) => {
         likePost,
         deleteUserPost,
         addCommentToPost,
+        deleteCommentFromPost,
       }}
     >
       {children}

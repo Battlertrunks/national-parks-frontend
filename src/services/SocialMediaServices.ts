@@ -32,3 +32,7 @@ export const commentUserPost = async (
 export const deletePost = async (id: string): Promise<void> => {
   return (await axios.delete(`${url}/${encodeURIComponent(id)}`)).data;
 };
+
+export const deleteComment = async (id: string): Promise<void> => {
+  return (await axios.delete(`${url}/comment/${encodeURIComponent(id)}`)).data;
+};
