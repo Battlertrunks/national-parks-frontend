@@ -68,6 +68,7 @@ const SocialMediaRoute = () => {
             <ul>
               {post.comments?.map((comment) => (
                 <li key={comment._id}>
+                  <h5>{comment.username}</h5>
                   <p>{comment?.text}</p>
                 </li>
               ))}
