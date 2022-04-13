@@ -50,7 +50,6 @@ const CommentForm = ({ commentLocation, postDetails }: Props) => {
     }${morningAfternoon}`;
 
     if (commentLocation.length <= 4) {
-      console.log("false");
       addCommentToPark({
         text: commentText,
         username: user?.displayName!,
@@ -59,8 +58,8 @@ const CommentForm = ({ commentLocation, postDetails }: Props) => {
         park_code: commentLocation,
       });
     } else {
-      console.log("true");
-      postDetails?.comments?.push({
+      //   postDetails?.comments?.push();
+      addCommentToPost(postDetails?._id!, {
         text: commentText,
         username: user?.displayName!,
         dateAndTime: timeFormat,
@@ -68,7 +67,6 @@ const CommentForm = ({ commentLocation, postDetails }: Props) => {
         post_id: postDetails?._id,
         innerComments: [],
       });
-      addCommentToPost(postDetails?._id!, postDetails!);
     }
 
     setCommentText("");
