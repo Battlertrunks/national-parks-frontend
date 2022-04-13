@@ -10,6 +10,8 @@ const SocialMediaRoute = () => {
     useContext(CommentContext);
   const { user } = useContext(AuthContext);
 
+  const [commentToggle, setCommentToggle] = useState<boolean>(false);
+
   useEffect(() => {
     getAndSetPosts();
   }, []);
@@ -55,7 +57,9 @@ const SocialMediaRoute = () => {
               <button onClick={() => unlikeAPost(post)}>Unlike</button>
             )}
             <p>Likes: {post.likes.amountOfLikes}</p>
-            <button>Comment</button>
+            <button onClick={() => setCommentToggle((prev) => !prev)}>
+              Comment
+            </button>
           </li>
         ))}
       </ul>

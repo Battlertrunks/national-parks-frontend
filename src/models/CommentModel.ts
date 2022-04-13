@@ -4,6 +4,6 @@ export default interface CommentModel {
   dateAndTime: string;
   username: string;
   text: string;
-  park_code: string;
+  park_code?: string;
   innerComments?: CommentModel[];
 }

@@ -1,3 +1,5 @@
+import CommentModel from "./CommentModel";
+
 export default interface PostModels {
   uid: string;
   _id?: string;
@@ -7,6 +9,7 @@ export default interface PostModels {
   dateAndTime: string;
   imageURL?: string;
   likes: Likes;
+  comments?: CommentModel[];
 }
 
 interface Likes {

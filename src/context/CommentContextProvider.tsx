@@ -22,8 +22,8 @@ const CommentContextProvider = ({ children }: Props) => {
     getComments(parkCode).then((response) => setComments(response));
   };
 
-  const addComment = (comment: CommentModel): void => {
-    postComment(comment).then(() => getAndSetComments(comment.park_code));
+  const addCommentToPark = (comment: CommentModel): void => {
+    postComment(comment).then(() => getAndSetComments(comment.park_code!));
   };
 
   const getAndSetPosts = (): void => {
@@ -42,17 +42,22 @@ const CommentContextProvider = ({ children }: Props) => {
     deletePost(id).then(() => getAndSetPosts());
   };
 
+  const addCommentToPost = (userPostId: CommentModel): void => {
+    postComment(userPostId).then(() => getAndSetPosts());
+  };
+
   return (
     <CommentContext.Provider
       value={{
         comments,
         getAndSetComments,
-        addComment,
+        addCommentToPark,
         posts,
         getAndSetPosts,
         addPost,
         likePost,
         deleteUserPost,
+        addCommentToPost,
       }}
     >
       {children}
