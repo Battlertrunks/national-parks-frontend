@@ -1,6 +1,61 @@
-.ParkCard img {
-  width: 250px;
+.ParkCard .parkcard-text a,
+h2 {
+  font-size: medium;
+  color: #3a6b39;
 }
-.ParkCard p {
-  color: black;
+
+.ParkCard {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  max-height: 200px;
+  overflow: hidden;
+}
+.ParkCard img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.ParkCard .parkcard-pic-and-text {
+  display: flex;
+}
+
+.ParkCard .parkcard-text p {
+  font-size: small;
+}
+
+.ParkCard .parkcard-pic {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40vw;
+  margin-right: 15px;
+}
+
+.ParkCard .parkcard-text {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  color: #3a6b39;
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.ParkCard button {
+  margin-top: 10px;
+  border-radius: 30px;
+  border-width: 0;
+  background-color: #c5ffbc;
+  padding: 5px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 15px auto;
+  width: 40vw;
+  text-align: center;
+  /* display: flex;
+  justify-content: center; */
 }

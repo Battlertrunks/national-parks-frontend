@@ -39,14 +39,23 @@ const ParkCard = ({ onDisplay }: Props) => {
 
   return (
     <div className="ParkCard">
-      <img src={onDisplay.images[0].url} alt={onDisplay.images[0].altText} />
-      <Link to={`/parks/details?${new URLSearchParams(parkCode)}`}>
-        <h2>{onDisplay.fullName}</h2>
-      </Link>
+      <div className="parkcard-pic-and-text">
+        <div className="parkcard-pic">
+          <img
+            src={onDisplay.images[0].url}
+            alt={onDisplay.images[0].altText}
+          />
+        </div>
+        <div className="parkcard-text">
+          <Link to={`/parks/details?${new URLSearchParams(parkCode)}`}>
+            <h2>{onDisplay.fullName}</h2>
+          </Link>
+          <p>{onDisplay.description}</p>
+        </div>
+      </div>
 
-      <p>{onDisplay.description}</p>
       {user && !attendedParks.some((park) => park?.id === onDisplay?.id) && (
-        <button onClick={() => addingParkToProgress()}>Attended</button>
+        <button onClick={() => addingParkToProgress()}>Mark Attended</button>
       )}
     </div>
   );
