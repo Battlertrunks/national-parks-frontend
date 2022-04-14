@@ -11,6 +11,7 @@ label {
 }
 
 .App p,
-a {
+a,
+button {
   font-family: "Lexend", regular;
 }
