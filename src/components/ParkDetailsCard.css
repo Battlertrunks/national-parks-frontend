@@ -1,14 +1,32 @@
-.ParkDetailsCard h1 {
-  padding-top: 150px;
-  color: black;
-}
-
 .ParkDetailsCard {
   color: #222;
+  display: flex;
+  flex-direction: column;
+}
+
+.ParkDetailsCard p {
+  margin-top: 10px;
+}
+
+.ParkDetailsCard h1 {
+  color: #3a6b39;
+  font-size: 18px;
+}
+.ParkDetailsCard .parkname-weather-container {
+  padding: 150px 20px 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ParkDetailsCard .weather-info {
+  display: flex;
+  align-items: center;
 }
 
 .ParkDetailsCard .main-image {
-  height: 200px;
+  margin: 10px auto;
+  width: 60vw;
 }
 
 .ParkDetailsCard .preview-imgs img {

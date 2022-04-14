@@ -1,6 +1,9 @@
-div.SearchParkRoute {
+.SearchParkRoute .parks-list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 90vw;
 }
 
 h2.centered {
