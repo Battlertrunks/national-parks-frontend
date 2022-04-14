@@ -27,7 +27,7 @@ const SocialMediaCommentCard = ({ comment, index, postID }: Props) => {
       {user?.uid === comment[index].uid && (
         <button
           onClick={() => {
-            deleteCommentFromPost(postID, comment[index]);
+            deleteCommentFromPost(postID, comment[index]._id!);
             console.log(comment[index]?._id!);
           }}
         >

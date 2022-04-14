@@ -42,12 +42,13 @@ export const deletePost = async (id: string): Promise<void> => {
 // deletes a user's comment on a post
 export const deleteComment = async (
   id: string,
-  deletedCommentPost: CommentModel
+  commentId: string
 ): Promise<PostModel> => {
   return (
     await axios.put(
-      `${url}/comment/delete/${encodeURIComponent(id)}`,
-      deletedCommentPost
+      `${url}/${encodeURIComponent(id)}/comment/delete/${encodeURIComponent(
+        commentId
+      )}`
     )
   ).data;
 };

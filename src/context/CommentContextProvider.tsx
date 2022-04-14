@@ -58,11 +58,8 @@ const CommentContextProvider = ({ children }: Props) => {
   };
 
   // deletes comment on a post and then updates posts state by calling get and sets posts.
-  const deleteCommentFromPost = (
-    id: string,
-    deletedCommentPost: CommentModel
-  ): void => {
-    deleteComment(id, deletedCommentPost).then(() => getAndSetPosts());
+  const deleteCommentFromPost = (id: string, commentId: string): void => {
+    deleteComment(id, commentId).then(() => getAndSetPosts());
   };
 
   return (
