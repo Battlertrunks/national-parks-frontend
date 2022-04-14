@@ -1,17 +1,3 @@
 .App {
   color: #fff;
 }
-
-.App h4,
-h3,
-h2,
-h1,
-label {
-  font-family: "Kulim Park", semi-bold;
-}
-
-.App p,
-a,
-button {
-  font-family: "Lexend", regular;
-}
