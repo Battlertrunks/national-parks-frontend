@@ -4,17 +4,29 @@
   flex-direction: column;
 }
 
-.ParkDetailsCard p {
-  margin-top: 10px;
+.ParkDetailsCard .park-description {
+  margin: 20px 20px;
+  font-size: 14px;
+}
+
+.ParkDetailsCard .activitiesList {
+  margin: 20px;
+  columns: 2;
+}
+
+.ParkDetailsCard .activitiesList p {
+  font-size: 14px;
 }
 
 .ParkDetailsCard h1 {
+  font-size: 90%;
   color: #3a6b39;
-  font-size: 18px;
 }
+
 .ParkDetailsCard .parkname-weather-container {
-  padding: 150px 20px 10px 20px;
+  padding: 100px 0px 10px 0px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
@@ -22,17 +34,70 @@
 .ParkDetailsCard .weather-info {
   display: flex;
   align-items: center;
+  font-size: 12px;
+}
+
+.ParkDetailsCard .weather-info img {
+  width: 40px;
 }
 
 .ParkDetailsCard .main-image {
   margin: 10px auto;
   width: 60vw;
+  border-radius: 5px;
+}
+
+.ParkDetailsCard h2 {
+  margin: 20px;
+}
+
+.ParkDetailsCard button {
+  border-radius: 30px;
+  border-width: 0;
+  background-color: #60a155;
+  padding: 5px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px auto;
+}
+.ParkDetailsCard .preview-imgs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .ParkDetailsCard .preview-imgs img {
-  width: 300px;
+  height: 200px;
 }
 
-.ParkDetailsCard .activitiesList {
-  columns: 5;
+.ParkDetailsCard form.CommentForm {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: 20px auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .ParkDetailsCard .activitiesList {
+    columns: 5;
+  }
+
+  .ParkDetailsCard .parkname-weather-container {
+    padding: 100px 0px 10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .ParkDetailsCard .preview-imgs {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .ParkDetailsCard .preview-imgs li img {
+    margin: 10px;
+    border-radius: 5px;
+  }
 }

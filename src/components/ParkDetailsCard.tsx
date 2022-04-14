@@ -12,6 +12,7 @@ import Activities from "../models/Activities";
 import CompletedParks from "../models/CompletedParks";
 import CommentForm from "./CommentForm";
 import CommentContext from "../context/CommentContext";
+import HomeSearchParkForm from "./HomePageComponents/HomeSearchParkForm";
 
 const ParkDetailsCard = () => {
   // Stores the parks inforation to be displayed
@@ -80,6 +81,7 @@ const ParkDetailsCard = () => {
   // Displays park information
   return (
     <div className="ParkDetailsCard">
+      <HomeSearchParkForm />
       <div className="parkname-weather-container">
         <h1>{parkDetails?.fullName}</h1>
         <div className="weather-info">
@@ -96,9 +98,9 @@ const ParkDetailsCard = () => {
         className="main-image"
       />
 
-      <p>{parkDetails?.description}</p>
+      <p className="park-description">{parkDetails?.description}</p>
       {user && !attendedParks.some((park) => park?.id === parkDetails?.id) && (
-        <button onClick={() => addingParkToProgress()}>Attended</button>
+        <button onClick={() => addingParkToProgress()}>Mark Visited</button>
       )}
       <h2>Activities</h2>
       <ul className="activitiesList">
