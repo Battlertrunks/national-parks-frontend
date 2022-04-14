@@ -64,6 +64,7 @@ const SocialMediaPostForm = () => {
       const createdPost: PostModel = {
         uid: user?.uid,
         username: user?.displayName!,
+        userPhoto: user?.photoURL!,
         title,
         body,
         dateAndTime: timeFormat,

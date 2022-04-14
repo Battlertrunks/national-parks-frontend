@@ -2,6 +2,15 @@
   color: #222;
   display: flex;
   flex-direction: column;
+  margin-top: 65px;
+}
+
+.ParkDetailsCard .HomeSearchParkForm h3 {
+  color: #fff;
+}
+
+.ParkDetailsCard .HomeSearchParkForm button {
+  background-color: #3a6b39;
 }
 
 .ParkDetailsCard .park-description {

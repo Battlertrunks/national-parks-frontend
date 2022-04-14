@@ -6,6 +6,7 @@ export default interface PostModels {
   title: string;
   body: string;
   username: string;
+  userPhoto?: string;
   dateAndTime: string;
   imageURL?: string;
   likes: Likes;

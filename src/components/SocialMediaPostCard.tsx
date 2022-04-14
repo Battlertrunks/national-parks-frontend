@@ -60,7 +60,7 @@ const SocialMediaPostCard = ({ post }: Props) => {
       )}
       <div className="profile-name-and-image">
         <img
-          src={user?.photoURL!}
+          src={post.userPhoto}
           alt={`${user?.displayName}'s profile photo.`}
         />
         <h4>{post?.username}</h4>
