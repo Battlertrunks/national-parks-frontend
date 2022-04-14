@@ -1,5 +1,7 @@
 import "./OpeningSection.css";
 
+// Just the opening screen when the user is not logged in
+// Mainly for new users coming in.
 const OpeningSection = () => {
   return (
     <div className="OpeningSection">

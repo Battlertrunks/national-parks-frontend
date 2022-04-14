@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ParkDetailsCardModel from "../models/ParkDetailsCardModel";
 import { getParkDetails } from "../services/NSPServices";
 import "./ParkDetailsCard.css";
@@ -10,44 +10,59 @@ import AuthContext from "../context/AuthContext";
 import AttendedParksContext from "../context/AttendedParksContext";
 import Activities from "../models/Activities";
 import CompletedParks from "../models/CompletedParks";
-import AccountActivitiesCard from "./AccountActivitiesCard";
 import CommentForm from "./CommentForm";
 import CommentContext from "../context/CommentContext";
 
 const ParkDetailsCard = () => {
+  // Stores the parks inforation to be displayed
   const [parkDetails, setParkDetails] = useState<ParkDetailsCardModel>();
+
+  // Getting parkCode to retrieve the correct park by getting it from the
+  // search param
   const [searchParams] = useSearchParams();
   const parkCode: string | null = searchParams.get("parkCode");
+
+  // This will store the weather of the park's location
   const [currentWeather, setCurrentWeather] = useState<WeatherModel>();
 
+  // Using context to check if user is logged in and using their uid
   const { user } = useContext(AuthContext);
+  // Context to add park to list and check if they are already attended it
   const { addPark, attendedParks } = useContext(AttendedParksContext);
+  // Contect to get comments to see
   const { comments, getAndSetComments } = useContext(CommentContext);
 
-  // const parkCode: string | undefined = useParams().parkCode;
-
+  // Runs when the parkcode has changed
   useEffect(() => {
+    // Gets park information to display
     getParkDetails(parkCode!).then((response) => {
+      // store the result in parkDetails state
       setParkDetails(response.data[0]);
     });
+    // Gets comments from the park
     getAndSetComments(parkCode!);
   }, [parkCode]);
 
+  // Gets park weather when parkDetails changes.
   useEffect(() => {
+    // gets the result if true and sets weather result in currentWeather state.
     if (parkDetails?.addresses[0].postalCode) {
       getWeather(parkDetails?.addresses[0].postalCode).then((response) =>
         setCurrentWeather(response)
       );
     }
   }, [parkDetails]);
-  console.log(currentWeather);
 
+  // When the user clicks attended park, it will appended the park to the list
   const addingParkToProgress = (): void => {
+    // Checks if user is logged in
     if (user) {
+      // Storing activities the park offers.
       const result: Activities[] = parkDetails!.activities.map((act) => {
         return { id: act.id, name: act.name, completed: false };
       });
 
+      // Adding park to their attended list by storing it in a variable first
       const parkToAdd: CompletedParks = {
         id: parkDetails!.id,
         uid: parkDetails!.uid,
@@ -57,11 +72,12 @@ const ParkDetailsCard = () => {
         parkCode: parkDetails!.parkCode,
         activities: result,
       };
-      console.log(parkToAdd, user.uid, "Hello");
+      // Sending the parks and assigning it the user using their uid.
       addPark({ ...parkToAdd, uid: user.uid });
     }
   };
 
+  // Displays park information
   return (
     <div className="ParkDetailsCard">
       <h1>{parkDetails?.fullName}</h1>

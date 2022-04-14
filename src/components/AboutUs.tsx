@@ -1,5 +1,6 @@
 import "./AboutUs.css";
 
+// Explains who we are.
 const AboutUs = () => {
   return (
     <div className="AboutUs">

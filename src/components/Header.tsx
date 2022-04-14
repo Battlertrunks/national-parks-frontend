@@ -5,11 +5,14 @@ import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Header.css";
 
 const Header = () => {
+  // Gets user info if logged in
   const { user } = useContext(AuthContext);
   const [menuDropdown, setMenuDropdown] = useState<boolean>(true);
 
   // const setDropdown = menuDropdown ? "menu-dropdown" : "menu-dropdown-open";
 
+  // We store our links here to go to different pages.
+  // Users can return to homepage when they click our logo too.
   return (
     <header className="Header">
       <Link to="/">

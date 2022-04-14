@@ -3,7 +3,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AuthContextProvider from "./context/AuthContextProvider";
-import AttendedParksContextProvider from "./context/AttendedParkContextProvider";
+import AttendedParksContextProvider from "./context/AttendedParksContextProvider";
 import CommentContextProvider from "./context/CommentContextProvider";
 
 const rootEl = document.getElementById("root");

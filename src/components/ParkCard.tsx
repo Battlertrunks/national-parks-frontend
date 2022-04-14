@@ -6,24 +6,33 @@ import "./ParkCard.css";
 import CompletedParks from "../models/CompletedParks";
 import Activities from "../models/Activities";
 
+// retriving park information to display to the screen
 interface Props {
   onDisplay: CompletedParks;
 }
 
 const ParkCard = ({ onDisplay }: Props) => {
+  // Getting user info for user to have options to say they attended
+  // parks and more.
   const { user } = useContext(AuthContext);
+  // Context, uses attendedParks to check if users has attended parks already and
+  // addPark to add parks to their attended list.
   const { attendedParks, addPark } = useContext(AttendedParksContext);
 
+  // Gets parkCode to use to load into park details screen in params
   const parkCode: any = {
     ...(onDisplay.parkCode ? { parkCode: onDisplay.parkCode } : {}),
   };
-  //   console.log(attendedParks.filter((item) => item.uid === onDisplay.uid));
 
+  // This function adds park to users attended list
   const addingParkToProgress = (): void => {
+    // checks if user is logged in
     if (user) {
+      // Storing activities the park offers.
       const result: Activities[] = onDisplay.activities.map((act) => {
         return { id: act.id, name: act.name, completed: false };
       });
+      // Adding park to their attended list by storing it in a variable first
       const parkToAdd: CompletedParks = {
         id: onDisplay.id,
         uid: onDisplay.uid,
@@ -33,6 +42,7 @@ const ParkCard = ({ onDisplay }: Props) => {
         parkCode: onDisplay.parkCode,
         activities: result,
       };
+      // Sending the parks and assigning it the user using their uid.
       addPark({ ...parkToAdd, uid: user.uid });
     }
   };
