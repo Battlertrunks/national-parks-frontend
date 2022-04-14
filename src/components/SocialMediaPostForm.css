@@ -1,0 +1,45 @@
+.SocialMediaPostForm {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  max-width: 1000px;
+  min-width: 450px;
+  margin: 50px auto;
+  padding: 15px 25px;
+  background-color: #5c9e52;
+  color: #fff;
+}
+
+.SocialMediaPostForm * {
+  margin: 10px 5px;
+}
+
+.SocialMediaPostForm input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.SocialMediaPostForm textarea {
+  height: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+/* .SocialMediaPostForm .file-btn {
+  border: none;
+  cursor: pointer;
+} */
+
+.SocialMediaPostForm button {
+  width: 150px;
+  height: 30px;
+  margin: 10px auto;
+  border: none;
+  background-color: #35642e;
+  color: #ffffff;
+  border-radius: 5px;
+  font-weight: 400;
+  cursor: pointer;
+}

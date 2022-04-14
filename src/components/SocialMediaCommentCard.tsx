@@ -24,16 +24,17 @@ const SocialMediaCommentCard = ({ comment, index, postID }: Props) => {
         <p>{comment[index]?.dateAndTime}</p>
       </div>
       <p className="comment-text">{comment[index]?.text}</p>
-      {user?.uid === comment[index].uid && (
-        <button
-          onClick={() => {
-            deleteCommentFromPost(postID, comment[index]._id!);
-            console.log(comment[index]?._id!);
-          }}
-        >
-          Delete your comment
-        </button>
-      )}
+      <div className="btn">
+        {user?.uid === comment[index].uid && (
+          <button
+            onClick={() => {
+              deleteCommentFromPost(postID, comment[index]._id!);
+            }}
+          >
+            Delete your comment
+          </button>
+        )}
+      </div>
     </li>
   );
 };

@@ -18,12 +18,14 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+label {
   font-family: "Kulim Park", sans-serif;
 }
 
 p,
-button {
+button,
+textarea {
   font-family: "Lexend", sans-serif;
   font-weight: 300;
 }

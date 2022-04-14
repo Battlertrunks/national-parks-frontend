@@ -69,16 +69,18 @@ const SocialMediaPostCard = ({ post }: Props) => {
       <img src={post.imageURL} alt={post.imageURL} />
       <p className="body-text">{post?.body}</p>
       <p className="date">{post.dateAndTime}</p>
-      {user && !post.likes.uids.some((users) => users === user.uid) ? (
-        <button onClick={() => likingAPost(post)}>Like</button>
-      ) : (
-        <button onClick={() => unlikeAPost(post)}>Unlike</button>
-      )}
-      <p>Likes: {post.likes.amountOfLikes}</p>
-      <button onClick={() => setCommentToggle((prev) => !prev)}>Comment</button>
-      {commentToggle && (
-        <CommentForm commentLocation={post._id!} postDetails={post} />
-      )}
+      <div className="like-container">
+        {user && !post.likes.uids.some((users) => users === user.uid) ? (
+          <button className="heart-btn" onClick={() => likingAPost(post)}>
+            <i className="fa-regular fa-heart"></i>
+          </button>
+        ) : (
+          <button className="heart-btn" onClick={() => unlikeAPost(post)}>
+            <i className="fa-solid fa-heart"></i>
+          </button>
+        )}
+        <p>Likes: {post.likes.amountOfLikes}</p>
+      </div>
       <ul>
         {/* Sets how many comments to display */}
         {[
@@ -106,6 +108,10 @@ const SocialMediaPostCard = ({ post }: Props) => {
       >
         Show More Comments
       </button>
+      <button onClick={() => setCommentToggle((prev) => !prev)}>Comment</button>
+      {commentToggle && (
+        <CommentForm commentLocation={post._id!} postDetails={post} />
+      )}
     </li>
   );
 };

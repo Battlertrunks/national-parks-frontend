@@ -45,3 +45,16 @@
   padding: 15px 10px;
   border-radius: 5px;
 }
+
+.SocialMediaPostCard .like-container {
+  display: flex;
+  align-items: center;
+}
+
+.SocialMediaPostCard .heart-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  color: rgb(255, 117, 117);
+  cursor: pointer;
+}

@@ -11,7 +11,8 @@
   align-items: flex-end;
 }
 
-.SocialMediaCommentCard .profile-and-date h4 {
+.SocialMediaCommentCard .profile-and-date h5 {
+  font-size: 18px;
 }
 
 .SocialMediaCommentCard .profile-and-date p {
@@ -21,4 +22,19 @@
 
 .SocialMediaCommentCard .comment-text {
   margin: 5px 10px;
+}
+
+.SocialMediaCommentCard .btn {
+  text-align: right;
+}
+
+.SocialMediaCommentCard button {
+  border: none;
+  background-color: transparent;
+  color: rgb(206, 0, 0);
+  cursor: pointer;
+}
+
+.SocialMediaCommentCard button:hover {
+  text-decoration: underline;
 }
