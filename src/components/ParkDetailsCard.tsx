@@ -94,7 +94,7 @@ const ParkDetailsCard = () => {
         <button onClick={() => addingParkToProgress()}>Attended</button>
       )}
       <h2>Activities</h2>
-      <ul>
+      <ul className="activitiesList">
         {parkDetails?.activities.map((activity) => (
           // <AccountActivitiesCard
           //   onDisplayCard={activity}
