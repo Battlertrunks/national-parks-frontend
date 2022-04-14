@@ -80,9 +80,16 @@ const ParkDetailsCard = () => {
   // Displays park information
   return (
     <div className="ParkDetailsCard">
-      <h1>{parkDetails?.fullName}</h1>
-      <p>{Math.floor(currentWeather?.current.temp_f!)} &#8457;</p>
-      <img src={currentWeather?.current.condition.icon} alt="Weather Icon" />
+      <div className="parkname-weather-container">
+        <h1>{parkDetails?.fullName}</h1>
+        <div className="weather-info">
+          <p>{Math.floor(currentWeather?.current.temp_f!)} &#8457;</p>
+          <img
+            src={currentWeather?.current.condition.icon}
+            alt="Weather Icon"
+          />
+        </div>
+      </div>
       <img
         src={parkDetails?.images[0].url}
         alt="park images"
