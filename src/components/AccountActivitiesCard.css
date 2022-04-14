@@ -1,0 +1,11 @@
+.Completed {
+  background-color: #3a6b39;
+}
+
+.NotCompleted {
+  background-color: rgb(255, 95, 95);
+}
+
+.AccountActivitiesCard button {
+  color: #fff;
+}

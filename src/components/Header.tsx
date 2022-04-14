@@ -18,13 +18,39 @@ const Header = () => {
       <Link to="/">
         <h1>National Treasures</h1>
       </Link>
+
+      <ul className="navlinks">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/parks/search">Search</Link>
+        </li>
+        <li>
+          <Link to="/parks/aboutus">About Us</Link>
+        </li>
+        <li>
+          <Link to="/account">Account</Link>
+        </li>
+        <li>
+          <Link to="/posts">Blog</Link>
+        </li>
+      </ul>
+
       <div>
         {user ? (
-          <div>
+          <div className="signInContainer">
             <Link to="/account">
-              <p className="username">{user.displayName}</p>
-
-              {user.photoURL && <img src={user.photoURL} alt="Profile Image" />}
+              <p className="username">
+                {user.displayName}
+                {user.photoURL && (
+                  <img
+                    src={user.photoURL}
+                    alt="Profile Image"
+                    className="profileImg"
+                  />
+                )}
+              </p>
             </Link>
             <button className="signOutBtn" onClick={signOut}>
               Sign Out
@@ -52,6 +78,9 @@ const Header = () => {
               </li>
               <li>
                 <Link to="/account">Account</Link>
+              </li>
+              <li>
+                <Link to="/posts">Blog</Link>
               </li>
             </ul>
           </div>

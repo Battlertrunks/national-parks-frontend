@@ -12,6 +12,7 @@ import Activities from "../models/Activities";
 import CompletedParks from "../models/CompletedParks";
 import CommentForm from "./CommentForm";
 import CommentContext from "../context/CommentContext";
+import HomeSearchParkForm from "./HomePageComponents/HomeSearchParkForm";
 
 const ParkDetailsCard = () => {
   // Stores the parks inforation to be displayed
@@ -80,21 +81,29 @@ const ParkDetailsCard = () => {
   // Displays park information
   return (
     <div className="ParkDetailsCard">
-      <h1>{parkDetails?.fullName}</h1>
-      <p>{Math.floor(currentWeather?.current.temp_f!)} &#8457;</p>
-      <img src={currentWeather?.current.condition.icon} alt="Weather Icon" />
+      <HomeSearchParkForm />
+      <div className="parkname-weather-container">
+        <h1>{parkDetails?.fullName}</h1>
+        <div className="weather-info">
+          <p>{Math.floor(currentWeather?.current.temp_f!)} &#8457;</p>
+          <img
+            src={currentWeather?.current.condition.icon}
+            alt="Weather Icon"
+          />
+        </div>
+      </div>
       <img
         src={parkDetails?.images[0].url}
         alt="park images"
         className="main-image"
       />
 
-      <p>{parkDetails?.description}</p>
+      <p className="park-description">{parkDetails?.description}</p>
       {user && !attendedParks.some((park) => park?.id === parkDetails?.id) && (
-        <button onClick={() => addingParkToProgress()}>Attended</button>
+        <button onClick={() => addingParkToProgress()}>Mark Visited</button>
       )}
       <h2>Activities</h2>
-      <ul>
+      <ul className="activitiesList">
         {parkDetails?.activities.map((activity) => (
           // <AccountActivitiesCard
           //   onDisplayCard={activity}

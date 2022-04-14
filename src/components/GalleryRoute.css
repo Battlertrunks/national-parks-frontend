@@ -1,4 +1,15 @@
 .GalleryRoute .centered {
+
+.SearchParkRoute .parks-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 90vw;
+}
+
+h2.centered {
+
   text-align: center;
   font-weight: bolder;
   font-size: larger;

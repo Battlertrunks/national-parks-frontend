@@ -11,7 +11,7 @@ interface Props {
 }
 
 const AccountParkCard = ({ park }: Props) => {
-  // Setting up state for the user to expand and unexpand the activities.
+  // Setting up state for the user to expand and collapse the activities.
   const [dropdownToggle, setDropdownToggle] = useState<boolean>(true);
   // Getting the removePark function from our context.
   const { removePark } = useContext(AttendedParksContext);

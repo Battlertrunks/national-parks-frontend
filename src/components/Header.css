@@ -5,6 +5,8 @@
   right: 0;
   display: flex;
   justify-content: space-between;
+
+  align-items: center;
   z-index: 2;
   padding: 10px 10px 25px 10px;
   background-repeat: no-repeat;
@@ -15,7 +17,7 @@
 }
 
 .Header h1 {
-  font-size: 24px;
+  font-size: 25px;
   font-family: "Kulim Park", semibold;
 }
 
@@ -52,13 +54,17 @@
   padding: 0px 6px;
 }
 
+.Header div {
+  display: flex;
+  align-items: center;
+}
+
 .Header .username {
   color: #fff;
 }
 
-.Header div {
-  display: flex;
-  align-items: center;
+.Header .profileImg {
+  width: 27px;
 }
 
 .Header a {
@@ -72,7 +78,7 @@
   z-index: 3;
 }
 
-.Header li {
+.Header .dropdown-content li {
   margin-bottom: 10px;
 }
 
@@ -80,12 +86,8 @@
   font-size: 32px;
   color: #fff;
 }
-.Header img {
-  width: 25px;
-}
 
 .Header .dropdown {
-  /* position: relative; */
   display: inline-block;
   background-color: #3a6b39;
   text-align: right;
@@ -94,7 +96,7 @@
 
 .Header .dropdown a {
   text-align: right;
-  font-size: 30px;
+  font-size: 20px;
   margin: 0;
 }
 
@@ -104,27 +106,41 @@
   position: absolute;
   top: 20;
   right: 0;
-  /* width: 100%; */
   text-align: right;
-
   transform: translateY(-2em);
   z-index: -1;
   transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
     z-index 0s linear 0.01s;
 }
 .Header .dropdown-content ul {
-  /* background-color: #3a6b3998; */
   margin: 30px 30px;
   padding: 0px 5px 0px 5px;
 }
 .Header .dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
-  /* z-index: 1; */
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.5s;
-  /* text-align: right; */
-  /* margin: 0; */
   background-color: #3a6b39;
-  /* width: 100%; */
+}
+.Header .navlinks {
+  display: none;
+}
+
+@media only screen and (min-width: 850px) {
+  .Header .dropdown {
+    display: none;
+  }
+
+  .Header .navlinks {
+    display: flex;
+    flex-direction: start;
+    align-items: stretch;
+  }
+
+  .Header .navlinks li a {
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+  }
 }
