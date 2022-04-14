@@ -5,6 +5,8 @@
   right: 0;
   display: flex;
   justify-content: space-between;
+
+  align-items: center;
   z-index: 2;
   padding: 10px 10px 25px 10px;
   background-repeat: no-repeat;
@@ -72,7 +74,7 @@ button.sideBar {
   z-index: 3;
 }
 
-.Header li {
+.Header .dropdown-content li {
   margin-bottom: 10px;
 }
 
@@ -124,14 +126,13 @@ button.sideBar {
   display: none;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 670px) {
   .Header .dropdown {
     display: none;
   }
 
-  .Header .navlinks {
+  .Header ul.navlinks {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    flex-direction: start;
   }
 }
