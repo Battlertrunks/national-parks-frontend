@@ -2,6 +2,15 @@
   color: #fff;
 }
 
-.App h3 {
-  font-family: "Kulim Park", sans-serif;
+.App h4,
+h3,
+h2,
+h1,
+label {
+  font-family: "Kulim Park", semi-bold;
+}
+
+.App p,
+a {
+  font-family: "Lexend", regular;
 }
