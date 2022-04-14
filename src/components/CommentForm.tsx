@@ -1,7 +1,6 @@
 import { FormEvent, useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import CommentContext from "../context/CommentContext";
-import ParkDetailsCardModel from "../models/ParkDetailsCardModel";
 import PostModels from "../models/PostModel";
 import "./CommentForm.css";
 

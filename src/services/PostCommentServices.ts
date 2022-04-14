@@ -1,6 +1,5 @@
 import axios from "axios";
 import CommentModel from "../models/CommentModel";
-import PostModels from "../models/PostModel";
 
 // Gets our databases comments for parks using our API as the middle man
 const url: string = process.env.REACT_APP_API_COMMENTS_URL || "";

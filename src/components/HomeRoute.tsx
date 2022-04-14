@@ -1,8 +1,6 @@
-import { useContext, useEffect, useState } from "react";
-import AuthContext from "../context/AuthContext";
+import { useEffect, useState } from "react";
 import NewsCardModel from "../models/NewsCardModel";
-import TrendingCardsModel from "../models/TrendingCardModel";
-import { getThingsToDo, getNews } from "../services/NSPServices";
+import { getNews } from "../services/NSPServices";
 import HomeSearchParkForm from "./HomePageComponents/HomeSearchParkForm";
 import NewsCard from "./HomePageComponents/NewsCard";
 import "./HomeRoute.css";

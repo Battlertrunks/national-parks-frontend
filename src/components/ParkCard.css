@@ -39,7 +39,7 @@ h2 {
   width: 50vw;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   color: #3a6b39;
   max-height: 150px;
   overflow: hidden;

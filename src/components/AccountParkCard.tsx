@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AttendedParksContext from "../context/AttendedParksContext";
 import CompletedParks from "../models/CompletedParks";
-import TrendingCardsModel from "../models/TrendingCardModel";
 import AccountActivitiesCard from "./AccountActivitiesCard";
 import "./AccountParkCard.css";
 

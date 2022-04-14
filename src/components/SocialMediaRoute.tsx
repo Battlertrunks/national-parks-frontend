@@ -1,9 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import AuthContext from "../context/AuthContext";
+import { useContext, useEffect } from "react";
 import CommentContext from "../context/CommentContext";
-import PostModel from "../models/PostModel";
-import { postComment } from "../services/PostCommentServices";
-import CommentForm from "./CommentForm";
 import SocialMediaPostCard from "./SocialMediaPostCard";
 import SocialMeidaPostForm from "./SocialMediaPostForm";
 import "./SocialMediaRoute.css";
