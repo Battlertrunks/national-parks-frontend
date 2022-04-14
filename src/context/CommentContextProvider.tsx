@@ -4,6 +4,7 @@ import PostModels from "../models/PostModel";
 import { getComments, postComment } from "../services/PostCommentServices";
 import {
   commentUserPost,
+  deleteComment,
   deletePost,
   likingUserPost,
   retrievePosts,
@@ -57,8 +58,8 @@ const CommentContextProvider = ({ children }: Props) => {
   };
 
   // deletes comment on a post and then updates posts state by calling get and sets posts.
-  const deleteCommentFromPost = (id: string): void => {
-    deletePost(id).then(() => getAndSetPosts());
+  const deleteCommentFromPost = (id: string, commentId: string): void => {
+    deleteComment(id, commentId).then(() => getAndSetPosts());
   };
 
   return (

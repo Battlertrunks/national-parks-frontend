@@ -1,3 +1,5 @@
+.GalleryRoute .centered {
+
 .SearchParkRoute .parks-list {
   display: flex;
   flex-wrap: wrap;
@@ -7,6 +9,7 @@
 }
 
 h2.centered {
+
   text-align: center;
   font-weight: bolder;
   font-size: larger;

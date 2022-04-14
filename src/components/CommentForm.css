@@ -1,0 +1,15 @@
+.CommentForm {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 15px;
+}
+
+.CommentForm * {
+  margin: 5px 10px;
+}
+
+.CommentForm button {
+  width: 50%;
+  margin: 5px auto;
+}

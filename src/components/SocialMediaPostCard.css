@@ -1,0 +1,60 @@
+.SocialMediaPostCard {
+  margin: 50px 0;
+  padding: 25px;
+  background-color: #5c9e52;
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.SocialMediaPostCard .profile-name-and-image {
+  display: flex;
+  align-items: center;
+}
+
+.SocialMediaPostCard .profile-name-and-image img {
+  width: 35px;
+  border-radius: 50%;
+}
+
+.SocialMediaPostCard .profile-name-and-image h4 {
+  margin: 0 15px;
+}
+
+.SocialMediaPostCard .title-and-time {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 25px;
+}
+
+.SocialMediaPostCard .title {
+  font-size: 28px;
+}
+
+.SocialMediaPostCard .date {
+  margin: 0 25px;
+  text-align: right;
+  font-size: 12px;
+}
+
+.SocialMediaPostCard .body-text {
+  font-size: 14px;
+  margin: 15px 10px;
+  background-color: #fff;
+  color: #5c9e52;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+
+.SocialMediaPostCard .like-container {
+  display: flex;
+  align-items: center;
+}
+
+.SocialMediaPostCard .heart-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  color: rgb(255, 117, 117);
+  cursor: pointer;
+}

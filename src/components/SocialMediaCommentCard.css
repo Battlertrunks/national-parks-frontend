@@ -1,0 +1,40 @@
+.SocialMediaCommentCard {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 15px 10px;
+  padding: 10px;
+  color: #5c9e52;
+}
+
+.SocialMediaCommentCard .profile-and-date {
+  display: flex;
+  align-items: flex-end;
+}
+
+.SocialMediaCommentCard .profile-and-date h5 {
+  font-size: 18px;
+}
+
+.SocialMediaCommentCard .profile-and-date p {
+  font-size: 10px;
+  margin-left: 20px;
+}
+
+.SocialMediaCommentCard .comment-text {
+  margin: 5px 10px;
+}
+
+.SocialMediaCommentCard .btn {
+  text-align: right;
+}
+
+.SocialMediaCommentCard button {
+  border: none;
+  background-color: transparent;
+  color: rgb(206, 0, 0);
+  cursor: pointer;
+}
+
+.SocialMediaCommentCard button:hover {
+  text-decoration: underline;
+}

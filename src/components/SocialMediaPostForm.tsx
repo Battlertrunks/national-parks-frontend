@@ -120,7 +120,13 @@ const SocialMediaPostForm = () => {
         onChange={(e) => setBody(e.target.value)}
       />
       {/* Set up to take in an image */}
-      <input ref={fileInputImgRef} type="file" name="image" id="image" />
+      <input
+        className="file-btn"
+        ref={fileInputImgRef}
+        type="file"
+        name="image"
+        id="image"
+      />
       <button>Submit</button>
     </form>
   );

@@ -4,7 +4,7 @@
   margin-top: 100px;
 }
 .TeamPageRoute h2,
-h3 {
+.TeamPageRoute h3 {
   font-family: "Kulim Park", semi bold;
   margin-bottom: 10px;
 }
@@ -13,7 +13,7 @@ h3 {
 }
 
 .TeamPageRoute .TeamHeader,
-.ThanksHeader {
+.TeamPageRoute .ThanksHeader {
   color: rgb(248, 102, 4);
 }
 

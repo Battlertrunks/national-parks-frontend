@@ -8,9 +8,10 @@ import "./SocialMediaCommentCard.css";
 interface Props {
   comment: CommentModel[];
   index: number;
+  postID: string;
 }
 
-const SocialMediaCommentCard = ({ comment, index }: Props) => {
+const SocialMediaCommentCard = ({ comment, index, postID }: Props) => {
   // Gets context to delete a user's post using the user context too.
   const { deleteCommentFromPost } = useContext(CommentContext);
   const { user } = useContext(AuthContext);
@@ -18,14 +19,22 @@ const SocialMediaCommentCard = ({ comment, index }: Props) => {
   // Button shows for only authors of comments to delete them.
   return (
     <li className="SocialMediaCommentCard">
-      <h5>{comment[index]?.username}</h5>
-      <p>{comment[index]?.dateAndTime}</p>
-      <p>{comment[index]?.text}</p>
-      {user?.uid === comment[index].uid && (
-        <button onClick={() => deleteCommentFromPost(comment[index]._id!)}>
-          Delete your comment
-        </button>
-      )}
+      <div className="profile-and-date">
+        <h5>{comment[index]?.username}</h5>
+        <p>{comment[index]?.dateAndTime}</p>
+      </div>
+      <p className="comment-text">{comment[index]?.text}</p>
+      <div className="btn">
+        {user?.uid === comment[index].uid && (
+          <button
+            onClick={() => {
+              deleteCommentFromPost(postID, comment[index]._id!);
+            }}
+          >
+            Delete your comment
+          </button>
+        )}
+      </div>
     </li>
   );
 };

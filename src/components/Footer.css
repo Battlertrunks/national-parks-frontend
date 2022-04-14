@@ -63,9 +63,9 @@
   padding: 2px;
 }
 
-a.twitter-icon,
-a.youtube-icon,
-a.facebook-icon {
+.Footer a.twitter-icon,
+.Footer a.youtube-icon,
+.Footer a.facebook-icon {
   font-size: 25px;
 }
 
