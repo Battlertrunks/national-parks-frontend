@@ -10,6 +10,7 @@ const Account = () => {
   const { user } = useContext(AuthContext);
   const { attendedParks } = useContext(AttendedParksContext);
 
+  // These three states are for the FAQ toggle in account page.
   const [attendingParkDropdown, setAttendingParkDropdown] =
     useState<boolean>(false);
   const [completingActivityDropdown, setCompletingActivityDropdown] =

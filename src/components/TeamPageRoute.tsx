@@ -1,5 +1,6 @@
 import "./TeamPageRoute.css";
 
+// This page gives information about the developers and some other mentions
 const TeamPageRoute = () => {
   // TODO: ADD IMAGES TO EACH TEAM MEMBER
   return (

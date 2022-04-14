@@ -4,6 +4,7 @@ import { auth } from "../firebaseConfig";
 import AuthContext from "./AuthContext";
 
 function AuthContextProvider({ children }: { children: ReactNode }) {
+  // User state starts null
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
     // useEffect to only register once at start

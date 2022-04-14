@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AttendedParksContext from "../context/AttendedParksContext";
 import CompletedParks from "../models/CompletedParks";
-import TrendingCardsModel from "../models/TrendingCardModel";
 import AccountActivitiesCard from "./AccountActivitiesCard";
 import "./AccountParkCard.css";
 
@@ -20,6 +19,7 @@ const AccountParkCard = ({ park }: Props) => {
   // Controls whether the activities should be displayed or not from the dropdownToggle.
   const setDropdown = dropdownToggle ? "activity-dropdown" : "";
 
+  // This will take you to the detailed park info of the park that has been clicked.
   const parkCodeLink: any = {
     ...(park.parkCode ? { parkCode: park.parkCode } : {}),
   };

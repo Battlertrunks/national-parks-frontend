@@ -2,7 +2,6 @@ import { useContext } from "react";
 import AttendedParksContext from "../context/AttendedParksContext";
 import Activities from "../models/Activities";
 import CompletedParks from "../models/CompletedParks";
-import TrendingCardsModel from "../models/TrendingCardModel";
 import "./AccountActivitiesCard.css";
 
 // Pulling the specific activity to be displayed and adding park for when the user states they

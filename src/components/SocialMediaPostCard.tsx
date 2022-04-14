@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import CommentContext from "../context/CommentContext";
 import PostModel from "../models/PostModel";
@@ -6,40 +6,55 @@ import CommentForm from "./CommentForm";
 import SocialMediaCommentCard from "./SocialMediaCommentCard";
 import "./SocialMediaPostCard.css";
 
+// Sends down post value
 interface Props {
   post: PostModel;
 }
 
 const SocialMediaPostCard = ({ post }: Props) => {
+  // gets context for user to like post and delete a post
   const { likePost, deleteUserPost } = useContext(CommentContext);
 
+  // Gets user to let them delete their post or have the ability to like post.
   const { user } = useContext(AuthContext);
 
+  // Toggle to make the comment form appear
   const [commentToggle, setCommentToggle] = useState<boolean>(false);
+
+  // limits the amount of of comments per post to 5 at default
   const [showMoreComments, setShowMoreComments] = useState<number>(5);
 
+  // When the user likes a post
   const likingAPost = (likedPost: PostModel): void => {
+    // increments number of likes
     likedPost.likes.amountOfLikes += 1;
+    // assigns user to likes
     likedPost.likes.uids.push(user!.uid);
+    // tells which post that the user likes and sends updated object
     likePost(likedPost._id!, likedPost);
   };
 
+  // When the user unlikes a post
   const unlikeAPost = (unlikedPost: PostModel): void => {
+    // decrements number of likes
     unlikedPost.likes.amountOfLikes -= 1;
+    // creates new array without the user who unliked the post
     unlikedPost.likes.uids = unlikedPost.likes.uids.filter(
       (keepUser) => keepUser !== user?.uid
     );
+    // tells which post the the user unlikes and sends updated object
     likePost(unlikedPost._id!, unlikedPost);
   };
 
+  // Runs function when the user clicks the delete post button
   const deleteYourPost = (postToDelete: string): void => {
+    // sends the id of the post to delete
     deleteUserPost(postToDelete);
   };
 
-  console.log(showMoreComments);
-
   return (
     <li className="SocialMediaPostCard">
+      {/* If the post is the authors, displays button to user */}
       {post.uid === user?.uid && (
         <button onClick={() => deleteYourPost(post._id!)}>Delete Post</button>
       )}
@@ -59,6 +74,7 @@ const SocialMediaPostCard = ({ post }: Props) => {
         <CommentForm commentLocation={post._id!} postDetails={post} />
       )}
       <ul>
+        {/* Sets how many comments to display */}
         {[
           ...Array(
             post.comments.length > showMoreComments
@@ -73,6 +89,7 @@ const SocialMediaPostCard = ({ post }: Props) => {
           />
         ))}
       </ul>
+      {/* Adds five more comments to the limit when clicked */}
       <button
         onClick={() =>
           setShowMoreComments((prev) =>
