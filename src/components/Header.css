@@ -17,7 +17,7 @@
 }
 
 .Header h1 {
-  font-size: 24px;
+  font-size: 25px;
   font-family: "Kulim Park", semibold;
 }
 
@@ -54,13 +54,17 @@ button.sideBar {
   padding: 0px 6px;
 }
 
+.Header div {
+  display: flex;
+  align-items: center;
+}
+
 .Header .username {
   color: #fff;
 }
 
-.Header div {
-  display: flex;
-  align-items: center;
+.Header .profileImg {
+  width: 27px;
 }
 
 .Header a {
@@ -81,9 +85,6 @@ button.sideBar {
 .Header i {
   font-size: 32px;
   color: #fff;
-}
-.Header img {
-  width: 25px;
 }
 
 .Header .dropdown {
@@ -126,13 +127,20 @@ button.sideBar {
   display: none;
 }
 
-@media only screen and (min-width: 670px) {
+@media only screen and (min-width: 850px) {
   .Header .dropdown {
     display: none;
   }
 
-  .Header ul.navlinks {
+  .Header .navlinks {
     display: flex;
     flex-direction: start;
+    align-items: stretch;
+  }
+
+  .Header .navlinks li a {
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
   }
 }
