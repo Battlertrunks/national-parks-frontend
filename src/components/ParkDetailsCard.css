@@ -14,3 +14,7 @@
 .ParkDetailsCard .preview-imgs img {
   width: 300px;
 }
+
+.ParkDetailsCard .activitiesList {
+  columns: 5;
+}
