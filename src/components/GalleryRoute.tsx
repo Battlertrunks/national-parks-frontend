@@ -42,6 +42,7 @@ const SearchParkRoute = () => {
     <div className="SearchParkRoute">
       <SearchForm />
       <h2 className="centered">Results</h2>
+
       {parks.map((park) => (
         <ParkCard onDisplay={park} key={park.id} />
       ))}

@@ -18,6 +18,25 @@ const Header = () => {
       <Link to="/">
         <h1>National Treasures</h1>
       </Link>
+
+      <ul className="navlinks">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/parks/search">Search</Link>
+        </li>
+        <li>
+          <Link to="/parks/aboutus">About Us</Link>
+        </li>
+        <li>
+          <Link to="/account">Account</Link>
+        </li>
+        <li>
+          <Link to="/posts">Blog</Link>
+        </li>
+      </ul>
+
       <div>
         {user ? (
           <div>
@@ -52,6 +71,9 @@ const Header = () => {
               </li>
               <li>
                 <Link to="/account">Account</Link>
+              </li>
+              <li>
+                <Link to="/posts">Blog</Link>
               </li>
             </ul>
           </div>
