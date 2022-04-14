@@ -3,6 +3,8 @@ body,
 h1,
 h2,
 h3,
+h4,
+h5,
 p,
 a,
 ul {
@@ -12,12 +14,16 @@ ul {
   list-style: none;
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Kulim Park", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+p,
+button {
+  font-family: "Lexend", sans-serif;
+  font-weight: 300;
 }

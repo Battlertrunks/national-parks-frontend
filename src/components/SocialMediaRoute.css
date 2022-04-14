@@ -3,6 +3,20 @@
   margin-top: 100px;
 }
 
+.SocialMediaRoute h2 {
+  margin: 25px 0;
+  font-size: 24px;
+}
+
+.SocialMediaRoute .posts-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  width: 75%;
+  min-width: 450px;
+  max-width: 1000px;
+}
+
 .SocialMediaRoute img {
   width: 300px;
 }

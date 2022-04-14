@@ -17,7 +17,7 @@ const SocialMediaRoute = () => {
     <section className="SocialMediaRoute">
       <SocialMeidaPostForm />
       <h2>Most Recent Post</h2>
-      <ul>
+      <ul className="posts-container">
         {/* Loads post on the page */}
         {posts.map((post) => (
           <SocialMediaPostCard post={post} key={post._id} />

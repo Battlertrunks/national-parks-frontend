@@ -22,7 +22,7 @@ interface CommentContextModel {
   // adds comments to post
   addCommentToPost: (id: string, userPostId: CommentModel) => void;
   // deletes user's comment on a post
-  deleteCommentFromPost: (id: string) => void;
+  deleteCommentFromPost: (id: string, deletedCommentPost: CommentModel) => void;
 }
 
 // Initializing values and functions

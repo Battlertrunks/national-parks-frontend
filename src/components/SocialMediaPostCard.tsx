@@ -58,11 +58,17 @@ const SocialMediaPostCard = ({ post }: Props) => {
       {post.uid === user?.uid && (
         <button onClick={() => deleteYourPost(post._id!)}>Delete Post</button>
       )}
-      <h4>{post?.username}</h4>
-      <p>{post.dateAndTime}</p>
-      <h3>{post?.title}</h3>
+      <div className="profile-name-and-image">
+        <img
+          src={user?.photoURL!}
+          alt={`${user?.displayName}'s profile photo.`}
+        />
+        <h4>{post?.username}</h4>
+      </div>
+      <h3 className="title">{post?.title}</h3>
       <img src={post.imageURL} alt={post.imageURL} />
-      <p>{post?.body}</p>
+      <p className="body-text">{post?.body}</p>
+      <p className="date">{post.dateAndTime}</p>
       {user && !post.likes.uids.some((users) => users === user.uid) ? (
         <button onClick={() => likingAPost(post)}>Like</button>
       ) : (
@@ -85,6 +91,7 @@ const SocialMediaPostCard = ({ post }: Props) => {
           <SocialMediaCommentCard
             comment={post.comments}
             index={index}
+            postID={post._id!}
             key={post.comments[index]._id}
           />
         ))}
