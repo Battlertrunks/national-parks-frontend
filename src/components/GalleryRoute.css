@@ -1,3 +1,8 @@
+div.SearchParkRoute {
+  display: flex;
+  flex-direction: column;
+}
+
 h2.centered {
   text-align: center;
   font-weight: bolder;
