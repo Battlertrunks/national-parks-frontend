@@ -33,10 +33,19 @@
   resize: none;
 }
 
-/* .SocialMediaPostForm .file-btn {
+.SocialMediaPostForm input[type="file"]::file-selector-button {
   border: none;
+  padding: 5px 10px;
+  border-radius: 1em;
+  background-color: #35642e;
+  color: #fff;
   cursor: pointer;
-} */
+  transition: 0.1s background-color ease;
+}
+
+.SocialMediaPostForm input[type="file"]::file-selector-button:hover {
+  background-color: #447a3c;
+}
 
 .SocialMediaPostForm button {
   width: 150px;

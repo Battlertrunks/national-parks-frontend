@@ -1,3 +1,4 @@
+import mia from "../images/Mia.jpg";
 import "./TeamPageRoute.css";
 
 // This page gives information about the developers and some other mentions
@@ -9,6 +10,7 @@ const TeamPageRoute = () => {
       <ul>
         <li>
           <h3>Our project manger: Mia</h3>
+          <img src={mia} alt="Picture of a huskey." />
           <p>
             Mia has contributed to the overall distribution of team work across
             our developers and has been the SCRUM master of the team. Her skills
@@ -84,10 +86,8 @@ const TeamPageRoute = () => {
         example of a diverse workforce. We support employee growth and
         opportunity at National Treasures.
       </p>
+      <h2 className="ThanksHeader">Special Thanks to...</h2>
       <ul>
-        <li>
-          <h2 className="ThanksHeader">Special Thanks to...</h2>
-        </li>
         <li>
           <h3>Mitch Cuckovich and Andrea Hoffman</h3>
           <p>
