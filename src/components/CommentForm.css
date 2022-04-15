@@ -17,6 +17,7 @@
 .CommentForm textarea {
   border-radius: 5px;
   border: 2px #60a155 solid;
+  resize: none;
 }
 
 .CommentForm button {
