@@ -15,4 +15,19 @@
 
 .Account p {
   font-family: "Lexend", regular;
+  margin-top: 15px;
+}
+
+.Account .TitleFAQ {
+  font-size: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.Account .FAQ {
+}
+
+.Account .Answers {
+  /* display: flex;
+  flex-direction: row; */
 }

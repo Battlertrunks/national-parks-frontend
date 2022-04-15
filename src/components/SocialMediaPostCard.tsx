@@ -21,7 +21,7 @@ const SocialMediaPostCard = ({ post }: Props) => {
   // Toggle to make the comment form appear
   const [commentToggle, setCommentToggle] = useState<boolean>(false);
 
-  // limits the amount of of comments per post to 5 at default
+  // limits the amount of comments per post to 5 at default
   const [showMoreComments, setShowMoreComments] = useState<number>(5);
 
   // When the user likes a post

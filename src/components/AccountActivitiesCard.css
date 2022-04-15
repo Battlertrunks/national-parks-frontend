@@ -1,5 +1,5 @@
 .Completed {
-  background-color: #3a6b39;
+  background-color: #c5ffbc;
 }
 
 .NotCompleted {
@@ -7,5 +7,9 @@
 }
 
 .AccountActivitiesCard button {
-  color: #fff;
+  color: #000;
+  border-width: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
 }
