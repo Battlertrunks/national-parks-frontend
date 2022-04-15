@@ -19,6 +19,9 @@ const AccountParkCard = ({ park }: Props) => {
   // Controls whether the activities should be displayed or not from the dropdownToggle.
   const setDropdown = dropdownToggle ? "activity-dropdown" : "";
 
+  // Limits the amount of comments per park to 5 at default
+  const [showMoreActs, setShowMoreActs] = useState<number>(9);
+
   // This will take you to the detailed park info of the park that has been clicked.
   const parkCodeLink: any = {
     ...(park.parkCode ? { parkCode: park.parkCode } : {}),
@@ -43,19 +46,40 @@ const AccountParkCard = ({ park }: Props) => {
           <span className="label">{`${progressBar.toFixed(0)}%`}</span>
         </div>
       </div>
-      <button onClick={() => setDropdownToggle((prev) => !prev)}>
+      <button
+        className="dropdownBtn"
+        onClick={() => setDropdownToggle((prev) => !prev)}
+      >
         Dropdown
       </button>
       <ul className={setDropdown}>
-        {park.activities.map((activity) => (
+        {[
+          ...Array(
+            park.activities.length > showMoreActs
+              ? showMoreActs
+              : park.activities.length
+          ),
+        ]?.map((activity, index) => (
           <AccountActivitiesCard
-            onDisplayCard={activity}
+            onDisplayCard={park.activities[index]}
             park={park}
-            key={activity.id}
+            key={park.activities[index].id}
           />
         ))}
       </ul>
-      <button onClick={() => removePark(park._id!)}>Remove Park</button>
+      <button
+        className="moreActsBtn"
+        onClick={() =>
+          setShowMoreActs((prev) =>
+            prev < park.activities.length ? prev + 9 : prev
+          )
+        }
+      >
+        Show More Activities
+      </button>
+      <button className="removeBtn" onClick={() => removePark(park._id!)}>
+        Remove Park
+      </button>
     </li>
   );
 };
