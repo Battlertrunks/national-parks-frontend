@@ -3,12 +3,12 @@
   left: 0;
   top: 0;
   right: 0;
+  height: 50px;
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   z-index: 2;
-  padding: 10px 10px 25px 10px;
+  padding: 10px 5px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -17,7 +17,7 @@
 }
 
 .Header h1 {
-  font-size: 25px;
+  font-size: 13px;
   font-family: "Kulim Park", semibold;
 }
 
@@ -34,19 +34,19 @@
   padding: 5px;
   font-family: "Kulim Park", extra light;
 }
-.Header button.signInBtn {
+.Header .signInBtn {
   border: 1px #fff solid;
   cursor: pointer;
 }
 
-.Header button.signOutBtn {
+.Header .signOutBtn {
   border: 1px #fff solid;
   color: #5c9e52;
   background-color: #fff;
   cursor: pointer;
 }
 
-.Header button.sideBar {
+.Header .sideBar {
   cursor: pointer;
   margin-left: 10px;
   padding: 2px;
@@ -60,11 +60,14 @@
 }
 
 .Header .username {
+  display: flex;
+  align-items: center;
   color: #fff;
 }
 
 .Header .profileImg {
   width: 27px;
+  margin-left: 10px;
 }
 
 .Header a {
@@ -128,6 +131,10 @@
 }
 
 @media only screen and (min-width: 850px) {
+  .Header h1 {
+    font-size: 24px;
+  }
+
   .Header .dropdown {
     display: none;
   }

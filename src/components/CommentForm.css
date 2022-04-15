@@ -5,11 +5,22 @@
   margin-top: 15px;
 }
 
+.CommentForm label {
+  color: #60a155;
+  font-weight: 800;
+}
+
 .CommentForm * {
   margin: 5px 10px;
+}
+
+.CommentForm textarea {
+  border-radius: 5px;
+  border: 2px #60a155 solid;
 }
 
 .CommentForm button {
   width: 50%;
   margin: 5px auto;
+  color: #fff;
 }

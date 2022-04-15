@@ -82,69 +82,74 @@ const ParkDetailsCard = () => {
   return (
     <div className="ParkDetailsCard">
       <HomeSearchParkForm />
-      <div className="parkname-weather-container">
-        <h1>{parkDetails?.fullName}</h1>
-        <div className="weather-info">
-          <p>{Math.floor(currentWeather?.current.temp_f!)} &#8457;</p>
-          <img
-            src={currentWeather?.current.condition.icon}
-            alt="Weather Icon"
-          />
+      <div className="content-container">
+        <div className="parkname-weather-container">
+          <h2 className="park-name">{parkDetails?.fullName}</h2>
+          <div className="weather-info">
+            <p>{Math.floor(currentWeather?.current.temp_f!)} &#8457;</p>
+            <img
+              src={currentWeather?.current.condition.icon}
+              alt="Weather Icon"
+            />
+          </div>
         </div>
+        <img
+          src={parkDetails?.images[0].url}
+          alt="park images"
+          className="main-image"
+        />
+
+        <p className="park-description">{parkDetails?.description}</p>
+        {user &&
+          !attendedParks.some((park) => park?.id === parkDetails?.id) && (
+            <button onClick={() => addingParkToProgress()}>Mark Visited</button>
+          )}
+        <h2>Activities</h2>
+        <ul className="activitiesList">
+          {parkDetails?.activities.map((activity) => (
+            // <AccountActivitiesCard
+            //   onDisplayCard={activity}
+            //   park={gettingAttendedInfo!}
+            // />
+            <li key={activity.id}>
+              <Link to="/account">
+                <p>{activity.name}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <h2>Photos</h2>
+        <ul className="preview-imgs">
+          {parkDetails?.images.map((image) => (
+            <li key={image.altText}>
+              <img src={image.url} alt={image.altText} />
+            </li>
+          ))}
+        </ul>
+
+        <h2>Park Address</h2>
+        <p>{parkDetails?.addresses[0].line1}</p>
+        <p>{parkDetails?.addresses[0].city}</p>
+        <p>{parkDetails?.addresses[0].stateCode}</p>
+        <p>{parkDetails?.addresses[0].postalCode}</p>
+
+        <h2>Contact Park</h2>
+        <p>Phone: {parkDetails?.contacts.phoneNumbers[0].phoneNumber}</p>
+        <p>Email: {parkDetails?.contacts.emailAddresses[0].emailAddress}</p>
+
+        {user && <CommentForm commentLocation={parkDetails?.parkCode!} />}
+        <ul className="comments-container">
+          {comments.map((comment) => (
+            <li key={comment._id}>
+              <div>
+                <h4>{comment.username}</h4>
+                <p className="date">{comment.dateAndTime}</p>
+              </div>
+              <p className="body-text">{comment.text}</p>
+            </li>
+          ))}
+        </ul>
       </div>
-      <img
-        src={parkDetails?.images[0].url}
-        alt="park images"
-        className="main-image"
-      />
-
-      <p className="park-description">{parkDetails?.description}</p>
-      {user && !attendedParks.some((park) => park?.id === parkDetails?.id) && (
-        <button onClick={() => addingParkToProgress()}>Mark Visited</button>
-      )}
-      <h2>Activities</h2>
-      <ul className="activitiesList">
-        {parkDetails?.activities.map((activity) => (
-          // <AccountActivitiesCard
-          //   onDisplayCard={activity}
-          //   park={gettingAttendedInfo!}
-          // />
-          <li key={activity.id}>
-            <Link to="/account">
-              <p>{activity.name}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <h2>Photos</h2>
-      <ul className="preview-imgs">
-        {parkDetails?.images.map((image) => (
-          <li key={image.altText}>
-            <img src={image.url} alt={image.altText} />
-          </li>
-        ))}
-      </ul>
-
-      <h2>Park Address</h2>
-      <p>{parkDetails?.addresses[0].line1}</p>
-      <p>{parkDetails?.addresses[0].city}</p>
-      <p>{parkDetails?.addresses[0].stateCode}</p>
-      <p>{parkDetails?.addresses[0].postalCode}</p>
-
-      <h2>Contact Park</h2>
-      <p>Phone: {parkDetails?.contacts.phoneNumbers[0].phoneNumber}</p>
-      <p>Email: {parkDetails?.contacts.emailAddresses[0].emailAddress}</p>
-
-      {user && <CommentForm commentLocation={parkDetails?.parkCode!} />}
-      <ul>
-        {comments.map((comment) => (
-          <li key={comment._id}>
-            <h4>{comment.username}</h4>
-            <p>{comment.dateAndTime}</p>
-            <p>{comment.text}</p>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
