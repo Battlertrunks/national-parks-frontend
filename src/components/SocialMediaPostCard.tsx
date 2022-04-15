@@ -71,7 +71,9 @@ const SocialMediaPostCard = ({ post }: Props) => {
         <h4>{post?.username}</h4>
       </div>
       <h3 className="title">{post?.title}</h3>
-      <img src={post.imageURL} alt={post.imageURL} />
+      {post.imageURL && (
+        <img className="img-post" src={post.imageURL} alt={post.imageURL} />
+      )}
       <p className="body-text">{post?.body}</p>
       <p className="date">{post.dateAndTime}</p>
       <div className="like-container">

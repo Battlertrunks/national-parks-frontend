@@ -1,8 +1,8 @@
 .SocialMediaPostCard {
-  margin: 50px 0;
+  margin: 50px 25px;
   padding: 25px;
   background-color: #5c9e52;
-  display: inline-block;
+  display: block;
   border-radius: 5px;
   color: #fff;
   position: relative;
@@ -11,10 +11,10 @@
 .SocialMediaPostCard .delete-btn {
   background-color: transparent;
   border: none;
-  color: rgb(228, 0, 0);
+  color: #fff;
   font-size: 24px;
   position: absolute;
-  left: 90%;
+  right: 5%;
   transition: 0.2s color ease-in-out;
   cursor: pointer;
 }
@@ -51,6 +51,15 @@
   margin: 0 25px;
   text-align: right;
   font-size: 12px;
+}
+
+.SocialMediaPostCard .img-post {
+  width: 100%;
+  margin: 25px auto;
+  display: block;
+  max-width: 500px;
+  min-width: 200px;
+  border-radius: 5px;
 }
 
 .SocialMediaPostCard .body-text {
@@ -101,4 +110,32 @@
   border: none;
   font-weight: 400;
   padding: 5px 10px;
+}
+
+.SocialMediaPostCard .CommentForm {
+  margin: 10px auto;
+  width: 100%;
+  display: block;
+}
+
+.SocialMediaPostCard .CommentForm textarea {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.SocialMediaPostCard .CommentForm button {
+  background-color: #fff;
+  border: none;
+  color: #5c9e52;
+  padding: 5px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.1s background-color ease-in;
+  margin: 15px auto;
+  display: block;
+}
+
+.SocialMediaPostCard .CommentForm button:hover {
+  background-color: #c1ffb7;
 }
