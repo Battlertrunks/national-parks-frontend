@@ -3,15 +3,20 @@
   flex-direction: column;
   width: 75%;
   max-width: 1000px;
-  min-width: 450px;
+  min-width: 300px;
   margin: 50px auto;
   padding: 15px 25px;
   background-color: #5c9e52;
   color: #fff;
+  border-radius: 5px;
 }
 
 .SocialMediaPostForm * {
   margin: 10px 5px;
+}
+
+.SocialMediaPostForm label {
+  font-size: 18px;
 }
 
 .SocialMediaPostForm input {
@@ -25,6 +30,7 @@
   border: none;
   border-radius: 5px;
   padding: 15px;
+  resize: none;
 }
 
 /* .SocialMediaPostForm .file-btn {
@@ -42,4 +48,9 @@
   border-radius: 5px;
   font-weight: 400;
   cursor: pointer;
+  transition: 0.1s background-color ease-in;
+}
+
+.SocialMediaPostForm button:hover {
+  background-color: #447a3c;
 }
