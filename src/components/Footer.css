@@ -2,7 +2,7 @@
   background-color: #5c9e52;
   left: 0;
   bottom: 0;
-  padding: 20px 5px;
+  padding: 20px 0px;
   width: 100%;
   margin-top: auto;
 }
@@ -102,6 +102,13 @@
   text-decoration: none;
   color: #fff;
   font-family: "Kulim Park", light;
+}
+
+.Footer .community-container a:hover,
+.Footer .company-container a:hover,
+.Footer .community-container Link:hover,
+.Footer .company-container Link:hover {
+  text-decoration: underline;
 }
 
 .Footer .community-container li,

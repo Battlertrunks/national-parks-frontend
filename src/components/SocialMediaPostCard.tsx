@@ -56,7 +56,12 @@ const SocialMediaPostCard = ({ post }: Props) => {
     <li className="SocialMediaPostCard">
       {/* If the post is the authors, displays button to user */}
       {post.uid === user?.uid && (
-        <button onClick={() => deleteYourPost(post._id!)}>Delete Post</button>
+        <button
+          className="delete-btn"
+          onClick={() => deleteYourPost(post._id!)}
+        >
+          <i className="fa-regular fa-trash-can"></i>
+        </button>
       )}
       <div className="profile-name-and-image">
         <img
@@ -66,7 +71,9 @@ const SocialMediaPostCard = ({ post }: Props) => {
         <h4>{post?.username}</h4>
       </div>
       <h3 className="title">{post?.title}</h3>
-      <img src={post.imageURL} alt={post.imageURL} />
+      {post.imageURL && (
+        <img className="img-post" src={post.imageURL} alt={post.imageURL} />
+      )}
       <p className="body-text">{post?.body}</p>
       <p className="date">{post.dateAndTime}</p>
       <div className="like-container">
