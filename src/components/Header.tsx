@@ -36,36 +36,63 @@ const Header = () => {
           <Link to="/posts">Blog</Link>
         </li>
       </ul>
-
-      <div>
-        {user ? (
-          <div className="signInContainer">
-            <Link to="/account">
-              <p className="username">
-                {user.displayName}
-                {user.photoURL && (
-                  <img
-                    src={user.photoURL}
-                    alt="Profile Image"
-                    className="profileImg"
-                  />
-                )}
-              </p>
-            </Link>
-            <button className="signOutBtn" onClick={signOut}>
-              Sign Out
+      <div className="userinfo-and-dropmenu">
+        <div className="userInfo">
+          {user ? (
+            <div className="signInContainer">
+              <div className="name-and-pic">
+                <Link to="/account">
+                  <p className="username">
+                    {user.displayName}
+                    {user.photoURL && (
+                      <img
+                        src={user.photoURL}
+                        alt="Profile Image"
+                        className="profileImg"
+                      />
+                    )}
+                  </p>
+                </Link>
+              </div>
+              <div className="disappear-btn">
+                <button className="signOutBtn" onClick={signOut}>
+                  Sign Out
+                </button>
+              </div>
+            </div>
+          ) : (
+            <button className="signInBtn" onClick={signInWithGoogle}>
+              Sign In
             </button>
-          </div>
-        ) : (
-          <button className="signInBtn" onClick={signInWithGoogle}>
-            Sign In
-          </button>
-        )}
+          )}
+        </div>
+
         <div className="dropdown">
           <button>
             <i className="fa-solid fa-bars"></i>
           </button>
           <div className="dropdown-content">
+            {user ? (
+              <div className="dropdown-signInContainer">
+                <Link to="/account">
+                  {user.photoURL && (
+                    <img
+                      src={user.photoURL}
+                      alt="Profile Image"
+                      className="profileImg"
+                    />
+                  )}
+                  <p>{user.displayName}</p>
+                </Link>
+                <button className="signOutBtn" onClick={signOut}>
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <button className="signInBtn" onClick={signInWithGoogle}>
+                Sign In
+              </button>
+            )}
             <ul>
               <li>
                 <Link to="/">Home</Link>
