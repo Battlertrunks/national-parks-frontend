@@ -45,7 +45,7 @@
 }
 
 .ParkDetailsCard .parkname-weather-container {
-  padding: 100px 0px 10px 0px;
+  padding: 25px 0px 10px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,6 +135,10 @@
 }
 
 @media only screen and (min-width: 600px) {
+  .ParkDetailsCard .parkname-weather-container {
+    padding: 100px 0px 10px 0px;
+  }
+
   .ParkDetailsCard .content-container {
     margin: 0 100px;
   }
