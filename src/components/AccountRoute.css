@@ -12,3 +12,19 @@
   margin-bottom: 200px;
   width: 80%;
 }
+
+.Account p {
+  margin-top: 15px;
+}
+
+.Account .TitleFAQ {
+  font-size: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.Account .Answers {
+  /* display: flex;
+  flex-direction: row; */
+}
+

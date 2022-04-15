@@ -32,56 +32,56 @@ const Account = () => {
           <p>Your park list is empty</p>
         )}
       </ul>
-      <h2>Account Parks FAQ</h2>
+      <h2 className="TitleFAQ">Account Parks FAQ</h2>
       <ul>
         <li>
-          <div>
-            <h3>Attending Parks</h3>
+          <div className="Answers Attending">
+            <h3 className="FAQ Attending">Attending Parks</h3>
             <button onClick={() => setAttendingParkDropdown((prev) => !prev)}>
               Dropdown
             </button>
+            {attendingParkDropdown && (
+              <p>
+                You can add parks to your visited list on your account by
+                clicking the attended button. Any parks added to the list will
+                be available the next time you log back in.
+              </p>
+            )}
           </div>
-          {attendingParkDropdown && (
-            <p>
-              You can add parks to your visited list on your account by clicking
-              the attended button. Any parks added to the list will be available
-              the next time you log back in.
-            </p>
-          )}
         </li>
         <li>
-          <div>
-            <h3>Completing Park Activities</h3>
+          <div className="Answers Completing">
+            <h3 className="FAQ Completing">Completing Park Activities</h3>
             <button
               onClick={() => setCompletingActivityDropdown((prev) => !prev)}
             >
               Dropdown
             </button>
+            {completingActivityDropdown && (
+              <p>
+                When completing a park activity, your progress will increase
+                until you have reached 100% park completion. This indicates that
+                you have done all available activities that park has to offer.
+                You can unset activities that you have not finished or may have
+                selected accidentally.
+              </p>
+            )}
           </div>
-          {completingActivityDropdown && (
-            <p>
-              When completing a park activity, your progress will increase until
-              you have reached 100% park completion. This indicates that you
-              have done all available activities that park has to offer. You can
-              unset activities that you have not finished or may have selected
-              accidentally.
-            </p>
-          )}
         </li>
         <li>
-          <div>
-            <h3>Removing Park</h3>
+          <div className="Answers Removing">
+            <h3 className="FAQ Removing">Removing Park</h3>
             <button onClick={() => setRemoveParkDropdown((prev) => !prev)}>
               Dropdown
             </button>
+            {removeParkDropdown && (
+              <p>
+                If you remove a visited park from your saved list, all of your
+                progress will be deleted. Please be aware of which park you are
+                removing.
+              </p>
+            )}
           </div>
-          {removeParkDropdown && (
-            <p>
-              If you remove a visited park from your saved list, all of your
-              progress will be deleted. Please be aware of which park you are
-              removing.
-            </p>
-          )}
         </li>
       </ul>
     </div>
