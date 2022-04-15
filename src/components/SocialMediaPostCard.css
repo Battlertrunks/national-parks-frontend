@@ -52,9 +52,32 @@
 }
 
 .SocialMediaPostCard .heart-btn {
-  border: none;
   background-color: transparent;
   font-size: 24px;
   color: rgb(255, 117, 117);
+}
+
+.SocialMediaPostCard .show-more-comments-btn {
+  background-color: #235f19;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.SocialMediaPostCard .comment-btn {
+  background-color: transparent;
+  color: #fff;
+  font-weight: 400;
+}
+
+.SocialMediaPostCard .comment-btn:hover {
+  text-decoration: underline;
+}
+
+.SocialMediaPostCard .heart-btn,
+.SocialMediaPostCard .show-more-comments-btn,
+.SocialMediaPostCard .comment-btn {
   cursor: pointer;
+  border: none;
+  font-weight: 400;
+  padding: 5px 10px;
 }

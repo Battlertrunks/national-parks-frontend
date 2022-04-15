@@ -5,8 +5,20 @@
   margin-top: 65px;
 }
 
+.ParkDetailsCard .content-container {
+  margin: 0 15px;
+}
+
+.ParkDetailsCard .park-name {
+  font-size: 16px;
+}
+
 .ParkDetailsCard .HomeSearchParkForm h3 {
   color: #fff;
+}
+
+.ParkDetailsCard p {
+  color: #60a155;
 }
 
 .ParkDetailsCard .HomeSearchParkForm button {
@@ -52,7 +64,8 @@
 
 .ParkDetailsCard .main-image {
   margin: 10px auto;
-  width: 60vw;
+  display: block;
+  width: 75%;
   border-radius: 5px;
 }
 
@@ -83,11 +96,53 @@
 .ParkDetailsCard form.CommentForm {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  width: 90%;
+  max-width: 500px;
   margin: 20px auto;
 }
 
+.ParkDetailsCard .comments-container {
+  margin: 50px 5px;
+}
+
+.ParkDetailsCard .comments-container li {
+  margin: 25px 0;
+  padding: 15px 20px;
+  background-color: #60a155;
+  border-radius: 5px;
+}
+
+.ParkDetailsCard .comments-container li h4,
+.ParkDetailsCard .comments-container li p {
+  color: #fff;
+}
+
+.ParkDetailsCard .comments-container div {
+  display: flex;
+  align-items: center;
+}
+
+.ParkDetailsCard .comments-container div * {
+  margin-right: 25px;
+}
+
+.ParkDetailsCard .date {
+  font-size: 10px;
+}
+
+.ParkDetailsCard .body-text {
+  margin-top: 10px;
+}
+
 @media only screen and (min-width: 600px) {
+  .ParkDetailsCard .content-container {
+    margin: 0 100px;
+  }
+
+  .ParkDetailsCard .park-name {
+    font-size: 21px;
+  }
+
   .ParkDetailsCard .activitiesList {
     columns: 5;
   }
@@ -108,5 +163,9 @@
   .ParkDetailsCard .preview-imgs li img {
     margin: 10px;
     border-radius: 5px;
+  }
+
+  .ParkDetailsCard .comments-container {
+    margin: 50px 40px;
   }
 }

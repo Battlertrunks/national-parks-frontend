@@ -100,6 +100,7 @@ const SocialMediaPostCard = ({ post }: Props) => {
       </ul>
       {/* Adds five more comments to the limit when clicked */}
       <button
+        className="show-more-comments-btn"
         onClick={() =>
           setShowMoreComments((prev) =>
             prev < post.comments.length ? prev + 5 : prev
@@ -108,7 +109,12 @@ const SocialMediaPostCard = ({ post }: Props) => {
       >
         Show More Comments
       </button>
-      <button onClick={() => setCommentToggle((prev) => !prev)}>Comment</button>
+      <button
+        className="comment-btn"
+        onClick={() => setCommentToggle((prev) => !prev)}
+      >
+        Comment
+      </button>
       {commentToggle && (
         <CommentForm commentLocation={post._id!} postDetails={post} />
       )}
