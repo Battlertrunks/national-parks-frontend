@@ -1,8 +1,11 @@
-.activity-dropdown {
+.AccountParkCard {
+}
+
+.AccountParkCard .activity-dropdown {
   display: none;
 }
 
-.hide-dropdown {
+.AccountParkCard .hide-dropdown {
   display: flex;
 }
 

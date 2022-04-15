@@ -20,7 +20,7 @@ const Account = () => {
   return (
     <div className="Account">
       <h2>Hello, {user?.displayName}!</h2>
-      <ul>
+      <ul className="park-container">
         {attendedParks.length !== 0 ? (
           attendedParks.map(
             (park) =>

@@ -2,6 +2,7 @@
   background-color: #5c9e52;
   left: 0;
   bottom: 0;
+  padding: 20px 5px;
   width: 100%;
   margin-top: auto;
 }
@@ -63,10 +64,10 @@
   padding: 2px;
 }
 
-.Footer a.twitter-icon,
-.Footer a.youtube-icon,
-.Footer a.facebook-icon {
-  font-size: 25px;
+.Footer .twitter-icon,
+.Footer .youtube-icon,
+.Footer .facebook-icon {
+  font-size: 16px;
 }
 
 .Footer .youtube-icon {
@@ -81,9 +82,15 @@
   color: #68d2ff;
 }
 
+.Footer .community-container ul,
+.Footer .company-container ul {
+  display: flex;
+  flex-direction: column;
+}
+
 .Footer .community-container h3,
 .Footer .company-container h3 {
-  font-size: 14px;
+  font-size: 18px;
   margin-left: 5px;
 }
 
@@ -100,6 +107,7 @@
 .Footer .community-container li,
 .Footer .company-container li {
   /* padding-left: 5px; */
+  margin: 5px 0;
   margin-left: 5px;
   padding: 1px;
 }
@@ -110,4 +118,21 @@
   flex-wrap: wrap;
   align-items: unset;
   margin: 0 5px;
+}
+
+.Footer .community-container a,
+.Footer .company-container a {
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 700px) {
+  .Footer .social-media-container {
+    max-width: 200px;
+  }
+
+  .Footer .twitter-icon,
+  .Footer .youtube-icon,
+  .Footer .facebook-icon {
+    font-size: 25px;
+  }
 }
