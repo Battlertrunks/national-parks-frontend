@@ -27,6 +27,7 @@
 .Header button {
   background-color: transparent;
   border: 0;
+  border-radius: 5px;
   color: #fff;
   padding: 5px;
   font-family: "Kulim Park", extra light;
@@ -78,8 +79,6 @@
 
 .Header .dropdown {
   display: inline-block;
-  /* background-color: #3a6b39;
-  border-radius: 5px; */
   text-align: right;
   margin: 0;
 }
@@ -126,9 +125,6 @@
   display: none;
 }
 
-.Header .disappear-btn {
-  display: none;
-}
 .Header .dropdown-signInContainer {
   display: flex;
   flex-direction: column;
@@ -141,13 +137,23 @@
 }
 
 .Header .signInContainer {
-  position: relative;
-  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  width: fit-content;
+}
+.Header .dropdown-content .signInBtn {
+  display: none;
 }
 .Header .userinfo-and-dropmenu {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+.Header .disappear-btn {
+  display: none;
+}
+
+.Header .userinfo {
+  display: flex;
 }
 @media only screen and (min-width: 850px) {
   .Header {
@@ -169,8 +175,17 @@
   }
 
   .Header .navlinks li a {
-    font-size: 20px;
+    font-size: 15px;
     padding: 5px;
     margin: 5px;
+  }
+
+  .Header .disappear-btn {
+    display: block;
+  }
+  .Header .signInContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
   }
 }
