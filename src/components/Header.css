@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-  padding: 10px 5px;
+  padding: 10px 25px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -16,15 +16,12 @@
   font-family: "Kulim Park", light;
 }
 
-.Header h1 {
-  font-size: 13px;
-  font-family: "Kulim Park", semibold;
-}
-
 .Header h1,
 .Header li Link {
   color: #fff;
   text-decoration: none;
+  font-size: 20px;
+  font-family: "Kulim Park", semibold;
 }
 
 .Header button {
@@ -54,11 +51,6 @@
   padding: 0px 6px;
 }
 
-.Header div {
-  display: flex;
-  align-items: center;
-}
-
 .Header .username {
   display: flex;
   align-items: center;
@@ -72,13 +64,7 @@
 
 .Header a {
   color: #fff;
-  margin-right: 15px;
   font-size: 12px;
-  text-align: right;
-}
-
-.Header a img {
-  z-index: 3;
 }
 
 .Header .dropdown-content li {
@@ -92,7 +78,8 @@
 
 .Header .dropdown {
   display: inline-block;
-  background-color: #3a6b39;
+  /* background-color: #3a6b39;
+  border-radius: 5px; */
   text-align: right;
   margin: 0;
 }
@@ -105,8 +92,11 @@
 
 .Header .dropdown-content {
   visibility: hidden;
+  display: flex;
+  flex-direction: column-reverse;
   opacity: 0;
   position: absolute;
+  padding-bottom: 10px;
   top: 20;
   right: 0;
   text-align: right;
@@ -116,8 +106,9 @@
     z-index 0s linear 0.01s;
 }
 .Header .dropdown-content ul {
-  margin: 30px 30px;
+  margin: 10px 10px;
   padding: 0px 5px 0px 5px;
+  text-align: center;
 }
 .Header .dropdown:hover .dropdown-content {
   visibility: visible;
@@ -125,12 +116,45 @@
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.5s;
   background-color: #3a6b39;
+  border-radius: 5px;
+  padding: 20px 15px 20px 15px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
 }
 .Header .navlinks {
   display: none;
 }
 
+.Header .disappear-btn {
+  display: none;
+}
+.Header .dropdown-signInContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Header .dropdown-signInContainer a {
+  display: none;
+}
+
+.Header .signInContainer {
+  position: relative;
+  flex-direction: row;
+}
+.Header .userinfo-and-dropmenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media only screen and (min-width: 850px) {
+  .Header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .Header h1 {
     font-size: 24px;
   }
@@ -141,8 +165,7 @@
 
   .Header .navlinks {
     display: flex;
-    flex-direction: start;
-    align-items: stretch;
+    justify-content: space-between;
   }
 
   .Header .navlinks li a {
