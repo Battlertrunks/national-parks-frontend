@@ -35,19 +35,19 @@
   padding: 5px;
 }
 
-.Header .signInBtn {
+.Header .sign-in-btn {
   border: 1px #fff solid;
   cursor: pointer;
 }
 
-.Header .signOutBtn {
+.Header .sign-out-btn {
   border: 1px #fff solid;
   color: #5c9e52;
   background-color: #fff;
   cursor: pointer;
 }
 
-.Header .sideBar {
+.Header .sidebar {
   cursor: pointer;
   margin-left: 10px;
   padding: 2px;
@@ -61,7 +61,7 @@
   color: #fff;
 }
 
-.Header .profileImg {
+.Header .profile-img {
   width: 27px;
   margin-left: 10px;
 }
@@ -75,7 +75,7 @@
 
 .Header a img {
   z-index: 3;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .Header .dropdown-content li {
@@ -138,29 +138,32 @@
   display: none;
 }
 
-.Header .dropdown-signInContainer {
+.Header .dropdown-sign-in-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.Header .dropdown-signInContainer a {
+.Header .dropdown-sign-in-container a {
   display: none;
 }
 
-.Header .signInContainer {
+.Header .sign-in-container {
   display: flex;
   justify-content: space-around;
   width: fit-content;
 }
-.Header .dropdown-content .signInBtn {
+
+.Header .dropdown-content .sign-in-btn {
   display: none;
 }
+
 .Header .userinfo-and-dropmenu {
   display: flex;
   align-items: center;
 }
+
 .Header .disappear-btn {
   display: none;
 }
@@ -168,10 +171,24 @@
 .Header .userinfo {
   display: flex;
 }
+
+.Header .name-and-pic {
+  display: flex;
+  align-items: center;
+}
+
+.Header .dropdown a:hover,
+.Header .navlinks a:hover,
+.Header .username:hover {
+  transition: 0.1s color ease-in;
+  color: #77ce6a;
+}
+
 @media only screen and (min-width: 850px) {
   .Header {
     flex-direction: row;
     justify-content: space-between;
+    padding: 10px 40px;
   }
 
   .Header h1 {
@@ -196,9 +213,14 @@
   .Header .disappear-btn {
     display: block;
   }
-  .Header .signInContainer {
+
+  .Header .sign-in-container {
     display: flex;
     justify-content: space-between;
     width: 200px;
+  }
+
+  .Header .sign-out-btn {
+    min-width: 5rem;
   }
 }

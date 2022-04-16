@@ -37,9 +37,9 @@ const Header = () => {
         </li>
       </ul>
       <div className="userinfo-and-dropmenu">
-        <div className="userInfo">
+        <div className="user-info">
           {user ? (
-            <div className="signInContainer">
+            <div className="sign-in-container">
               <div className="name-and-pic">
                 <Link to="/account">
                   <p className="username">
@@ -48,20 +48,20 @@ const Header = () => {
                       <img
                         src={user.photoURL}
                         alt="Profile Image"
-                        className="profileImg"
+                        className="profile-img"
                       />
                     )}
                   </p>
                 </Link>
               </div>
               <div className="disappear-btn">
-                <button className="signOutBtn" onClick={signOut}>
+                <button className="sign-out-btn" onClick={signOut}>
                   Sign Out
                 </button>
               </div>
             </div>
           ) : (
-            <button className="signInBtn" onClick={signInWithGoogle}>
+            <button className="sign-in-btn" onClick={signInWithGoogle}>
               Sign In
             </button>
           )}
@@ -73,23 +73,23 @@ const Header = () => {
           </button>
           <div className="dropdown-content">
             {user ? (
-              <div className="dropdown-signInContainer">
+              <div className="dropdown-sign-in-container">
                 <Link to="/account">
                   {user.photoURL && (
                     <img
                       src={user.photoURL}
                       alt="Profile Image"
-                      className="profileImg"
+                      className="profile-img"
                     />
                   )}
                   <p>{user.displayName}</p>
                 </Link>
-                <button className="signOutBtn" onClick={signOut}>
+                <button className="sign-out-btn" onClick={signOut}>
                   Sign Out
                 </button>
               </div>
             ) : (
-              <button className="signInBtn" onClick={signInWithGoogle}>
+              <button className="sign-in-btn" onClick={signInWithGoogle}>
                 Sign In
               </button>
             )}
