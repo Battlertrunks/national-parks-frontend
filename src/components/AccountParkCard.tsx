@@ -41,9 +41,14 @@ const AccountParkCard = ({ park }: Props) => {
 
   return (
     <li className="AccountParkCard" key={park._id}>
-      <Link to={`/parks/details?${new URLSearchParams(parkCodeLink)}`}>
-        <h4>{park.fullName}</h4>
-      </Link>
+      <div className="name-and-remove-container">
+        <Link to={`/parks/details?${new URLSearchParams(parkCodeLink)}`}>
+          <h4>{park.fullName}</h4>
+        </Link>
+        <button className="remove-btn" onClick={() => removePark(park._id!)}>
+          Remove Park
+        </button>
+      </div>
       <div className="container">
         <div className="filler" style={{ width: `${progressBar}%` }}>
           <span className="label">{`${progressBar.toFixed(0)}%`}</span>
@@ -56,34 +61,33 @@ const AccountParkCard = ({ park }: Props) => {
       >
         <i className="fa-regular fa-circle-down"></i>
       </button>
-      <ul className={setDropdown}>
-        {[
-          ...Array(
-            park.activities.length > showMoreActs
-              ? showMoreActs
-              : park.activities.length
-          ),
-        ]?.map((activity, index) => (
-          <AccountActivitiesCard
-            onDisplayCard={park.activities[index]}
-            park={park}
-            key={park.activities[index].id}
-          />
-        ))}
-      </ul>
-      <button
-        className="more-more-acts"
-        onClick={() =>
-          setShowMoreActs((prev) =>
-            prev < park.activities.length ? prev + 9 : prev
-          )
-        }
-      >
-        Show More Activities
-      </button>
-      <button className="remove-btn" onClick={() => removePark(park._id!)}>
-        Remove Park
-      </button>
+      <div className={setDropdown}>
+        <ul>
+          {[
+            ...Array(
+              park.activities.length > showMoreActs
+                ? showMoreActs
+                : park.activities.length
+            ),
+          ]?.map((activity, index) => (
+            <AccountActivitiesCard
+              onDisplayCard={park.activities[index]}
+              park={park}
+              key={park.activities[index].id}
+            />
+          ))}
+        </ul>
+        <button
+          className="more-acts"
+          onClick={() =>
+            setShowMoreActs((prev) =>
+              prev < park.activities.length ? prev + 9 : prev
+            )
+          }
+        >
+          Show More Activities
+        </button>
+      </div>
     </li>
   );
 };

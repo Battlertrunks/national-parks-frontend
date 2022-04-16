@@ -17,14 +17,13 @@
 }
 
 .Header h1 {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
 }
-.Header h1,
+
 .Header li Link {
   color: #fff;
   text-decoration: none;
   font-size: 20px;
-  font-family: "Kulim Park", semibold;
 }
 
 .Header button {
@@ -58,12 +57,14 @@
 .Header .username {
   display: flex;
   align-items: center;
+  font-size: 0.55rem;
   color: #fff;
 }
 
 .Header .profile-img {
   width: 27px;
   margin-left: 10px;
+  border-radius: 50%;
 }
 
 .Header a {

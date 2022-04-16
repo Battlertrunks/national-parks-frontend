@@ -35,13 +35,22 @@ const Account = () => {
         </ul>
       </div>
       <h2 className="title-FAQ">Account Parks FAQ</h2>
-      <ul>
+      <ul className="faq-container">
         <li>
           <div className="answers attending">
-            <h3 className="faq attending">Attending Parks</h3>
-            <button onClick={() => setAttendingParkDropdown((prev) => !prev)}>
-              Dropdown
-            </button>
+            <div className="title-and-btn-container">
+              <h3 className="faq attending">Attending Parks</h3>
+              <button
+                style={{
+                  transform: `rotate(${
+                    attendingParkDropdown ? "0" : "180deg"
+                  })`,
+                }}
+                onClick={() => setAttendingParkDropdown((prev) => !prev)}
+              >
+                <i className="fa-regular fa-circle-down"></i>
+              </button>
+            </div>
             {attendingParkDropdown && (
               <p>
                 You can add parks to your visited list on your account by
@@ -53,12 +62,19 @@ const Account = () => {
         </li>
         <li>
           <div className="answers completing">
-            <h3 className="faq completing">Completing Park Activities</h3>
-            <button
-              onClick={() => setCompletingActivityDropdown((prev) => !prev)}
-            >
-              Dropdown
-            </button>
+            <div className="title-and-btn-container">
+              <h3 className="faq completing">Completing Park Activities</h3>
+              <button
+                style={{
+                  transform: `rotate(${
+                    completingActivityDropdown ? "0" : "180deg"
+                  })`,
+                }}
+                onClick={() => setCompletingActivityDropdown((prev) => !prev)}
+              >
+                <i className="fa-regular fa-circle-down"></i>
+              </button>
+            </div>
             {completingActivityDropdown && (
               <p>
                 When completing a park activity, your progress will increase
@@ -72,10 +88,17 @@ const Account = () => {
         </li>
         <li>
           <div className="answers removing">
-            <h3 className="faq removing">Removing Park</h3>
-            <button onClick={() => setRemoveParkDropdown((prev) => !prev)}>
-              Dropdown
-            </button>
+            <div className="title-and-btn-container">
+              <h3 className="faq removing">Removing Park</h3>
+              <button
+                style={{
+                  transform: `rotate(${removeParkDropdown ? "0" : "180deg"})`,
+                }}
+                onClick={() => setRemoveParkDropdown((prev) => !prev)}
+              >
+                <i className="fa-regular fa-circle-down"></i>
+              </button>
+            </div>
             {removeParkDropdown && (
               <p>
                 If you remove a visited park from your saved list, all of your

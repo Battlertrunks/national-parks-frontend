@@ -1,7 +1,6 @@
 .AccountActivitiesCard {
   background-color: #fff;
   font-size: 13px;
-  width: 100px;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -18,7 +17,7 @@
 }
 
 .AccountActivitiesCard .completed {
-  background-color: #c5ffbc;
+  background-color: #42743a;
 }
 
 .AccountActivitiesCard .not-completed {
@@ -26,7 +25,7 @@
 }
 
 .AccountActivitiesCard button {
-  color: #000;
+  color: #fff;
   border-width: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
