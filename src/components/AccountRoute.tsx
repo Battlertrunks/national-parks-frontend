@@ -18,25 +18,27 @@ const Account = () => {
   const [removeParkDropdown, setRemoveParkDropdown] = useState<boolean>(false);
 
   return (
-    <div className="Account">
-      <h2>Hello, {user?.displayName}!</h2>
-      <ul className="park-container">
-        {attendedParks.length !== 0 ? (
-          attendedParks.map(
-            (park) =>
-              park.uid === user?.uid && (
-                <AccountParkCard park={park} key={park._id} />
-              )
-          )
-        ) : (
-          <p>Your park list is empty</p>
-        )}
-      </ul>
-      <h2 className="TitleFAQ">Account Parks FAQ</h2>
+    <section className="Account">
+      <div className="park-container">
+        <h2>Hello, {user?.displayName}!</h2>
+        <ul className="park-container">
+          {attendedParks.length !== 0 ? (
+            attendedParks.map(
+              (park) =>
+                park.uid === user?.uid && (
+                  <AccountParkCard park={park} key={park._id} />
+                )
+            )
+          ) : (
+            <p>Your park list is empty</p>
+          )}
+        </ul>
+      </div>
+      <h2 className="title-FAQ">Account Parks FAQ</h2>
       <ul>
         <li>
-          <div className="Answers Attending">
-            <h3 className="FAQ Attending">Attending Parks</h3>
+          <div className="answers attending">
+            <h3 className="faq attending">Attending Parks</h3>
             <button onClick={() => setAttendingParkDropdown((prev) => !prev)}>
               Dropdown
             </button>
@@ -50,8 +52,8 @@ const Account = () => {
           </div>
         </li>
         <li>
-          <div className="Answers Completing">
-            <h3 className="FAQ Completing">Completing Park Activities</h3>
+          <div className="answers completing">
+            <h3 className="faq completing">Completing Park Activities</h3>
             <button
               onClick={() => setCompletingActivityDropdown((prev) => !prev)}
             >
@@ -69,8 +71,8 @@ const Account = () => {
           </div>
         </li>
         <li>
-          <div className="Answers Removing">
-            <h3 className="FAQ Removing">Removing Park</h3>
+          <div className="answers removing">
+            <h3 className="faq removing">Removing Park</h3>
             <button onClick={() => setRemoveParkDropdown((prev) => !prev)}>
               Dropdown
             </button>
@@ -84,7 +86,7 @@ const Account = () => {
           </div>
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 

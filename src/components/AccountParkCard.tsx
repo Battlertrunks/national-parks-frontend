@@ -27,6 +27,8 @@ const AccountParkCard = ({ park }: Props) => {
     ...(park.parkCode ? { parkCode: park.parkCode } : {}),
   };
 
+  const rotateDropDownIcon = dropdownToggle ? "0deg" : "180deg";
+
   // Calcualtes the progress bar of completed activities by calculating the length (amount) of activities
   // and dividing it by the amount completed, then multiplying by 100 to make it a whole number.
   const progressBar =
@@ -36,10 +38,11 @@ const AccountParkCard = ({ park }: Props) => {
     ) /
       park.activities.length) *
     100;
+
   return (
     <li className="AccountParkCard" key={park._id}>
       <Link to={`/parks/details?${new URLSearchParams(parkCodeLink)}`}>
-        <p>{park.fullName}</p>
+        <h4>{park.fullName}</h4>
       </Link>
       <div className="container">
         <div className="filler" style={{ width: `${progressBar}%` }}>
@@ -47,10 +50,11 @@ const AccountParkCard = ({ park }: Props) => {
         </div>
       </div>
       <button
-        className="dropdownBtn"
+        className="dropdown-btn"
+        style={{ transform: `rotate(${rotateDropDownIcon})` }}
         onClick={() => setDropdownToggle((prev) => !prev)}
       >
-        Dropdown
+        <i className="fa-regular fa-circle-down"></i>
       </button>
       <ul className={setDropdown}>
         {[
@@ -68,7 +72,7 @@ const AccountParkCard = ({ park }: Props) => {
         ))}
       </ul>
       <button
-        className="moreActsBtn"
+        className="more-more-acts"
         onClick={() =>
           setShowMoreActs((prev) =>
             prev < park.activities.length ? prev + 9 : prev
@@ -77,7 +81,7 @@ const AccountParkCard = ({ park }: Props) => {
       >
         Show More Activities
       </button>
-      <button className="removeBtn" onClick={() => removePark(park._id!)}>
+      <button className="remove-btn" onClick={() => removePark(park._id!)}>
         Remove Park
       </button>
     </li>

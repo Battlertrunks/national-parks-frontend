@@ -13,7 +13,7 @@
   background-size: cover;
   background-position: center;
   background-color: #3a6b39;
-  font-family: "Kulim Park", light;
+  border-bottom: 0.15rem #fff solid;
 }
 
 .Header h1 {
@@ -95,8 +95,9 @@
 
 .Header .dropdown a {
   text-align: right;
-  font-size: 20px;
+  font-size: 1.2rem;
   margin: 0;
+  font-weight: 200;
 }
 
 .Header .dropdown-content {
@@ -205,7 +206,8 @@
   }
 
   .Header .navlinks li a {
-    font-size: 15px;
+    font-size: 0.9rem;
+    font-weight: 300;
     padding: 5px;
     margin: 5px;
   }

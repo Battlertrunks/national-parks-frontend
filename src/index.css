@@ -26,7 +26,8 @@ label {
 p,
 button,
 textarea,
-input {
+input,
+a {
   font-family: "Lexend", sans-serif;
   font-weight: 300;
 }
