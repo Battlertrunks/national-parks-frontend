@@ -3,11 +3,11 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  max-width: 90vw;
+  max-width: 90%;
 }
 
-h2.centered {
+.centered {
   text-align: center;
   font-weight: bolder;
-  font-size: larger;
+  font-size: 1.75rem;
 }

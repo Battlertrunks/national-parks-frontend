@@ -90,7 +90,7 @@
 
 .Footer .community-container h3,
 .Footer .company-container h3 {
-  font-size: 18px;
+  font-size: 1.15rem;
   margin-left: 5px;
 }
 
@@ -98,7 +98,6 @@
 .Footer .company-container a,
 .Footer .community-container Link,
 .Footer .company-container Link {
-  font-size: 11px;
   text-decoration: none;
   color: #fff;
   font-family: "Kulim Park", light;
@@ -129,7 +128,7 @@
 
 .Footer .community-container a,
 .Footer .company-container a {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 @media only screen and (min-width: 700px) {
@@ -140,6 +139,6 @@
   .Footer .twitter-icon,
   .Footer .youtube-icon,
   .Footer .facebook-icon {
-    font-size: 25px;
+    font-size: 1.65rem;
   }
 }

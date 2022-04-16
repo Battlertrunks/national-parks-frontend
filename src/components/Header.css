@@ -16,6 +16,9 @@
   font-family: "Kulim Park", light;
 }
 
+.Header h1 {
+  font-size: 0.85rem;
+}
 .Header h1,
 .Header li Link {
   color: #fff;
@@ -30,8 +33,8 @@
   border-radius: 5px;
   color: #fff;
   padding: 5px;
-  font-family: "Kulim Park", extra light;
 }
+
 .Header .signInBtn {
   border: 1px #fff solid;
   cursor: pointer;
@@ -49,7 +52,7 @@
   margin-left: 10px;
   padding: 2px;
   border: none;
-  padding: 0px 6px;
+  padding: 0 6px;
 }
 
 .Header .username {
@@ -65,7 +68,14 @@
 
 .Header a {
   color: #fff;
-  font-size: 12px;
+  margin-right: 15px;
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+.Header a img {
+  z-index: 3;
+  font-size: .75rem;
 }
 
 .Header .dropdown-content li {
@@ -73,7 +83,7 @@
 }
 
 .Header i {
-  font-size: 32px;
+  font-size: 2rem;
   color: #fff;
 }
 
@@ -104,11 +114,13 @@
   transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
     z-index 0s linear 0.01s;
 }
+
 .Header .dropdown-content ul {
   margin: 10px 10px;
   padding: 0px 5px 0px 5px;
   text-align: center;
 }
+
 .Header .dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
@@ -121,6 +133,7 @@
   flex-direction: column-reverse;
   align-items: center;
 }
+
 .Header .navlinks {
   display: none;
 }
@@ -162,7 +175,7 @@
   }
 
   .Header h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .Header .dropdown {

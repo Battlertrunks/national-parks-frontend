@@ -1,5 +1,8 @@
+.AboutUs {
+  padding: 0 25px;
+}
+
 .AboutUs h1,
-.AboutUs h2,
 .AboutUs p {
   color: #5c9e52;
 }
@@ -16,10 +19,17 @@
 
 .AboutUs h2 {
   margin-bottom: 10px;
+  background-color: #5c9e52;
+  color: #fff;
+  padding: 10px 5px;
+  width: 150px;
+  border-radius: 50px;
+  text-align: center;
+  display: inline-block;
 }
 
 .AboutUs p {
-  font-family: "Lexend", regular;
+  margin: 5px 15px;
 }
 
 .AboutUs {
