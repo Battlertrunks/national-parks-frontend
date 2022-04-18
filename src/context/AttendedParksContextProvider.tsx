@@ -23,7 +23,7 @@ const AttendedParksContextProvider = ({ children }: Props) => {
 
   // Gets the parks for the specific user. TODO NEED TO FIX AN UID ISSUE
   const getAndSetParks = (user: any): void => {
-    getAttendedParks(user.uid).then((response) => setAttendedParks(response));
+    getAttendedParks(user.uid!).then((response) => setAttendedParks(response));
   };
 
   // Adds a park when the user clicks the button that they have visited there.
@@ -51,7 +51,13 @@ const AttendedParksContextProvider = ({ children }: Props) => {
 
   return (
     <AttendedParksContext.Provider
-      value={{ attendedParks, addPark, removePark, attendedActivity }}
+      value={{
+        attendedParks,
+        getAndSetParks,
+        addPark,
+        removePark,
+        attendedActivity,
+      }}
     >
       {children}
     </AttendedParksContext.Provider>

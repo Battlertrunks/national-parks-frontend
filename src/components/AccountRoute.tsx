@@ -1,5 +1,6 @@
-import { useContext, useState } from "react";
-import { useParams } from "react-router";
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import AttendedParksContext from "../context/AttendedParksContext";
 import AuthContext from "../context/AuthContext";
 import AccountParkCard from "./AccountParkCard";
@@ -9,7 +10,14 @@ const Account = () => {
   // Gathering user (to see if the user is logged in or not) and attendedPark (to display the user's
   // parks they have visited).
   const { user } = useContext(AuthContext);
-  const { attendedParks } = useContext(AttendedParksContext);
+  const { attendedParks, getAndSetParks } = useContext(AttendedParksContext);
+
+  const viewOtherUser: string | undefined = useParams().userid;
+  console.log(viewOtherUser);
+
+  useEffect(() => {
+    getAndSetParks(viewOtherUser);
+  }, []);
 
   // TO CHECK OUTHER USERS ACCOUNTS
   //const otherUserParam: string | undefined = useParams().id;
@@ -29,7 +37,7 @@ const Account = () => {
           {attendedParks.length !== 0 ? (
             attendedParks.map(
               (park) =>
-                park.uid === user?.uid && (
+                park.uid === (viewOtherUser ? viewOtherUser : user?.uid) && (
                   <AccountParkCard park={park} key={park._id} />
                 )
             )
