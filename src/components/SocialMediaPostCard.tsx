@@ -83,16 +83,17 @@ const SocialMediaPostCard = ({ post }: Props) => {
       <p className="body-text">{post?.body}</p>
       <p className="date">{post.dateAndTime}</p>
       <div className="like-container">
-        {user && !post.likes.uids.some((users) => users === user.uid) ? (
-          <button className="heart-btn" onClick={() => likingAPost(post)}>
-            <i className="fa-regular fa-heart"></i>
-          </button>
-        ) : (
-          <button className="heart-btn" onClick={() => unlikeAPost(post)}>
-            <i className="fa-solid fa-heart"></i>
-          </button>
-        )}
-        <p>Likes: {post.likes.amountOfLikes}</p>
+        {user &&
+          (!post.likes.uids.some((users) => users === user.uid) ? (
+            <button className="heart-btn" onClick={() => likingAPost(post)}>
+              <i className="fa-regular fa-heart"></i>
+            </button>
+          ) : (
+            <button className="heart-btn" onClick={() => unlikeAPost(post)}>
+              <i className="fa-solid fa-heart"></i>
+            </button>
+          ))}
+        <p className="likes">Likes: {post.likes.amountOfLikes}</p>
       </div>
       <ul>
         {/* Sets how many comments to display */}

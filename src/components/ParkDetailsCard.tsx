@@ -140,7 +140,7 @@ const ParkDetailsCard = () => {
 
         {user && <CommentForm commentLocation={parkDetails?.parkCode!} />}
         <ul className="comments-container">
-          {comments.map((comment) => (
+          {comments.reverse().map((comment) => (
             <li key={comment._id}>
               <div>
                 <h4>{comment.username}</h4>

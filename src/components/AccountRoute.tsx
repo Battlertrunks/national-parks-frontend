@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import AttendedParksContext from "../context/AttendedParksContext";
 import AuthContext from "../context/AuthContext";
@@ -12,6 +12,7 @@ const Account = () => {
   const { user } = useContext(AuthContext);
   const { attendedParks, getAndSetParks, viewingUser } =
     useContext(AttendedParksContext);
+  const navigate = useNavigate();
 
   const viewOtherUser: string | undefined = useParams().userid;
 
@@ -23,6 +24,10 @@ const Account = () => {
       getAndSetParks(user?.uid);
     }
   }, [viewOtherUser, user]);
+
+  if (!user) {
+    navigate("/");
+  }
 
   // TO CHECK OUTHER USERS ACCOUNTS
   //const otherUserParam: string | undefined = useParams().id;

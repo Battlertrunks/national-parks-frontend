@@ -19,7 +19,7 @@ const SocialMediaRoute = () => {
       <h2>Most Recent Post</h2>
       <ul className="posts-container">
         {/* Loads post on the page */}
-        {posts.map((post) => (
+        {posts.reverse().map((post) => (
           <SocialMediaPostCard post={post} key={post._id} />
         ))}
       </ul>

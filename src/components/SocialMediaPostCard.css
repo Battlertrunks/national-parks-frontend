@@ -143,3 +143,7 @@
 .SocialMediaPostCard .CommentForm button:hover {
   background-color: #c1ffb7;
 }
+
+.SocialMediaPostCard .likes {
+  margin: 15px 0;
+}
