@@ -30,12 +30,16 @@
   padding: 5px;
 }
 
-.SearchForm select {
+.SearchForm select,
+.SearchForm .dropdown1 input {
   width: 25vw;
   border-radius: 25px;
   border-width: 0;
   margin-top: 5px;
   padding: 3px;
+}
+
+.SearchForm select {
   cursor: pointer;
 }
 
