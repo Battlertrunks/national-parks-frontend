@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useParams } from "react-router";
 import AttendedParksContext from "../context/AttendedParksContext";
 import AuthContext from "../context/AuthContext";
 import AccountParkCard from "./AccountParkCard";
@@ -9,6 +10,9 @@ const Account = () => {
   // parks they have visited).
   const { user } = useContext(AuthContext);
   const { attendedParks } = useContext(AttendedParksContext);
+
+  // TO CHECK OUTHER USERS ACCOUNTS
+  //const otherUserParam: string | undefined = useParams().id;
 
   // These three states are for the FAQ toggle in account page.
   const [attendingParkDropdown, setAttendingParkDropdown] =
