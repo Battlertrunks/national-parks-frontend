@@ -7,8 +7,8 @@
 }
 
 .Account {
+  margin: 0 auto;
   margin-bottom: 200px;
-  width: 100%;
 }
 
 .Account .park-container {
@@ -49,4 +49,15 @@
 .Account .faq-container h3,
 .Account .faq-container p {
   color: #5c9e52;
+}
+
+@media only screen and (min-width: 860px) {
+  .Account .park-container {
+    padding: 0 5%;
+    padding-top: 50px;
+  }
+
+  .Account .faq {
+    margin: 0 10%;
+  }
 }

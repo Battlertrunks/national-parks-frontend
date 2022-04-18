@@ -1,6 +1,5 @@
 .AccountActivitiesCard {
   background-color: #fff;
-  font-size: 13px;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -30,4 +29,5 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
+  padding: 3px 0;
 }

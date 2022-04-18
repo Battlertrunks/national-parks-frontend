@@ -34,81 +34,83 @@ const Account = () => {
           )}
         </ul>
       </div>
-      <h2 className="title-FAQ">Account Parks FAQ</h2>
-      <ul className="faq-container">
-        <li>
-          <div className="answers attending">
-            <div className="title-and-btn-container">
-              <h3 className="faq attending">Attending Parks</h3>
-              <button
-                style={{
-                  transform: `rotate(${
-                    attendingParkDropdown ? "0" : "180deg"
-                  })`,
-                }}
-                onClick={() => setAttendingParkDropdown((prev) => !prev)}
-              >
-                <i className="fa-regular fa-circle-down"></i>
-              </button>
+      <div className="faq">
+        <h2 className="title-FAQ">Account Parks FAQ</h2>
+        <ul className="faq-container">
+          <li>
+            <div className="answers attending">
+              <div className="title-and-btn-container">
+                <h3 className="faq-attending">Attending Parks</h3>
+                <button
+                  style={{
+                    transform: `rotate(${
+                      attendingParkDropdown ? "0" : "180deg"
+                    })`,
+                  }}
+                  onClick={() => setAttendingParkDropdown((prev) => !prev)}
+                >
+                  <i className="fa-regular fa-circle-down"></i>
+                </button>
+              </div>
+              {attendingParkDropdown && (
+                <p>
+                  You can add parks to your visited list on your account by
+                  clicking the attended button. Any parks added to the list will
+                  be available the next time you log back in.
+                </p>
+              )}
             </div>
-            {attendingParkDropdown && (
-              <p>
-                You can add parks to your visited list on your account by
-                clicking the attended button. Any parks added to the list will
-                be available the next time you log back in.
-              </p>
-            )}
-          </div>
-        </li>
-        <li>
-          <div className="answers completing">
-            <div className="title-and-btn-container">
-              <h3 className="faq completing">Completing Park Activities</h3>
-              <button
-                style={{
-                  transform: `rotate(${
-                    completingActivityDropdown ? "0" : "180deg"
-                  })`,
-                }}
-                onClick={() => setCompletingActivityDropdown((prev) => !prev)}
-              >
-                <i className="fa-regular fa-circle-down"></i>
-              </button>
+          </li>
+          <li>
+            <div className="answers completing">
+              <div className="title-and-btn-container">
+                <h3 className="faq-completing">Completing Park Activities</h3>
+                <button
+                  style={{
+                    transform: `rotate(${
+                      completingActivityDropdown ? "0" : "180deg"
+                    })`,
+                  }}
+                  onClick={() => setCompletingActivityDropdown((prev) => !prev)}
+                >
+                  <i className="fa-regular fa-circle-down"></i>
+                </button>
+              </div>
+              {completingActivityDropdown && (
+                <p>
+                  When completing a park activity, your progress will increase
+                  until you have reached 100% park completion. This indicates
+                  that you have done all available activities that park has to
+                  offer. You can unset activities that you have not finished or
+                  may have selected accidentally.
+                </p>
+              )}
             </div>
-            {completingActivityDropdown && (
-              <p>
-                When completing a park activity, your progress will increase
-                until you have reached 100% park completion. This indicates that
-                you have done all available activities that park has to offer.
-                You can unset activities that you have not finished or may have
-                selected accidentally.
-              </p>
-            )}
-          </div>
-        </li>
-        <li>
-          <div className="answers removing">
-            <div className="title-and-btn-container">
-              <h3 className="faq removing">Removing Park</h3>
-              <button
-                style={{
-                  transform: `rotate(${removeParkDropdown ? "0" : "180deg"})`,
-                }}
-                onClick={() => setRemoveParkDropdown((prev) => !prev)}
-              >
-                <i className="fa-regular fa-circle-down"></i>
-              </button>
+          </li>
+          <li>
+            <div className="answers removing">
+              <div className="title-and-btn-container">
+                <h3 className="faq-removing">Removing Park</h3>
+                <button
+                  style={{
+                    transform: `rotate(${removeParkDropdown ? "0" : "180deg"})`,
+                  }}
+                  onClick={() => setRemoveParkDropdown((prev) => !prev)}
+                >
+                  <i className="fa-regular fa-circle-down"></i>
+                </button>
+              </div>
+              {removeParkDropdown && (
+                <p>
+                  If you remove a visited park from your saved list, all of your
+                  progress will be deleted. Please be aware of which park you
+                  are removing.
+                </p>
+              )}
             </div>
-            {removeParkDropdown && (
-              <p>
-                If you remove a visited park from your saved list, all of your
-                progress will be deleted. Please be aware of which park you are
-                removing.
-              </p>
-            )}
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </section>
   );
 };
