@@ -33,15 +33,15 @@
 .Footer h2 {
   font-size: 18px;
   color: #fff;
-  font-family: "Kulim Park", semi bold;
+  font-family: "Kulim Park", sans-serif;
 }
 .Footer h3 {
-  font-family: "Kulim Park", semi bold;
+  font-family: "Kulim Park", sans-serif;
 }
 .Footer p {
   font-size: 9px;
   color: #fff;
-  font-family: "Kulim Park", light;
+  font-family: "Kulim Park", sans-serif;
 }
 
 .Footer .social-media-container {
