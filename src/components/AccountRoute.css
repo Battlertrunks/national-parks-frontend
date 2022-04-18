@@ -1,48 +1,48 @@
-.Account h1,
-.Account h2,
-.Account h3,
-.Account h4,
-.Account span {
+.AccountRoute h1,
+.AccountRoute h2,
+.AccountRoute h3,
+.AccountRoute h4,
+.AccountRoute span {
   color: #fff;
 }
 
-.Account {
+.AccountRoute {
   margin: 0 auto;
   margin-bottom: 200px;
   margin-top: 50px;
 }
 
-.Account h2 {
+.AccountRoute h2 {
   font-size: 1.75rem;
 }
 
-.Account .park-container {
+.AccountRoute .park-container {
   padding: 0 5px;
   padding-top: 50px;
   background-color: #5c9e52;
 }
 
-.Account p {
+.AccountRoute p {
   margin-top: 15px;
 }
 
-.Account .title-FAQ {
+.AccountRoute .title-FAQ {
   font-size: 1.5rem;
   margin: 1em 0.5em;
   color: #5c9e52;
 }
 
-.Account .faq-container li {
+.AccountRoute .faq-container li {
   margin: 2em 0.75em;
 }
 
-.Account .title-and-btn-container {
+.AccountRoute .title-and-btn-container {
   display: flex;
   justify-content: space-between;
   margin-right: 1.5em;
 }
 
-.Account .faq-container button {
+.AccountRoute .faq-container button {
   background-color: transparent;
   border: none;
   font-size: 1.75rem;
@@ -51,18 +51,18 @@
   cursor: pointer;
 }
 
-.Account .faq-container h3,
-.Account .faq-container p {
+.AccountRoute .faq-container h3,
+.AccountRoute .faq-container p {
   color: #5c9e52;
 }
 
 @media only screen and (min-width: 860px) {
-  .Account .park-container {
+  .AccountRoute .park-container {
     padding: 0 5%;
     padding-top: 50px;
   }
 
-  .Account .faq {
+  .AccountRoute .faq {
     margin: 0 10%;
   }
 }
