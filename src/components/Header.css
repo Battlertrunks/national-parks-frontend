@@ -13,18 +13,17 @@
   background-size: cover;
   background-position: center;
   background-color: #3a6b39;
-  font-family: "Kulim Park", light;
+  border-bottom: 0.15rem #fff solid;
 }
 
 .Header h1 {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
 }
-.Header h1,
+
 .Header li Link {
   color: #fff;
   text-decoration: none;
   font-size: 20px;
-  font-family: "Kulim Park", semibold;
 }
 
 .Header button {
@@ -35,19 +34,19 @@
   padding: 5px;
 }
 
-.Header .signInBtn {
+.Header .sign-in-btn {
   border: 1px #fff solid;
   cursor: pointer;
 }
 
-.Header .signOutBtn {
+.Header .sign-out-btn {
   border: 1px #fff solid;
   color: #5c9e52;
   background-color: #fff;
   cursor: pointer;
 }
 
-.Header .sideBar {
+.Header .sidebar {
   cursor: pointer;
   margin-left: 10px;
   padding: 2px;
@@ -58,12 +57,14 @@
 .Header .username {
   display: flex;
   align-items: center;
+  font-size: 0.55rem;
   color: #fff;
 }
 
-.Header .profileImg {
+.Header .profile-img {
   width: 27px;
   margin-left: 10px;
+  border-radius: 50%;
 }
 
 .Header a {
@@ -75,7 +76,7 @@
 
 .Header a img {
   z-index: 3;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .Header .dropdown-content li {
@@ -95,8 +96,9 @@
 
 .Header .dropdown a {
   text-align: right;
-  font-size: 20px;
+  font-size: 1.2rem;
   margin: 0;
+  font-weight: 200;
 }
 
 .Header .dropdown-content {
@@ -138,29 +140,32 @@
   display: none;
 }
 
-.Header .dropdown-signInContainer {
+.Header .dropdown-sign-in-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.Header .dropdown-signInContainer a {
+.Header .dropdown-sign-in-container a {
   display: none;
 }
 
-.Header .signInContainer {
+.Header .sign-in-container {
   display: flex;
   justify-content: space-around;
   width: fit-content;
 }
-.Header .dropdown-content .signInBtn {
+
+.Header .dropdown-content .sign-in-btn {
   display: none;
 }
+
 .Header .userinfo-and-dropmenu {
   display: flex;
   align-items: center;
 }
+
 .Header .disappear-btn {
   display: none;
 }
@@ -168,10 +173,24 @@
 .Header .userinfo {
   display: flex;
 }
+
+.Header .name-and-pic {
+  display: flex;
+  align-items: center;
+}
+
+.Header .dropdown a:hover,
+.Header .navlinks a:hover,
+.Header .username:hover {
+  transition: 0.1s color ease-in;
+  color: #77ce6a;
+}
+
 @media only screen and (min-width: 850px) {
   .Header {
     flex-direction: row;
     justify-content: space-between;
+    padding: 10px 40px;
   }
 
   .Header h1 {
@@ -188,7 +207,8 @@
   }
 
   .Header .navlinks li a {
-    font-size: 15px;
+    font-size: 0.9rem;
+    font-weight: 300;
     padding: 5px;
     margin: 5px;
   }
@@ -196,9 +216,14 @@
   .Header .disappear-btn {
     display: block;
   }
-  .Header .signInContainer {
+
+  .Header .sign-in-container {
     display: flex;
     justify-content: space-between;
     width: 200px;
+  }
+
+  .Header .sign-out-btn {
+    min-width: 5rem;
   }
 }

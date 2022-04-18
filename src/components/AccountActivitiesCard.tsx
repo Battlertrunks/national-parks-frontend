@@ -34,8 +34,8 @@ const AccountActivitiesCard = ({ onDisplayCard, park }: Props) => {
   };
 
   const checksCompletion: string = onDisplayCard.completed
-    ? "Completed"
-    : "NotCompleted";
+    ? "completed"
+    : "not-completed";
 
   return (
     <li className="AccountActivitiesCard">
@@ -44,7 +44,7 @@ const AccountActivitiesCard = ({ onDisplayCard, park }: Props) => {
         className={checksCompletion}
         onClick={() => attendedActivityFunc()}
       >
-        {onDisplayCard.completed ? "Completed" : "Finished?"}
+        {onDisplayCard.completed ? "completed" : "finished"}
       </button>
     </li>
   );

@@ -1,13 +1,31 @@
-.Completed {
-  background-color: #c5ffbc;
+.AccountActivitiesCard {
+  background-color: #fff;
+  font-size: 13px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 10px;
+  border-radius: 5px;
 }
 
-.NotCompleted {
+.AccountActivitiesCard p {
+  font-size: 0.75rem;
+  padding: 10px 0;
+  color: #5c9e52;
+}
+
+.AccountActivitiesCard .completed {
+  background-color: #42743a;
+}
+
+.AccountActivitiesCard .not-completed {
   background-color: rgb(255, 95, 95);
 }
 
 .AccountActivitiesCard button {
-  color: #000;
+  color: #fff;
   border-width: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;

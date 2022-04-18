@@ -19,14 +19,16 @@ h2,
 h3,
 h4,
 h5,
-label {
+label,
+span {
   font-family: "Kulim Park", sans-serif;
 }
 
 p,
 button,
 textarea,
-input {
+input,
+a {
   font-family: "Lexend", sans-serif;
   font-weight: 300;
 }

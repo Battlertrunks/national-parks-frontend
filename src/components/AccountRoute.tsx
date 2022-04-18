@@ -18,28 +18,39 @@ const Account = () => {
   const [removeParkDropdown, setRemoveParkDropdown] = useState<boolean>(false);
 
   return (
-    <div className="Account">
-      <h2>Hello, {user?.displayName}!</h2>
-      <ul className="park-container">
-        {attendedParks.length !== 0 ? (
-          attendedParks.map(
-            (park) =>
-              park.uid === user?.uid && (
-                <AccountParkCard park={park} key={park._id} />
-              )
-          )
-        ) : (
-          <p>Your park list is empty</p>
-        )}
-      </ul>
-      <h2 className="TitleFAQ">Account Parks FAQ</h2>
-      <ul>
+    <section className="Account">
+      <div className="park-container">
+        <h2>Hello, {user?.displayName}!</h2>
+        <ul className="park-container">
+          {attendedParks.length !== 0 ? (
+            attendedParks.map(
+              (park) =>
+                park.uid === user?.uid && (
+                  <AccountParkCard park={park} key={park._id} />
+                )
+            )
+          ) : (
+            <p>Your park list is empty</p>
+          )}
+        </ul>
+      </div>
+      <h2 className="title-FAQ">Account Parks FAQ</h2>
+      <ul className="faq-container">
         <li>
-          <div className="Answers Attending">
-            <h3 className="FAQ Attending">Attending Parks</h3>
-            <button onClick={() => setAttendingParkDropdown((prev) => !prev)}>
-              Dropdown
-            </button>
+          <div className="answers attending">
+            <div className="title-and-btn-container">
+              <h3 className="faq attending">Attending Parks</h3>
+              <button
+                style={{
+                  transform: `rotate(${
+                    attendingParkDropdown ? "0" : "180deg"
+                  })`,
+                }}
+                onClick={() => setAttendingParkDropdown((prev) => !prev)}
+              >
+                <i className="fa-regular fa-circle-down"></i>
+              </button>
+            </div>
             {attendingParkDropdown && (
               <p>
                 You can add parks to your visited list on your account by
@@ -50,13 +61,20 @@ const Account = () => {
           </div>
         </li>
         <li>
-          <div className="Answers Completing">
-            <h3 className="FAQ Completing">Completing Park Activities</h3>
-            <button
-              onClick={() => setCompletingActivityDropdown((prev) => !prev)}
-            >
-              Dropdown
-            </button>
+          <div className="answers completing">
+            <div className="title-and-btn-container">
+              <h3 className="faq completing">Completing Park Activities</h3>
+              <button
+                style={{
+                  transform: `rotate(${
+                    completingActivityDropdown ? "0" : "180deg"
+                  })`,
+                }}
+                onClick={() => setCompletingActivityDropdown((prev) => !prev)}
+              >
+                <i className="fa-regular fa-circle-down"></i>
+              </button>
+            </div>
             {completingActivityDropdown && (
               <p>
                 When completing a park activity, your progress will increase
@@ -69,11 +87,18 @@ const Account = () => {
           </div>
         </li>
         <li>
-          <div className="Answers Removing">
-            <h3 className="FAQ Removing">Removing Park</h3>
-            <button onClick={() => setRemoveParkDropdown((prev) => !prev)}>
-              Dropdown
-            </button>
+          <div className="answers removing">
+            <div className="title-and-btn-container">
+              <h3 className="faq removing">Removing Park</h3>
+              <button
+                style={{
+                  transform: `rotate(${removeParkDropdown ? "0" : "180deg"})`,
+                }}
+                onClick={() => setRemoveParkDropdown((prev) => !prev)}
+              >
+                <i className="fa-regular fa-circle-down"></i>
+              </button>
+            </div>
             {removeParkDropdown && (
               <p>
                 If you remove a visited park from your saved list, all of your
@@ -84,7 +109,7 @@ const Account = () => {
           </div>
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 
