@@ -10,14 +10,19 @@ const Account = () => {
   // Gathering user (to see if the user is logged in or not) and attendedPark (to display the user's
   // parks they have visited).
   const { user } = useContext(AuthContext);
-  const { attendedParks, getAndSetParks } = useContext(AttendedParksContext);
+  const { attendedParks, getAndSetParks, viewingUser } =
+    useContext(AttendedParksContext);
 
   const viewOtherUser: string | undefined = useParams().userid;
-  console.log(viewOtherUser);
 
   useEffect(() => {
-    getAndSetParks(viewOtherUser);
-  }, []);
+    if (viewOtherUser) {
+      viewingUser(viewOtherUser);
+      getAndSetParks(viewOtherUser);
+    } else {
+      getAndSetParks(user?.uid);
+    }
+  }, [viewOtherUser, user]);
 
   // TO CHECK OUTHER USERS ACCOUNTS
   //const otherUserParam: string | undefined = useParams().id;

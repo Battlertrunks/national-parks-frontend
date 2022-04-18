@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import AttendedParksContext from "../context/AttendedParksContext";
+import AuthContext from "../context/AuthContext";
 import Activities from "../models/Activities";
 import CompletedParks from "../models/CompletedParks";
 import "./AccountActivitiesCard.css";
@@ -14,6 +15,7 @@ interface Props {
 const AccountActivitiesCard = ({ onDisplayCard, park }: Props) => {
   // Getting the attendedActivity function from AttendedParksContext context to update the completion of the activity.
   const { attendedActivity } = useContext(AttendedParksContext);
+  const { user } = useContext(AuthContext);
 
   // When the user clicks the attended button, it updates the activity object's property completed to true.
   const attendedActivityFunc = (): void => {
@@ -40,12 +42,22 @@ const AccountActivitiesCard = ({ onDisplayCard, park }: Props) => {
   return (
     <li className="AccountActivitiesCard">
       <p>{onDisplayCard.name}</p>
-      <button
-        className={checksCompletion}
-        onClick={() => attendedActivityFunc()}
-      >
-        {onDisplayCard.completed ? "completed" : "finished"}
-      </button>
+      {user?.uid === park.uid ? (
+        <button
+          className={checksCompletion}
+          onClick={() => attendedActivityFunc()}
+        >
+          {onDisplayCard.completed ? "completed" : "finished"}
+        </button>
+      ) : (
+        <button
+          className={checksCompletion}
+          onClick={() => attendedActivityFunc()}
+          disabled
+        >
+          {onDisplayCard.completed ? "completed" : "finished"}
+        </button>
+      )}
     </li>
   );
 };
