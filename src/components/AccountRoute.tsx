@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
 import AttendedParksContext from "../context/AttendedParksContext";
 import AuthContext from "../context/AuthContext";
 import AccountParkCard from "./AccountParkCard";
@@ -23,10 +22,11 @@ const AccountRoute = () => {
     } else {
       getAndSetParks(user?.uid);
     }
-    if (!user && !viewOtherUser) {
-      navigate("/");
-    }
   }, [viewOtherUser, user]);
+
+  if (!user && !viewOtherUser) {
+    navigate("/");
+  }
 
   // TO CHECK OUTHER USERS ACCOUNTS
   //const otherUserParam: string | undefined = useParams().id;
@@ -47,7 +47,7 @@ const AccountRoute = () => {
             Account.
           </h2>
         ) : (
-          <h2>Hello, {user?.displayName}!</h2>
+          <h2 className="login-message">Hello, {user?.displayName}!</h2>
         )}
         <ul className="park-container">
           {attendedParks.length !== 0 ? (

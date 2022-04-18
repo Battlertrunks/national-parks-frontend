@@ -132,7 +132,9 @@ const SocialMediaPostForm = () => {
       <button>Submit</button>
     </form>
   ) : (
-    <h3>Please Log In to Post</h3>
+    <div className="SocialMediaPostForm">
+      <h2>Please Log In to Post</h2>
+    </div>
   );
 };
 

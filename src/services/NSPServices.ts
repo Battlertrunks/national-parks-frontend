@@ -3,13 +3,13 @@ import ActivitiesResponse from "../models/ActivitiesResponse";
 import NewsCardModelResponse from "../models/NewsCardModelResponse";
 import Params from "../models/Params";
 import ParkDetailsCardModelResponse from "../models/ParkDetailsCardModelResponse";
-import TrendingCardModelResponse from "../models/TrendingCardModelResponse";
+import NationalParksCardResponse from "../models/NationalParksCardResponse";
 
 // The key to access the NPS API to get the parks and more
 const key: string = process.env.REACT_APP_NPS_KEY || "";
 
 // Gets default list of parks for users to see or go to.
-export const getThingsToDo = async (): Promise<TrendingCardModelResponse> => {
+export const getThingsToDo = async (): Promise<NationalParksCardResponse> => {
   return (
     await axios.get("https://developer.nps.gov/api/v1/parks", {
       params: { api_key: key },
@@ -29,7 +29,7 @@ export const getActivities = async (): Promise<ActivitiesResponse> => {
 // Retrives the parks from the user's search params
 export const getParksBySearch = async (
   newParams: Params
-): Promise<TrendingCardModelResponse> => {
+): Promise<NationalParksCardResponse> => {
   newParams.api_key = key;
   return await axios
     .get("https://developer.nps.gov/api/v1/parks", {

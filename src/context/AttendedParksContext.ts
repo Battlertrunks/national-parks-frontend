@@ -1,13 +1,13 @@
 import { createContext } from "react";
 import CompletedParks from "../models/CompletedParks";
-import TrendingCardsModel from "../models/TrendingCardModel";
+import NationalParksCard from "../models/NationalParksCard";
 
 // Setting the model of what we are going to need and use.
 interface AttendParksContextModel {
-  attendedParks: TrendingCardsModel[];
+  attendedParks: NationalParksCard[];
   viewingUser: (userUid: string) => void;
   getAndSetParks: (user: any) => void;
-  addPark: (park: TrendingCardsModel) => void;
+  addPark: (park: NationalParksCard) => void;
   removePark: (id: string) => void;
   attendedActivity: (id: string, park: CompletedParks) => void;
 }

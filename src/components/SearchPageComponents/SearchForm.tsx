@@ -1,9 +1,7 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router";
-import Activities from "../../models/Activities";
 import Params from "../../models/Params";
 import States from "../../models/States";
-import { getActivities } from "../../services/NSPServices";
 import "./SearchForm.css";
 
 const SearchForm = () => {
