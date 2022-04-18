@@ -24,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeRoute />} />
           <Route path="/account" element={<AccountRoute />} />
+          <Route path="/account/:id" element={<AccountRoute />} />
           <Route path="/parks/search" element={<GalleryRoute />} />
           <Route path="/parks/aboutUs" element={<AboutUs />} />
           <Route path="/parks/details" element={<ParkDetailsCard />} />

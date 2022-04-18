@@ -12,16 +12,17 @@
 }
 
 .SocialMediaCommentCard .profile-and-date h5 {
-  font-size: 18px;
+  font-size: 0.85rem;
 }
 
 .SocialMediaCommentCard .profile-and-date p {
-  font-size: 10px;
+  font-size: 0.5rem;
   margin-left: 20px;
 }
 
 .SocialMediaCommentCard .comment-text {
   margin: 5px 10px;
+  font-size: 0.7rem;
 }
 
 .SocialMediaCommentCard .btn {
@@ -33,8 +34,28 @@
   background-color: transparent;
   color: rgb(206, 0, 0);
   cursor: pointer;
+  font-size: 0.6rem;
 }
 
 .SocialMediaCommentCard button:hover {
   text-decoration: underline;
+}
+
+@media only screen and (min-width: 860px) {
+  .SocialMediaCommentCard .profile-and-date h5 {
+    font-size: 1rem;
+  }
+
+  .SocialMediaCommentCard .profile-and-date p {
+    font-size: 0.75rem;
+  }
+
+  .SocialMediaCommentCard .comment-text {
+    margin: 5px 10px;
+    font-size: 0.9rem;
+  }
+
+  .SocialMediaCommentCard button {
+    font-size: 0.85rem;
+  }
 }
