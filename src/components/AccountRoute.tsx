@@ -1,5 +1,6 @@
-import { useContext, useState } from "react";
-import { useParams } from "react-router";
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import AttendedParksContext from "../context/AttendedParksContext";
 import AuthContext from "../context/AuthContext";
 import AccountParkCard from "./AccountParkCard";
@@ -9,7 +10,19 @@ const Account = () => {
   // Gathering user (to see if the user is logged in or not) and attendedPark (to display the user's
   // parks they have visited).
   const { user } = useContext(AuthContext);
-  const { attendedParks } = useContext(AttendedParksContext);
+  const { attendedParks, getAndSetParks, viewingUser } =
+    useContext(AttendedParksContext);
+
+  const viewOtherUser: string | undefined = useParams().userid;
+
+  useEffect(() => {
+    if (viewOtherUser) {
+      viewingUser(viewOtherUser);
+      getAndSetParks(viewOtherUser);
+    } else {
+      getAndSetParks(user?.uid);
+    }
+  }, [viewOtherUser, user]);
 
   // TO CHECK OUTHER USERS ACCOUNTS
   //const otherUserParam: string | undefined = useParams().id;
@@ -24,12 +37,19 @@ const Account = () => {
   return (
     <section className="Account">
       <div className="park-container">
-        <h2>Hello, {user?.displayName}!</h2>
+        {viewOtherUser ? (
+          <h2>
+            Viewing {attendedParks[0] ? attendedParks[0].username : "empty"}{" "}
+            Account.
+          </h2>
+        ) : (
+          <h2>Hello, {user?.displayName}!</h2>
+        )}
         <ul className="park-container">
           {attendedParks.length !== 0 ? (
             attendedParks.map(
               (park) =>
-                park.uid === user?.uid && (
+                park.uid === (viewOtherUser ? viewOtherUser : user?.uid) && (
                   <AccountParkCard park={park} key={park._id} />
                 )
             )

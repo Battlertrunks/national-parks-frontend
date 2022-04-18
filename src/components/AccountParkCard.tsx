@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AttendedParksContext from "../context/AttendedParksContext";
+import AuthContext from "../context/AuthContext";
 import CompletedParks from "../models/CompletedParks";
 import AccountActivitiesCard from "./AccountActivitiesCard";
 import "./AccountParkCard.css";
@@ -15,6 +16,7 @@ const AccountParkCard = ({ park }: Props) => {
   const [dropdownToggle, setDropdownToggle] = useState<boolean>(true);
   // Getting the removePark function from our context.
   const { removePark } = useContext(AttendedParksContext);
+  const { user } = useContext(AuthContext);
 
   // Controls whether the activities should be displayed or not from the dropdownToggle.
   const setDropdown = dropdownToggle ? "activity-dropdown" : "";
@@ -45,9 +47,11 @@ const AccountParkCard = ({ park }: Props) => {
         <Link to={`/parks/details?${new URLSearchParams(parkCodeLink)}`}>
           <h4>{park.fullName}</h4>
         </Link>
-        <button className="remove-btn" onClick={() => removePark(park._id!)}>
-          Remove Park
-        </button>
+        {user && user?.uid === park.uid && (
+          <button className="remove-btn" onClick={() => removePark(park._id!)}>
+            Remove Park
+          </button>
+        )}
       </div>
       <div className="container">
         <div className="filler" style={{ width: `${progressBar}%` }}>

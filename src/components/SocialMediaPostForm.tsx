@@ -103,7 +103,7 @@ const SocialMediaPostForm = () => {
     fileInputImgRef.current!.value = "";
   };
 
-  return (
+  return user ? (
     <form className="SocialMediaPostForm" onSubmit={submitHandler}>
       <label htmlFor="title">Post Title:</label>
       <input
@@ -131,6 +131,8 @@ const SocialMediaPostForm = () => {
       />
       <button>Submit</button>
     </form>
+  ) : (
+    <h3>Please Log In to Post</h3>
   );
 };
 

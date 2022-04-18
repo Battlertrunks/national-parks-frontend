@@ -36,6 +36,7 @@ const ParkCard = ({ onDisplay }: Props) => {
       const parkToAdd: CompletedParks = {
         id: onDisplay.id,
         uid: onDisplay.uid,
+        username: user.displayName!,
         images: onDisplay.images,
         fullName: onDisplay.fullName,
         description: onDisplay.description,

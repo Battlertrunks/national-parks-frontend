@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import CommentContext from "../context/CommentContext";
 import PostModel from "../models/PostModel";
@@ -14,6 +15,12 @@ interface Props {
 const SocialMediaPostCard = ({ post }: Props) => {
   // gets context for user to like post and delete a post
   const { likePost, deleteUserPost } = useContext(CommentContext);
+
+  const [viewUser, setViewUser] = useState<string>("");
+
+  const userParam: any = {
+    ...(viewUser ? { userId: viewUser } : {}),
+  };
 
   // Gets user to let them delete their post or have the ability to like post.
   const { user } = useContext(AuthContext);
@@ -64,11 +71,10 @@ const SocialMediaPostCard = ({ post }: Props) => {
         </button>
       )}
       <div className="profile-name-and-image">
-        <img
-          src={post.userPhoto}
-          alt={`${user?.displayName}'s profile photo.`}
-        />
-        <h4>{post?.username}</h4>
+        <img src={post.userPhoto} alt={`${post.username}'s profile photo.`} />
+        <Link to={`/view/user/${encodeURIComponent(post.uid)}`}>
+          <h4>{post?.username}</h4>
+        </Link>
       </div>
       <h3 className="title">{post?.title}</h3>
       {post.imageURL && (

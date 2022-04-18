@@ -5,6 +5,8 @@ import TrendingCardsModel from "../models/TrendingCardModel";
 // Setting the model of what we are going to need and use.
 interface AttendParksContextModel {
   attendedParks: TrendingCardsModel[];
+  viewingUser: (userUid: string) => void;
+  getAndSetParks: (user: any) => void;
   addPark: (park: TrendingCardsModel) => void;
   removePark: (id: string) => void;
   attendedActivity: (id: string, park: CompletedParks) => void;
@@ -13,6 +15,8 @@ interface AttendParksContextModel {
 // Defining the default value to be needed for the provider.
 const defaultValues: AttendParksContextModel = {
   attendedParks: [],
+  viewingUser: () => {},
+  getAndSetParks: () => {},
   addPark: () => {},
   removePark: () => {},
   attendedActivity: () => {},
