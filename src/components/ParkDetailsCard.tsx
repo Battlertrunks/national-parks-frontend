@@ -67,6 +67,7 @@ const ParkDetailsCard = () => {
       const parkToAdd: CompletedParks = {
         id: parkDetails!.id,
         uid: parkDetails!.uid,
+        username: user.displayName!,
         images: parkDetails!.images,
         fullName: parkDetails!.fullName,
         description: parkDetails!.description,

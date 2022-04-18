@@ -37,7 +37,14 @@ const Account = () => {
   return (
     <section className="Account">
       <div className="park-container">
-        <h2>Hello, {user?.displayName}!</h2>
+        {viewOtherUser ? (
+          <h2>
+            Viewing {attendedParks[0] ? attendedParks[0].username : "empty"}{" "}
+            Account.
+          </h2>
+        ) : (
+          <h2>Hello, {user?.displayName}!</h2>
+        )}
         <ul className="park-container">
           {attendedParks.length !== 0 ? (
             attendedParks.map(

@@ -7,6 +7,7 @@ interface image {
 
 export default interface CompletedParks {
   uid?: string;
+  username: string;
   id: string;
   _id?: string;
   images: image[];

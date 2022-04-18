@@ -25,6 +25,7 @@ const AccountActivitiesCard = ({ onDisplayCard, park }: Props) => {
     // the id of what park we want to updated and sending the new/updated park object
     attendedActivity(park._id!, {
       uid: park.uid,
+      username: park.username,
       id: park.id,
       _id: park.uid,
       images: park.images,
@@ -47,7 +48,11 @@ const AccountActivitiesCard = ({ onDisplayCard, park }: Props) => {
           className={checksCompletion}
           onClick={() => attendedActivityFunc()}
         >
-          {onDisplayCard.completed ? "completed" : "finished"}
+          {onDisplayCard.completed ? (
+            <i className="fa-regular fa-square-check"></i>
+          ) : (
+            <i className="fa-regular fa-square"></i>
+          )}
         </button>
       ) : (
         <button
@@ -55,7 +60,11 @@ const AccountActivitiesCard = ({ onDisplayCard, park }: Props) => {
           onClick={() => attendedActivityFunc()}
           disabled
         >
-          {onDisplayCard.completed ? "completed" : "finished"}
+          {onDisplayCard.completed ? (
+            <i className="fa-regular fa-square-check"></i>
+          ) : (
+            <i className="fa-regular fa-square"></i>
+          )}
         </button>
       )}
     </li>

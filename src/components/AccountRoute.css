@@ -9,6 +9,11 @@
 .Account {
   margin: 0 auto;
   margin-bottom: 200px;
+  margin-top: 50px;
+}
+
+.Account h2 {
+  font-size: 1.75rem;
 }
 
 .Account .park-container {
