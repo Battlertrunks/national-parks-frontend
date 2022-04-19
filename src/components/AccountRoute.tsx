@@ -22,6 +22,8 @@ const AccountRoute = () => {
     } else {
       getAndSetParks(user?.uid);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [viewOtherUser, user]);
 
   if (!user && !viewOtherUser) {

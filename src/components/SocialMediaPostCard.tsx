@@ -16,12 +16,6 @@ const SocialMediaPostCard = ({ post }: Props) => {
   // gets context for user to like post and delete a post
   const { likePost, deleteUserPost } = useContext(CommentContext);
 
-  const [viewUser, setViewUser] = useState<string>("");
-
-  const userParam: any = {
-    ...(viewUser ? { userId: viewUser } : {}),
-  };
-
   // Gets user to let them delete their post or have the ability to like post.
   const { user } = useContext(AuthContext);
 
@@ -71,7 +65,7 @@ const SocialMediaPostCard = ({ post }: Props) => {
         </button>
       )}
       <div className="profile-name-and-image">
-        <img src={post.userPhoto} alt={`${post.username}'s profile photo.`} />
+        <img src={post.userPhoto} alt={`${post.username}'s profile.`} />
         <Link to={`/view/user/${encodeURIComponent(post.uid)}`}>
           <h4>{post?.username}</h4>
         </Link>

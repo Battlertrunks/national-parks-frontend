@@ -11,6 +11,8 @@ const SocialMediaRoute = () => {
   // Runs once on load to get and set the post
   useEffect(() => {
     getAndSetPosts();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

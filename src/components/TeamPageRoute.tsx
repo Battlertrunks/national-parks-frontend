@@ -13,7 +13,7 @@ const TeamPageRoute = () => {
       <ul>
         <li>
           <h3>Our project manger: Mia</h3>
-          <img src={mia} alt="Picture of a huskey." />
+          <img src={mia} alt="Huskey named Mia." />
           <p>
             Mia has contributed to the overall distribution of team work across
             our developers and has been the SCRUM master of the team. Her skills
@@ -23,7 +23,7 @@ const TeamPageRoute = () => {
         </li>
         <li>
           <h3>Developer: Alex Sweezie</h3>
-          <img src={alex} alt="Picture of Alex camping in a hammock" />
+          <img src={alex} alt="Alex camping in a hammock" />
           <p>
             Before Covid-19, Alex's field of work was in the the automotive
             industry. He has over five years of experience in automotive
@@ -45,7 +45,7 @@ const TeamPageRoute = () => {
         </li>
         <li>
           <h3>Developer: Tom Hudak</h3>
-          <img src={tom} alt="picture of tom" />
+          <img src={tom} alt="Portait shot of Tom." />
           <p>
             After 10 years in the beer brewing and production industry, Tom is
             transitioning from a career as a Brewmaster to a Software Engineer.
@@ -67,7 +67,7 @@ const TeamPageRoute = () => {
         </li>
         <li>
           <h3>Developer: Gavin Szczesniak</h3>
-          <img src={gavin} alt="Portait image of Gavin Szczesniak" />
+          <img src={gavin} alt="Portait shot of Gavin Szczesniak" />
           <p>
             Gavin's interest in programming started back in his junior year of
             high school. His coding adventures began with Python but have

@@ -13,6 +13,7 @@ const Footer = () => {
             <li>
               <a
                 href="https://www.youtube.com/"
+                rel="noopener noreferrer"
                 target="_blank"
                 className="youtube-icon"
               >
@@ -22,6 +23,7 @@ const Footer = () => {
             <li>
               <a
                 href="https://twitter.com/"
+                rel="noopener noreferrer"
                 target="_blank"
                 className="twitter-icon"
               >
@@ -31,6 +33,7 @@ const Footer = () => {
             <li>
               <a
                 href="https://www.facebook.com/"
+                rel="noopener noreferrer"
                 target="_blank"
                 className="facebook-icon"
               >
@@ -43,10 +46,13 @@ const Footer = () => {
           <h3>Community</h3>
           <ul>
             <li>
-              <a href="#">Articles</a>
-            </li>
-            <li>
-              <a href="#">Help</a>
+              <a
+                href="https://www.nps.gov/grte/learn/news/newsreleases.htm"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Articles
+              </a>
             </li>
             <li>
               <Link to="/team">Team</Link>
@@ -60,7 +66,11 @@ const Footer = () => {
               <Link to="/parks/aboutUs">About Us</Link>
             </li>
             <li>
-              <a href="https://www.grandcircus.co/apply/" target="_blank">
+              <a
+                href="https://www.grandcircus.co/apply/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Career
               </a>
             </li>

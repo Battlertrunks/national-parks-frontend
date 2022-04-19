@@ -42,6 +42,8 @@ const ParkDetailsCard = () => {
     });
     // Gets comments from the park
     getAndSetComments(parkCode!);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [parkCode]);
 
   // Gets park weather when parkDetails changes.

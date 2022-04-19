@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
@@ -7,7 +7,6 @@ import "./Header.css";
 const Header = () => {
   // Gets user info if logged in
   const { user } = useContext(AuthContext);
-  const [menuDropdown, setMenuDropdown] = useState<boolean>(true);
 
   // const setDropdown = menuDropdown ? "menu-dropdown" : "menu-dropdown-open";
 
@@ -49,7 +48,7 @@ const Header = () => {
                     {user.photoURL && (
                       <img
                         src={user.photoURL}
-                        alt="Profile Image"
+                        alt="Profile"
                         className="profile-img"
                       />
                     )}
@@ -80,7 +79,7 @@ const Header = () => {
                   {user.photoURL && (
                     <img
                       src={user.photoURL}
-                      alt="Profile Image"
+                      alt="Profile"
                       className="profile-img"
                     />
                   )}
