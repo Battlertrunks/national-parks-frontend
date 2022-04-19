@@ -1,6 +1,7 @@
 import mia from "../images/Mia.jpg";
 import gavin from "../images/Gavin.jpg";
 import tom from "../images/tom.jpg";
+import alex from "../images/Alex.jpg";
 import "./TeamPageRoute.css";
 
 // This page gives information about the developers and some other mentions
@@ -22,6 +23,7 @@ const TeamPageRoute = () => {
         </li>
         <li>
           <h3>Developer: Alex Sweezie</h3>
+          <img src={alex} alt="Picture of Alex camping in a hammock" />
           <p>
             Before Covid-19, Alex's field of work was in the the automotive
             industry. He has over five years of experience in automotive
