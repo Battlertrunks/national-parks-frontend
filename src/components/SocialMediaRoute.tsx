@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import CommentContext from "../context/CommentContext";
 import SocialMediaPostCard from "./SocialMediaPostCard";
 import SocialMeidaPostForm from "./SocialMediaPostForm";
@@ -6,14 +6,7 @@ import "./SocialMediaRoute.css";
 
 const SocialMediaRoute = () => {
   // Gets context to see post and load them in.
-  const { posts, getAndSetPosts } = useContext(CommentContext);
-
-  // Runs once on load to get and set the post
-  useEffect(() => {
-    getAndSetPosts();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { posts } = useContext(CommentContext);
 
   return (
     <section className="SocialMediaRoute">

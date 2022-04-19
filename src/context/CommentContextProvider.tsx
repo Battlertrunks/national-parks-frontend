@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import CommentModel from "../models/CommentModel";
 import PostModels from "../models/PostModel";
 import { getComments, postComment } from "../services/PostCommentServices";
@@ -61,6 +61,10 @@ const CommentContextProvider = ({ children }: Props) => {
   const deleteCommentFromPost = (id: string, commentId: string): void => {
     deleteComment(id, commentId).then(() => getAndSetPosts());
   };
+
+  useEffect(() => {
+    getAndSetPosts();
+  }, []);
 
   return (
     <CommentContext.Provider
