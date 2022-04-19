@@ -50,9 +50,7 @@ const AttendedParksContextProvider = ({ children }: Props) => {
   useEffect(() => {
     // Checks if user is logged in.
     if (user || viewUserId) {
-      console.log(viewUserId);
       const userid: string | undefined = viewUserId ? viewUserId : user?.uid;
-      console.log(userid);
       getAndSetParks(userid);
     }
   }, [user, viewUserId]);
