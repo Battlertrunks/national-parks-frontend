@@ -1,9 +1,9 @@
 .SocialMediaRoute {
-  color: #222;
+  color: #5c9e52;
   margin-top: 100px;
 }
 
-.SocialMediaRoute h2 {
+.SocialMediaRoute .recent-post {
   margin: 25px 0;
   text-align: center;
   font-size: 24px;
@@ -18,7 +18,7 @@
 }
 
 @media only screen and (min-width: 850px) {
-  .SocialMediaRoute h2 {
+  .SocialMediaRoute .recent-post {
     text-align: left;
     margin: 25px 75px;
     font-size: 36px;

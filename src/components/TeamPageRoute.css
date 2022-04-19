@@ -36,7 +36,7 @@
 
 .TeamPageRoute p {
   font-family: "Lexend", regular;
-  margin: 5px 15px;
+  margin: 25px 15px;
 }
 
 .TeamPageRoute .TeamHeader,
@@ -46,4 +46,10 @@
 
 .TeamPageRoute li {
   margin: 25px 0;
+}
+
+@media only screen and (min-width: 1240px) {
+  .TeamPageRoute {
+    margin: 7em 8em;
+  }
 }

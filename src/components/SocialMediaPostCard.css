@@ -35,6 +35,7 @@
 
 .SocialMediaPostCard .profile-name-and-image h4 {
   margin: 0 15px;
+  color: #fff;
 }
 
 .SocialMediaPostCard .title-and-time {
@@ -142,4 +143,8 @@
 
 .SocialMediaPostCard .CommentForm button:hover {
   background-color: #c1ffb7;
+}
+
+.SocialMediaPostCard .likes {
+  margin: 15px 0;
 }

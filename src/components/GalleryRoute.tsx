@@ -1,7 +1,7 @@
 import SearchForm from "./SearchPageComponents/SearchForm";
 import "./GalleryRoute.css";
 import { useEffect, useState } from "react";
-import TrendingCardsModel from "../models/TrendingCardModel";
+import NationalParksCard from "../models/NationalParksCard";
 import { useSearchParams } from "react-router-dom";
 import { getParksBySearch } from "../services/NSPServices";
 import Params from "../models/Params";
@@ -9,7 +9,7 @@ import ParkCard from "./ParkCard";
 
 const SearchParkRoute = () => {
   // This state will the parks to display in a array
-  const [parks, setParks] = useState<TrendingCardsModel[]>([]);
+  const [parks, setParks] = useState<NationalParksCard[]>([]);
 
   // Set up a search params to find parks that users search for.
   // These values will be stored in the variables if they are within the params in the url
@@ -36,7 +36,7 @@ const SearchParkRoute = () => {
         setParks(response.data);
       });
     }
-  }, [searchQuery, stateCode, parkCode]); // Will run useEffect if these values change.
+  }, [searchDepenencies]); // Will run useEffect if these values change.
 
   return (
     <div className="SearchParkRoute">

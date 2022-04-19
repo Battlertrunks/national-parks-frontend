@@ -8,8 +8,7 @@ import {
 } from "../services/AttendedParkServices";
 import AuthContext from "./AuthContext";
 import AttendedParksContext from "./AttendedParksContext";
-import TrendingCardsModel from "../models/TrendingCardModel";
-import { useParams } from "react-router-dom";
+import NationalParksCard from "../models/NationalParksCard";
 
 interface Props {
   children: ReactNode;
@@ -20,7 +19,7 @@ const AttendedParksContextProvider = ({ children }: Props) => {
   const { user } = useContext(AuthContext);
 
   // The state that stores the attended parks once retrived from MongoDB.
-  const [attendedParks, setAttendedParks] = useState<TrendingCardsModel[]>([]);
+  const [attendedParks, setAttendedParks] = useState<NationalParksCard[]>([]);
   const [viewUserId, setViewUserId] = useState<string>("");
 
   const viewingUser = (userUid: string) => {
@@ -33,7 +32,7 @@ const AttendedParksContextProvider = ({ children }: Props) => {
   };
 
   // Adds a park when the user clicks the button that they have visited there.
-  const addPark = (park: TrendingCardsModel): void => {
+  const addPark = (park: NationalParksCard): void => {
     addAttendedParks(park).then(() => getAndSetParks(user?.uid));
   };
 

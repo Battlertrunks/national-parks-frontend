@@ -1,5 +1,5 @@
 .ParkCard .parkcard-text a,
-h2 {
+.ParkCard .parkcard-text h2 {
   font-size: medium;
   color: #3a6b39;
 }

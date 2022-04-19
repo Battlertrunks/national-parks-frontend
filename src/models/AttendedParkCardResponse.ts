@@ -1,5 +1,5 @@
-import TrendingCardsModel from "./TrendingCardModel";
+import NationalParksCard from "./NationalParksCard";
 
 export default interface AttendedParkCardResponse {
-  data: TrendingCardsModel;
+  data: NationalParksCard;
 }

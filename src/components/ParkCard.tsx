@@ -64,11 +64,12 @@ const ParkCard = ({ onDisplay }: Props) => {
           <p>{onDisplay.description}</p>
         </div>
       </div>
-      {user && !attendedParks.some((park) => park?.id === onDisplay?.id) ? (
-        <button onClick={() => addingParkToProgress()}>Mark Visited</button>
-      ) : (
-        <button disabled>Visited</button>
-      )}
+      {user &&
+        (!attendedParks.some((park) => park?.id === onDisplay?.id) ? (
+          <button onClick={() => addingParkToProgress()}>Mark Visited</button>
+        ) : (
+          <button disabled>Visited</button>
+        ))}
     </div>
   );
 };

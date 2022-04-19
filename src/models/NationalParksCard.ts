@@ -5,7 +5,7 @@ interface image {
   altText: string;
 }
 
-export default interface TrendingCardsModel {
+export default interface NationalParksCard {
   uid?: string;
   username: string;
   id: string;

@@ -1,17 +1,13 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router";
-import Activities from "../../models/Activities";
 import Params from "../../models/Params";
 import States from "../../models/States";
-import { getActivities } from "../../services/NSPServices";
 import "./SearchForm.css";
 
 const SearchForm = () => {
   const [q, setQ] = useState("");
 
   const navigate = useNavigate();
-
-  const [activites, setActivities] = useState<Activities[]>([]);
 
   const [stateCode, setStateCode] = useState<string>("");
   const [parkCode, setParkCode] = useState<string>("");
@@ -69,10 +65,6 @@ const SearchForm = () => {
     { fullName: "Wyoming", stateCode: "WY" },
   ];
 
-  useEffect(() => {
-    getActivities().then((response) => setActivities(response.data));
-  }, []);
-
   const submitHandler = (e: FormEvent): void => {
     e.preventDefault();
 
@@ -84,6 +76,7 @@ const SearchForm = () => {
 
     navigate(`/parks/search?${new URLSearchParams({ ...queryStringParams })}`);
     setQ("");
+    setParkCode("");
   };
 
   return (
@@ -99,19 +92,12 @@ const SearchForm = () => {
 
       <div className="dropdowns">
         <div className="dropdown1">
-          <label htmlFor="activity">Filter by Activity</label>
-          <select
+          <label htmlFor="activity">Find by Park Code</label>
+          <input
             name="activity"
             id="activity"
             onChange={(e) => setParkCode(e.target.value)}
-          >
-            <option value=""></option>
-            {activites.map((activity) => (
-              <option value={activity.id} key={activity.id}>
-                {activity.name}
-              </option>
-            ))}
-          </select>
+          />
         </div>
         <div className="dropdown2">
           <label htmlFor="state">Filter by State</label>

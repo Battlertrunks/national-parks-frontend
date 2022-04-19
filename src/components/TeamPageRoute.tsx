@@ -1,4 +1,5 @@
 import mia from "../images/Mia.jpg";
+import gavin from "../images/Gavin.jpg";
 import "./TeamPageRoute.css";
 
 // This page gives information about the developers and some other mentions
@@ -62,16 +63,21 @@ const TeamPageRoute = () => {
         </li>
         <li>
           <h3>Developer: Gavin Szczesniak</h3>
+          <img src={gavin} alt="Portait image of Gavin Szczesniak" />
           <p>
             Gavin's interest in programming started back in his junior year of
             high school. His coding adventures began with Python but have
-            expanded into C++, JavaScript, TypeScript and much more!
+            expanded into C++, JavaScript, TypeScript and much more! Gavin has
+            expereince within Unity game engine creating games using C#. He took
+            what he learned at Ferris State University about design and user
+            experience to apply it to web application.
           </p>
           <p>
             Gavin mainly works with the MERN stack using TypeScript to create
             responsive web applications. After hours, Gavin hones his skills
             using Frontend Mentor or donating time to his personal programming
-            projects.
+            projects. He plans to learn other stacks like the MEAN and learn
+            Flutter in the near future.
           </p>
           <p>
             During his free time, Gavin plays with his dog, Mia, and takes her

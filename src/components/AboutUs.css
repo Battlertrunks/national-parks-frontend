@@ -19,6 +19,7 @@
 
 .AboutUs h2 {
   margin-bottom: 10px;
+  margin-top: 50px;
   background-color: #5c9e52;
   color: #fff;
   padding: 10px 5px;
@@ -26,10 +27,11 @@
   border-radius: 50px;
   text-align: center;
   display: inline-block;
+  font-size: 1.25rem;
 }
 
 .AboutUs p {
-  margin: 5px 15px;
+  margin: 25px 15px;
 }
 
 .AboutUs {
@@ -40,4 +42,10 @@
 
 .AboutUs li {
   margin: 25px 0;
+}
+
+@media only screen and (min-width: 1240px) {
+  .AboutUs {
+    margin: 7em 8em;
+  }
 }
