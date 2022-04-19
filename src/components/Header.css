@@ -65,6 +65,7 @@
   width: 27px;
   margin-left: 10px;
   border-radius: 50%;
+  border: 1px #fff solid;
 }
 
 .Header a {
