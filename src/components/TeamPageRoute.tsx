@@ -1,5 +1,6 @@
 import mia from "../images/Mia.jpg";
 import gavin from "../images/Gavin.jpg";
+import tom from "../images/tom.jpg";
 import "./TeamPageRoute.css";
 
 // This page gives information about the developers and some other mentions
@@ -42,6 +43,7 @@ const TeamPageRoute = () => {
         </li>
         <li>
           <h3>Developer: Tom Hudak</h3>
+          <img src={tom} alt="picture of tom" />
           <p>
             After 10 years in the beer brewing and production industry, Tom is
             transitioning from a career as a Brewmaster to a Software Engineer.
