@@ -47,7 +47,7 @@ const AccountRoute = () => {
             Account.
           </h2>
         ) : (
-          <h2 className="login-message">Hello, {user?.displayName}!</h2>
+          <h2>Hello, {user?.displayName}!</h2>
         )}
         <ul className="park-container">
           {attendedParks.length !== 0 ? (

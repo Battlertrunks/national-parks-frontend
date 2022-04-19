@@ -101,10 +101,14 @@ const ParkDetailsCard = () => {
         />
         <h3>Description</h3>
         <p className="park-description">{parkDetails?.description}</p>
-        {user &&
-          !attendedParks.some((park) => park?.id === parkDetails?.id) && (
-            <button onClick={() => addingParkToProgress()}>Mark Visited</button>
-          )}
+        {user && !attendedParks.some((park) => park?.id === parkDetails?.id) && (
+          <button
+            className="visited-btn"
+            onClick={() => addingParkToProgress()}
+          >
+            Mark Visited
+          </button>
+        )}
         <h3>Activities</h3>
         <ul className="activitiesList">
           {parkDetails?.activities.map((activity) => (
@@ -143,7 +147,9 @@ const ParkDetailsCard = () => {
           {comments.reverse().map((comment) => (
             <li key={comment._id}>
               <div>
-                <h4>{comment.username}</h4>
+                <Link to={`/view/user/${encodeURIComponent(comment.uid)}`}>
+                  <h4>{comment.username}</h4>
+                </Link>
                 <p className="date">{comment.dateAndTime}</p>
               </div>
               <p className="body-text">{comment.text}</p>

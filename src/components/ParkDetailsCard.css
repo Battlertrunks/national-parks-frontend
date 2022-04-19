@@ -2,7 +2,7 @@
   color: #222;
   display: flex;
   flex-direction: column;
-  margin-top: 65px;
+  margin-top: 15px;
 }
 
 .ParkDetailsCard .content-container {
@@ -19,6 +19,10 @@
 
 .ParkDetailsCard p {
   color: #60a155;
+}
+
+.ParkDetailsCard .visited-btn {
+  color: #fff;
 }
 
 .ParkDetailsCard .HomeSearchParkForm button {

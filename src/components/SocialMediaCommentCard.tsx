@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import CommentContext from "../context/CommentContext";
 import CommentModel from "../models/CommentModel";
@@ -20,7 +21,9 @@ const SocialMediaCommentCard = ({ comment, index, postID }: Props) => {
   return (
     <li className="SocialMediaCommentCard">
       <div className="profile-and-date">
-        <h5>{comment[index]?.username}</h5>
+        <Link to={`/view/user/${encodeURIComponent(comment[index].uid)}`}>
+          <h5>{comment[index]?.username}</h5>
+        </Link>
         <p>{comment[index]?.dateAndTime}</p>
       </div>
       <p className="comment-text">{comment[index]?.text}</p>
