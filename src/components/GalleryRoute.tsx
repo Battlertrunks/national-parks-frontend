@@ -21,6 +21,7 @@ const SearchParkRoute = () => {
   // Checks if search depenencies contains at least one value to be truthy.
   // if truthy then it will retrive parks based off of the params and
   // store them in parks state.
+
   useEffect(() => {
     // Setting up the params checking if these variables have value
     // if no value then it will be a empty object,
