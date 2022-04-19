@@ -99,13 +99,13 @@ const ParkDetailsCard = () => {
           alt="park images"
           className="main-image"
         />
-
+        <h3>Description</h3>
         <p className="park-description">{parkDetails?.description}</p>
         {user &&
           !attendedParks.some((park) => park?.id === parkDetails?.id) && (
             <button onClick={() => addingParkToProgress()}>Mark Visited</button>
           )}
-        <h2>Activities</h2>
+        <h3>Activities</h3>
         <ul className="activitiesList">
           {parkDetails?.activities.map((activity) => (
             // <AccountActivitiesCard
@@ -119,7 +119,7 @@ const ParkDetailsCard = () => {
             </li>
           ))}
         </ul>
-        <h2>Photos</h2>
+        <h3>Photos</h3>
         <ul className="preview-imgs">
           {parkDetails?.images.map((image) => (
             <li key={image.altText}>
@@ -128,13 +128,13 @@ const ParkDetailsCard = () => {
           ))}
         </ul>
 
-        <h2>Park Address</h2>
+        <h3>Park Address</h3>
         <p>{parkDetails?.addresses[0].line1}</p>
         <p>{parkDetails?.addresses[0].city}</p>
         <p>{parkDetails?.addresses[0].stateCode}</p>
         <p>{parkDetails?.addresses[0].postalCode}</p>
 
-        <h2>Contact Park</h2>
+        <h3>Contact Park</h3>
         <p>Phone: {parkDetails?.contacts.phoneNumbers[0].phoneNumber}</p>
         <p>Email: {parkDetails?.contacts.emailAddresses[0].emailAddress}</p>
 

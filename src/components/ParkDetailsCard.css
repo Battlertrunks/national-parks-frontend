@@ -32,11 +32,27 @@
 
 .ParkDetailsCard .activitiesList {
   margin: 20px;
-  columns: 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .ParkDetailsCard .activitiesList p {
-  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ParkDetailsCard .activitiesList p {
+  font-size: 0.7rem;
+  text-align: center;
+  background-color: #60a155;
+  color: #fff;
+  margin: 10px;
+  border-radius: 3em;
+  width: 10em;
+  height: 2.25em;
+  padding: 0.65em;
 }
 
 .ParkDetailsCard h1 {
@@ -52,10 +68,20 @@
   justify-content: space-between;
 }
 
+.ParkDetailsCard .parkname-weather-container h2 {
+  color: #60a155;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
 .ParkDetailsCard .weather-info {
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 0.75rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 150px;
 }
 
 .ParkDetailsCard .weather-info img {
@@ -69,8 +95,11 @@
   border-radius: 5px;
 }
 
-.ParkDetailsCard h2 {
-  margin: 20px;
+.ParkDetailsCard h3 {
+  margin: 20px 0;
+  margin-top: 125px;
+  font-size: 1.15rem;
+  color: #60a155;
 }
 
 .ParkDetailsCard button {
@@ -93,12 +122,13 @@
   height: 200px;
 }
 
-.ParkDetailsCard form.CommentForm {
+.ParkDetailsCard .CommentForm {
   display: flex;
   flex-direction: column;
   width: 90%;
   max-width: 500px;
   margin: 20px auto;
+  margin-top: 150px;
 }
 
 .ParkDetailsCard .comments-container {
@@ -139,6 +169,19 @@
     padding: 100px 0px 10px 0px;
   }
 
+  .ParkDetailsCard .parkname-weather-container h2 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .ParkDetailsCard h3 {
+    font-size: 1.75rem;
+  }
+
+  .ParkDetailsCard .park-description {
+    font-size: 1.1rem;
+  }
+
   .ParkDetailsCard .content-container {
     margin: 0 100px;
   }
@@ -171,5 +214,10 @@
 
   .ParkDetailsCard .comments-container {
     margin: 50px 40px;
+  }
+
+  .ParkDetailsCard .activitiesList p {
+    font-size: 0.9rem;
+    height: 2.5em;
   }
 }
