@@ -22,6 +22,7 @@ const HomeRoute = () => {
     retrieveNews();
   }, []); // runs once
 
+  console.log("run");
   // When the user clicks the left arrow button, brings left card to be on screen
   // when it is at its end of the first card, it will get the last card from the list
   const swipeNewsLeft = (): void => {

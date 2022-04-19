@@ -123,13 +123,16 @@ const SocialMediaPostCard = ({ post }: Props) => {
       >
         Show More Comments
       </button>
-      <button
-        className="comment-btn"
-        onClick={() => setCommentToggle((prev) => !prev)}
-      >
-        Comment
-      </button>
-      {commentToggle && (
+
+      {user && (
+        <button
+          className="comment-btn"
+          onClick={() => setCommentToggle((prev) => !prev)}
+        >
+          Comment
+        </button>
+      )}
+      {user && commentToggle && (
         <CommentForm commentLocation={post._id!} postDetails={post} />
       )}
     </li>

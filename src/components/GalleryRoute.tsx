@@ -18,25 +18,23 @@ const SearchParkRoute = () => {
   const stateCode: string | null = searchParams.get("stateCode")!;
   const parkCode: string | null = searchParams.get("parkCode")!;
 
-  // Setting up the params checking if these variables have value
-  // if no value then it will be a empty object,
-  // if there is a value, then it will contain a property of the value
-  const searchDepenencies: Params = {
-    ...(searchQuery ? { q: searchQuery } : {}),
-    ...(stateCode ? { stateCode } : {}),
-    ...(parkCode ? { parkCode } : {}),
-  };
-
   // Checks if search depenencies contains at least one value to be truthy.
   // if truthy then it will retrive parks based off of the params and
   // store them in parks state.
   useEffect(() => {
-    if (searchDepenencies) {
-      getParksBySearch(searchDepenencies).then((response) => {
-        setParks(response.data);
-      });
-    }
-  }, [searchDepenencies]); // Will run useEffect if these values change.
+    // Setting up the params checking if these variables have value
+    // if no value then it will be a empty object,
+    // if there is a value, then it will contain a property of the value
+    const searchDepenencies: Params = {
+      ...(searchQuery ? { q: searchQuery } : {}),
+      ...(stateCode ? { stateCode } : {}),
+      ...(parkCode ? { parkCode } : {}),
+    };
+
+    getParksBySearch(searchDepenencies).then((response) => {
+      setParks(response.data);
+    });
+  }, [searchQuery, stateCode, parkCode]); // Will run useEffect if these values change.
 
   return (
     <div className="SearchParkRoute">
