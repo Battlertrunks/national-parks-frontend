@@ -21,6 +21,10 @@
   color: #60a155;
 }
 
+.ParkDetailsCard .visited-btn {
+  color: #fff;
+}
+
 .ParkDetailsCard .HomeSearchParkForm button {
   background-color: #3a6b39;
 }
