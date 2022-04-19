@@ -63,4 +63,8 @@
   .NewsCard .content-container h2 {
     font-size: 1.25rem;
   }
+
+  .NewsCard p {
+    font-size: 0.75rem;
+  }
 }
