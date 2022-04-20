@@ -1,46 +1,10 @@
-# Getting Started with Create React App
+# National Treasures - Web Application using MERN Stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We have made an app called National Treasures. It is a way for people to connect with national parks or landmarks by finding a destination that matches with their preferred interests and location. A visitor can search for parks by the state they reside in or directly by their name. This allows for easy use for anyone traveling around the United States or for someone who just wants to take a day trip to a nearby park they haven’t visited yet.
 
-## Available Scripts
+This app also displays activities that are available at each park and keeps track of which activities you have or haven’t finished. If you have an experience that you want to share, there’s also a built-in comment system and blog available. This is where you can see other user’s posts and interact with them by liking or commenting.
 
-In the project directory, you can run:
+When you visit a park’s details page, you can view other user’s comments that may answer some questions you have about the park, or you can just read about their experience instead. You are also able to comment directly under a park that you have visited to provide input on your experience that others may find useful.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Instead of reading the blog comments about the parks, you can also keep up to date with our dynamic news feed. We are constantly pulling up to date news articles from our API to bring you the most current information that can be used to plan your next adventure.
+If there’s an article that brings up questions you may have about your next destination park, the article provides a link to the original park that submitted the news story. This is where you can call or email them with your questions. This application is bringing National Parks to the digital age for everyone to enjoy!
