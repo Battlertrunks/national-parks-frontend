@@ -168,6 +168,16 @@
   margin-top: 10px;
 }
 
+.ParkDetailsCard .delete-comment-btn {
+  color: rgb(255, 255, 255);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.ParkDetailsCard .delete-comment-btn:hover {
+  text-decoration: underline;
+}
+
 @media only screen and (min-width: 600px) {
   .ParkDetailsCard .parkname-weather-container {
     padding: 100px 0px 10px 0px;

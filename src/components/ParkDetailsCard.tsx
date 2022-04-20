@@ -157,13 +157,16 @@ const ParkDetailsCard = () => {
               </div>
               <p className="body-text">{comment.text}</p>
               {user && user?.uid === comment.uid && (
-                <button
-                  onClick={() =>
-                    deleteCommentOnPark(comment._id!, comment.park_code!)
-                  }
-                >
-                  Delete Comment
-                </button>
+                <div className="delete-container">
+                  <button
+                    className="delete-comment-btn"
+                    onClick={() =>
+                      deleteCommentOnPark(comment._id!, comment.park_code!)
+                    }
+                  >
+                    Delete Comment
+                  </button>
+                </div>
               )}
             </li>
           ))}
