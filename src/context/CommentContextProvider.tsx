@@ -1,10 +1,14 @@
 import { ReactNode, useEffect, useState } from "react";
 import CommentModel from "../models/CommentModel";
 import PostModels from "../models/PostModel";
-import { getComments, postComment } from "../services/PostCommentServices";
+import {
+  deleteParkComment,
+  getComments,
+  postComment,
+} from "../services/PostCommentServices";
 import {
   commentUserPost,
-  deleteComment,
+  deletePostComment,
   deletePost,
   likingUserPost,
   retrievePosts,
@@ -30,6 +34,10 @@ const CommentContextProvider = ({ children }: Props) => {
   // Calls get and set comments function to appended it to the comments state.
   const addCommentToPark = (comment: CommentModel): void => {
     postComment(comment).then(() => getAndSetComments(comment.park_code!));
+  };
+
+  const deleteCommentOnPark = (id: string, parkCode: string): void => {
+    deleteParkComment(id).then(() => getAndSetComments(parkCode));
   };
 
   // gets and sets post from services from the API, then appends it to posts
@@ -59,7 +67,7 @@ const CommentContextProvider = ({ children }: Props) => {
 
   // deletes comment on a post and then updates posts state by calling get and sets posts.
   const deleteCommentFromPost = (id: string, commentId: string): void => {
-    deleteComment(id, commentId).then(() => getAndSetPosts());
+    deletePostComment(id, commentId).then(() => getAndSetPosts());
   };
 
   useEffect(() => {
@@ -72,6 +80,7 @@ const CommentContextProvider = ({ children }: Props) => {
         comments,
         getAndSetComments,
         addCommentToPark,
+        deleteCommentOnPark,
         posts,
         getAndSetPosts,
         addPost,

@@ -40,7 +40,7 @@ export const deletePost = async (id: string): Promise<void> => {
 };
 
 // deletes a user's comment on a post
-export const deleteComment = async (
+export const deletePostComment = async (
   id: string,
   commentId: string
 ): Promise<PostModel> => {
