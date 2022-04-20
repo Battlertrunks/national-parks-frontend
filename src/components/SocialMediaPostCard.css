@@ -38,6 +38,10 @@
   color: #fff;
 }
 
+.SocialMediaPostCard .profile-name-and-image h4:hover {
+  text-decoration: underline;
+}
+
 .SocialMediaPostCard .title-and-time {
   display: flex;
   align-items: flex-end;

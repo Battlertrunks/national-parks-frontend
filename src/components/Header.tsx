@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import logo from "../images/NationalParksLogo.png";
@@ -8,6 +8,12 @@ import "./Header.css";
 const Header = () => {
   // Gets user info if logged in
   const { user } = useContext(AuthContext);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   // const setDropdown = menuDropdown ? "menu-dropdown" : "menu-dropdown-open";
 
