@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CommentContext from "../context/CommentContext";
 import SocialMediaPostCard from "./SocialMediaPostCard";
 import SocialMeidaPostForm from "./SocialMediaPostForm";
@@ -14,9 +14,9 @@ const SocialMediaRoute = () => {
       <h2 className="recent-post">Most Recent Post</h2>
       <ul className="posts-container">
         {/* Loads post on the page */}
-        {posts.reverse().map((post) => (
-          <SocialMediaPostCard post={post} key={post._id} />
-        ))}
+        {posts
+          .map((post) => <SocialMediaPostCard post={post} key={post._id} />)
+          .reverse()}
       </ul>
     </section>
   );
