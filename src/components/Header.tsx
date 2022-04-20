@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
+import logo from "../images/NationalParksLogo.png";
 import "./Header.css";
 
 const Header = () => {
@@ -15,7 +16,10 @@ const Header = () => {
   return (
     <header className="Header">
       <Link to="/">
-        <h1>National Treasures</h1>
+        <div className="logo-container">
+          <img src={logo} alt="Natioanl Tresaures Logo" />
+          <h1>National Treasures</h1>
+        </div>
       </Link>
 
       <ul className="navlinks">

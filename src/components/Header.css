@@ -16,8 +16,17 @@
   border-bottom: 0.15rem #fff solid;
 }
 
+.Header .logo-container {
+  display: flex;
+  align-items: center;
+}
+
 .Header h1 {
   font-size: 1.1rem;
+}
+
+.Header img {
+  width: 50px;
 }
 
 .Header li Link {
@@ -187,7 +196,7 @@
   color: #77ce6a;
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 900px) {
   .Header {
     flex-direction: row;
     justify-content: space-between;
