@@ -16,6 +16,10 @@
   color: #5c9e52;
 }
 
+.SocialMediaCommentCard .profile-and-date h5:hover {
+  text-decoration: underline;
+}
+
 .SocialMediaCommentCard .profile-and-date p {
   font-size: 0.5rem;
   margin-left: 20px;

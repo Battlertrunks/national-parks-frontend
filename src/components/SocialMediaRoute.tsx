@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import CommentContext from "../context/CommentContext";
 import SocialMediaPostCard from "./SocialMediaPostCard";
 import SocialMeidaPostForm from "./SocialMediaPostForm";

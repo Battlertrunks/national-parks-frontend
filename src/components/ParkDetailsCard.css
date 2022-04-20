@@ -135,6 +135,11 @@
   margin-top: 150px;
 }
 
+.CommentForm button:hover {
+  transition: 0.1s background-color ease;
+  background-color: #73b967;
+}
+
 .ParkDetailsCard .comments-container {
   margin: 50px 5px;
 }
@@ -149,6 +154,10 @@
 .ParkDetailsCard .comments-container li h4,
 .ParkDetailsCard .comments-container li p {
   color: #fff;
+}
+
+.ParkDetailsCard .comments-container li h4:hover {
+  text-decoration: underline;
 }
 
 .ParkDetailsCard .comments-container div {
