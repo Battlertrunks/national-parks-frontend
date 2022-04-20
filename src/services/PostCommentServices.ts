@@ -17,3 +17,7 @@ export const postComment = async (
 ): Promise<CommentModel> => {
   return (await axios.post(url, comment)).data;
 };
+
+export const deleteParkComment = async (id: string): Promise<void> => {
+  return (await axios.delete(`${url}/${encodeURIComponent(id)}`)).data;
+};

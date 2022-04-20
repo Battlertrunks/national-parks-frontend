@@ -31,7 +31,8 @@ const ParkDetailsCard = () => {
   // Context to add park to list and check if they are already attended it
   const { addPark, attendedParks } = useContext(AttendedParksContext);
   // Contect to get comments to see
-  const { comments, getAndSetComments } = useContext(CommentContext);
+  const { comments, getAndSetComments, deleteCommentOnPark } =
+    useContext(CommentContext);
 
   // Runs when the parkcode has changed
   useEffect(() => {
@@ -155,6 +156,15 @@ const ParkDetailsCard = () => {
                 <p className="date">{comment.dateAndTime}</p>
               </div>
               <p className="body-text">{comment.text}</p>
+              {user && user?.uid === comment.uid && (
+                <button
+                  onClick={() =>
+                    deleteCommentOnPark(comment._id!, comment.park_code!)
+                  }
+                >
+                  Delete Comment
+                </button>
+              )}
             </li>
           ))}
         </ul>
