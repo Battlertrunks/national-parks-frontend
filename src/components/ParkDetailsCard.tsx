@@ -120,9 +120,7 @@ const ParkDetailsCard = () => {
             //   park={gettingAttendedInfo!}
             // />
             <li key={activity.id}>
-              <Link to="/account">
-                <p>{activity.name}</p>
-              </Link>
+              <p>{activity.name}</p>
             </li>
           ))}
         </ul>
